@@ -3,8 +3,8 @@
 .tech_intro {
   width: 100vw;
   background-color: $haiqu-light-grey;
-  position: relative;
-  overflow: auto;
+  position: sticky;
+  top: 0;
 
   &__process_bar {
     position: relative;
@@ -111,7 +111,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 11;
+    z-index: 17;
   }
 
   &__100x_container {
@@ -135,7 +135,8 @@
   }
 
   &__number {
-    position: relative;
+    position: sticky;
+    top:0;
     width: 83.875rem;
     height: 29.1875rem;
     background-color: $main-font-color;

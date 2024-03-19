@@ -1,9 +1,10 @@
 @import '/src/styles/main.module.scss';
 
 .main {
+  position: relative;
   width: 100vw;
   font-family: $neue-montreal-font;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   &__testimonial {
     background-color: $main-font-color;
@@ -16,5 +17,6 @@
   &__ticker_container {
     @include flexCenter;
     width: 100%;
+    // overflow-x: hidden;
   }
 }

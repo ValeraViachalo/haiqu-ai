@@ -3,4 +3,8 @@
 .partners_section {
     background-color: $main-font-color;
     padding-bottom: 13.125rem;
+
+    &__testimonial_container {
+        overflow-x: scroll;
+    }
 }

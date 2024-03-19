@@ -29,32 +29,35 @@ const EventsSection = () => {
           <p className={styles.events_section__row_title}>
             {constants.EVENTS_SECTION_LATEST_NEWS_TITLE}
           </p>
-          {latestNews.map(({ id, title, date, photo, color, dark }) => (
-            <LatestNews
-              key={id}
-              backgroundColor={color}
-              date={date}
-              title={title}
-              photo={photo}
-              dark={dark}
-              color={color}
-            />
-          ))}
-          ;
+          <div className={styles.events_section__row__latest_news}>
+            {latestNews.map(({ id, title, date, photo, color, dark }) => (
+              <LatestNews
+                key={id}
+                backgroundColor={color}
+                date={date}
+                title={title}
+                photo={photo}
+                dark={dark}
+                color={color}
+              />
+            ))}
+          </div>
         </div>
 
         <div className={styles.events_section__row}>
           <p className={styles.events_section__row_title}>
             {constants.EVENTS_SECTION_HACKATHONS_TITLE}
           </p>
-          {hackathons.map(({ id, title, date, photo }) => (
-            <Hackathon
-              key={id}
-              title={title}
-              date={date}
-              photo={photo}
-            />
-          ))}
+          <div className={styles.events_section__row__hackathons}>
+            {hackathons.map(({ id, title, date, photo }) => (
+              <Hackathon
+                key={id}
+                title={title}
+                date={date}
+                photo={photo}
+              />
+            ))}
+          </div>
         </div>
 
         <div className={styles.events_section__row}>
@@ -62,14 +65,16 @@ const EventsSection = () => {
             {constants.EVENTS_SECTION_SEMINARS}
           </p>
 
-          {seminars.map(({ id, photo, title, description }) => (
-            <Seminar
-              key={id}
-              photo={photo}
-              title={title}
-              description={description}
-            />
-          ))}
+          <div className={styles.events_section__row__seminars}>
+            {seminars.map(({ id, photo, title, description }) => (
+              <Seminar
+                key={id}
+                photo={photo}
+                title={title}
+                description={description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

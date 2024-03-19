@@ -13,7 +13,9 @@ const PartnersSection = () => {
         dark
       />
 
-      <Testimonial testimonial={testimonial} />
+      <div className={styles.partners_section__testimonial_container}>
+        <Testimonial testimonial={testimonial} />
+      </div>
     </section>
   );
 };

@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './footer.module.scss';
+import DemoBookingForm from '../demo-booking-form';
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
+      <DemoBookingForm />
       <div className={styles.footer__top_section}>
         <p>©2023 Haiqu. All rights reserved.</p>
         <p>+1 650 788 6011</p>

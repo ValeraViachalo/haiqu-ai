@@ -2,6 +2,7 @@
 
 .events_section {
   padding: $padding-horizontal;
+  position: relative;
 
   &__header {
     display: flex;
@@ -42,14 +43,35 @@
   }
 
   &__row {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 25vw;
-    margin-left: 0.9375rem;
+    // margin-left: 0.9375rem;
     gap: 0.9375rem;
 
     &__latest_news {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9375rem;
+      padding-top: $padding-horizontal;
       width: 45vw;
+    }
+
+    &__hackathons {
+      display: flex;
+      flex-direction: column;
+      padding-top: $padding-horizontal;
+      position: sticky;
+      top: 0;
+      gap: 0.9375rem;
+      height: 100%;
+    }
+
+    &__seminars {
+      position: sticky;
+      top: 0;
+      padding-top: $padding-horizontal;
     }
   }
 
@@ -58,6 +80,6 @@
     line-height: 2.4375rem;
     padding-bottom: 0.9375rem;
     border-bottom: 1px solid $main-font-color;
-    margin-bottom: $padding-horizontal;
+    // margin-bottom: $padding-horizontal;
   }
 }

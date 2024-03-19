@@ -3,12 +3,17 @@
 .case_study {
   display: flex;
   background-color: $main-font-color;
-  padding-top: 16rem;
   padding: $padding-horizontal;
+  position: relative;
 
   &__info {
     width: 55%;
     color: $white-color;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 50rem;
+    padding-top: $padding-horizontal;
   }
 
   &__title {
@@ -19,7 +24,7 @@
 
   &__moto {
     @include sectionTitle;
-    
+
     max-width: 50.5rem;
     margin-bottom: 1.875rem;
   }
