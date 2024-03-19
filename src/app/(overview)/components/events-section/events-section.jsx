@@ -23,9 +23,7 @@ const EventsSection = () => {
       </div>
 
       <div className={styles.events_section__headings}>
-        <div
-          className={`${styles.events_section__row__latest_news} ${styles.events_section__row}`}
-        >
+        <div className={styles.events_section__row}>
           <p className={styles.events_section__row_title}>
             {constants.EVENTS_SECTION_LATEST_NEWS_TITLE}
           </p>
