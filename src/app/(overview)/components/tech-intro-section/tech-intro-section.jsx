@@ -11,9 +11,6 @@ import classNames from 'classnames';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const END = `+=${window.innerWidth}`;
-const SCRUB = 1;
-
 const TechIntroSection = () => {
   const filledBar = useRef(null);
   const main = useRef(null);
@@ -63,9 +60,9 @@ const TechIntroSection = () => {
       scrollTrigger: {
         trigger: main.current,
         start: 'top top',
-        end: END,
+        end: `+=${window.innerHeight}`,
         pin: true,
-        scrub: SCRUB,
+        scrub: 1,
       },
     });
 
@@ -135,7 +132,7 @@ const TechIntroSection = () => {
         trigger: main.current,
         start: '22% top',
         end: `+=${window.innerWidth / 2}`,
-        scrub: true,
+        scrub: 1,
         pin: true,
       },
     });
