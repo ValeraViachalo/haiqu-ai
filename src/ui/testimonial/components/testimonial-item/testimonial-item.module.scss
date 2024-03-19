@@ -1,0 +1,25 @@
+@import '/src/styles/main.module.scss';
+
+.testimonial_item {
+  min-width: $testimonial-item-width;
+  display: flex;
+  flex-direction: column;
+  color: $white-color;
+  padding: 1.875rem;
+  border-left: 0.0625rem solid rgba($haiqu-light-grey, 0.35);
+  // margin-right: 13.125rem;
+
+  &__name {
+    font-size: 1.625rem;
+  }
+
+  &__role {
+    font-size: 1.625rem;
+    color: rgba($white-color, 0.35);
+    margin-bottom: 0.9375rem;
+  }
+
+  &__quote {
+    font-size: 5.25rem;
+  }
+}

@@ -1,0 +1,18 @@
+@import '/src/styles/main.module.scss';
+
+.logo_container {
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+.logo__blue {
+  width: 100%;
+  height: 100%;
+  background-color: $haiqu-blue;
+  mask-image: url('./assets/morph-logo.gif');
+  mask-size: 100%;
+}

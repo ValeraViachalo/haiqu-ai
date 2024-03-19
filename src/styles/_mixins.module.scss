@@ -1,0 +1,36 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin buttonCommonStyles {
+  position: absolute;
+  top: $padding-horizontal;
+  right: $padding-horizontal;
+  transition: 1s ease;
+  transform: translateY(-4.5rem);
+  border: none;
+  font-family: $fraktion-font;
+  padding: $padding-button;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgba($haiqu-light-grey, 0.35);
+}
+
+@mixin btn {
+  border: none;
+  font-family: $fraktion-font;
+  padding: $padding-button;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgba($haiqu-light-grey, 0.35);
+}
+
+@mixin sectionTitle {
+  font-size: 5.25rem;
+  line-height: 6.09rem;
+  font-weight: 400;
+}

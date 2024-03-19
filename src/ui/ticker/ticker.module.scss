@@ -1,0 +1,77 @@
+@import '/src/styles/main.module.scss';
+
+.ticker {
+  position: relative;
+  width: 100%;
+  padding: 13.75rem 0;
+  overflow: hidden;
+  @include flexCenter;
+  flex-direction: column;
+
+  &__title {
+    font-size: 1.625rem;
+    text-align: center;
+    margin-bottom: 0.9375rem;
+
+    &__dark {
+      color: $white-color;
+    }
+  }
+
+  &__container {
+    opacity: 0.35;
+    background-color: $haiqu-light-grey;
+    width: 40%;
+    height: auto;
+    display: flex;
+    border-radius: 0.95rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__logos {
+    animation: animate 60s linear infinite;
+    animation-delay: -60s;
+    white-space: nowrap;
+    display: flex;
+
+    &:nth-child(2) {
+      animation: animate2 60s linear infinite;
+      animation-delay: -30s;
+    }
+  }
+
+  &__logo_container {
+    padding-top: 1rem;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 10vh;
+    margin-right: 3.35rem;
+
+    img {
+      object-position: center;
+      object-fit: contain;
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes animate2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+}

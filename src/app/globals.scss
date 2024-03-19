@@ -1,0 +1,15 @@
+:root {
+  --testimonial-items-quantity: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  scroll-behavior: auto !important;
+  font-size: 0.833333vw;
+  font-family: var(--neue-montreal-font);
+}

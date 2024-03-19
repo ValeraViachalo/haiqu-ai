@@ -1,0 +1,9 @@
+@import '/src/styles/main.module.scss';
+
+.page_wrapper {
+  padding: $padding-horizontal;
+  font-size: 3rem;
+  height: 70vh;
+
+  @include flexCenter;
+}

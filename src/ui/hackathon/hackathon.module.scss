@@ -1,0 +1,36 @@
+@import '/src/styles/main.module.scss';
+
+.hackathon {
+  width: 100%;
+  border: 1px solid rgba($main-font-color, 0.35);
+  border-radius: 0.9375rem;
+  padding: 0.9375rem;
+  transition: 1s ease;
+
+  &__photo {
+    position: relative;
+    width: 5.125rem;
+    height: 5.125rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+  }
+
+  &__image {
+    transition: 1s ease;
+
+    &_hovered {
+      transform: scale(1.5);
+    }
+  }
+
+  &__date {
+    margin-top: 0.9375rem;
+    font-size: 1.625rem;
+    color: rgba($main-font-color, 0.35);
+  }
+
+  &__title {
+    font-size: 1.625rem;
+    color: $main-font-color;
+  }
+}

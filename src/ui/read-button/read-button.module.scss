@@ -1,0 +1,28 @@
+@import '/src/styles/main.module.scss';
+
+.read_button {
+  position: absolute;
+  top: $padding-horizontal;
+  right: $padding-horizontal;
+  transition: 1s ease;
+  transform: translateY(-4.5rem);
+  font-size: 1.25rem;
+  z-index: 10;
+
+  @include buttonCommonStyles;
+
+  &:hover {
+    transition: 0.3s ease;
+    opacity: 0.6;
+  }
+
+  &__visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s ease;
+  }
+
+  &__dark {
+    color: $white-color;
+  }
+}

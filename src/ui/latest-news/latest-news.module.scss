@@ -1,0 +1,42 @@
+@import '/src/styles/main.module.scss';
+
+.latest_news {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.9375rem;
+  padding: $padding-horizontal;
+  position: relative;
+  overflow: hidden;
+
+  &__dark {
+    color: $white-color;
+  }
+
+  &__photo {
+    position: relative;
+    width: 16.8125rem;
+    height: 16.8125rem;
+    margin-bottom: $padding-horizontal;
+    border-radius: 0.625rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    border-radius: 0.625rem;
+    transition: 1s ease;
+
+    &__hovered {
+      transform: scale(1.2);
+    }
+  }
+
+  &__date {
+    font-size: 1.625rem;
+    margin-bottom: 0.9375rem;
+  }
+
+  &__title {
+    font-size: 2.125rem;
+    min-height: 10rem;
+  }
+}

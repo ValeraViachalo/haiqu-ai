@@ -1,0 +1,77 @@
+@import '/src/styles/main.module.scss';
+
+.interested_section {
+  position: relative;
+
+  background-color: $main-font-color;
+  height: 68.875rem;
+  padding: $padding-horizontal;
+
+  &__title {
+    position: absolute;
+    top: 25.3rem;
+    @include sectionTitle;
+    color: $white-color;
+    z-index: 10;
+  }
+
+  &__book_button {
+    position: relative;
+    top: 30.5rem;
+  }
+
+  &__image_container {
+    z-index: 1;
+    position: relative;
+    top: 0;
+  }
+
+  &__note {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: $white-color;
+    font-family: $fraktion-semibold;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  &__circle {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    background-color: $white-color;
+    border-radius: 50%;
+  }
+
+  &__note_title {
+    padding-left: 1.875rem;
+  }
+
+  &__elipse {
+    position: absolute;
+    width: 36rem;
+    height: 5rem;
+
+    &__1 {
+      top: 14rem;
+      left: 42rem;
+      opacity: 0.95;
+    }
+
+    &__2 {
+      top: 23.5rem;
+      left: 42rem;
+    }
+
+    &__3 {
+      top: 32.5rem;
+      left: 42rem;
+    }
+
+    &__4 {
+      top: 41.5rem;
+      left: 42rem;
+      opacity: 0;
+    }
+  }
+}

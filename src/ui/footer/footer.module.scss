@@ -1,0 +1,32 @@
+@import '/src/styles/main.module.scss';
+
+.footer {
+  padding: $padding-horizontal;
+  font-family: $neue-montreal-font;
+
+  &__top_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 13rem;
+  }
+
+  &__bottom_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    opacity: 0.3;
+
+    a {
+      text-decoration: none;
+      color: $main-font-color;
+      display: block;
+      cursor: pointer;
+
+      &:visited {
+        color: $main-font-color;
+      }
+    }
+  }
+}

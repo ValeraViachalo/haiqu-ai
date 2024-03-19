@@ -1,0 +1,26 @@
+@import '/src/styles/main.module.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.375rem $padding-horizontal;
+
+  &__logo_group {
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__logo_container {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &__logo_text {
+    position: relative;
+    left: -2rem;
+    width: 7rem;
+  }
+}

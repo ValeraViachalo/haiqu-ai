@@ -1,0 +1,38 @@
+@import '/src/styles/main.module.scss';
+
+.case_study {
+  display: flex;
+  background-color: $main-font-color;
+  padding-top: 16rem;
+  padding: $padding-horizontal;
+
+  &__info {
+    width: 55%;
+    color: $white-color;
+  }
+
+  &__title {
+    font-size: 1.625rem;
+    line-height: 1.86875rem;
+    margin-bottom: 4.375rem;
+  }
+
+  &__moto {
+    @include sectionTitle;
+    
+    max-width: 50.5rem;
+    margin-bottom: 1.875rem;
+  }
+
+  &__description {
+    max-width: 42.9375rem;
+    font-size: 2.125rem;
+  }
+
+  &__cases_container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: $padding-horizontal;
+  }
+}

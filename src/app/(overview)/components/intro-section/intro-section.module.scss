@@ -1,0 +1,45 @@
+@import '/src/styles/main.module.scss';
+
+.intro {
+  width: 100vw;
+  position: relative;
+  height: calc(100vh - 5rem);
+  margin-top: 4.1875rem;
+  padding: 0 1.875rem;
+
+  &__title {
+    @include sectionTitle;
+    z-index: -1;
+  }
+
+  &__title2 {
+    position: relative;
+    left: 50%;
+  }
+
+  &__sphere_container {
+    position: absolute;
+    width: 73.75%;
+    height: auto;
+    top: 3.23%;
+    left: 13%;
+    aspect-ratio: 7 / 3.4;
+  }
+
+  &__trigger_zone {
+    position: absolute;
+    top: 3.23%;
+    left: 13%;
+    width: 73.6vw;
+    border-radius: 40rem;
+    height: 36vw;
+    z-index: 10000;
+  }
+
+  &__balls_container {
+    z-index: 10000;
+    min-width: 100%;
+    min-height: 50vh;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,205 @@
+@import '/src/styles/main.module.scss';
+
+.tech_intro {
+  width: 100vw;
+  background-color: $haiqu-light-grey;
+  position: relative;
+  overflow: auto;
+
+  &__process_bar {
+    position: relative;
+    width: 0;
+    height: 0.5rem;
+    background-color: $main-font-color;
+    opacity: 0.15;
+    margin-bottom: 0.25rem;
+
+    &__filled {
+      position: absolute;
+      width: 100vw;
+      transform: translateX(-100vw);
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: $haiqu-blue;
+      opacity: 1;
+    }
+  }
+
+  &__logo {
+    transform: translateX(-2.25rem);
+    position: relative;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 16.875rem;
+  }
+
+  &__text {
+    font-size: 2.125rem;
+    text-align: center;
+    margin-bottom: 0.625rem;
+  }
+
+  &__text_mask {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    background-color: $haiqu-light-grey;
+    top: 19.9375rem;
+    height: 3rem;
+    margin-bottom: 5.75rem;
+  }
+
+  &__illustration {
+    position: relative;
+    padding-left: $padding-horizontal;
+    width: 100%;
+    height: 42.1875rem;
+    margin-bottom: 15.9375rem;
+  }
+
+  &__rect_small {
+    position: absolute;
+    top: 25.5%;
+    left: $padding-horizontal;
+    width: 0;
+    height: 10rem;
+    background-color: $haiqu-blue;
+    opacity: 0.8;
+    z-index: 15;
+  }
+
+  &__rect_big {
+    position: absolute;
+    top: 25.5%;
+    width: 0;
+    height: 13.1875rem;
+    background-color: $haiqu-light-blue;
+    opacity: 0.8;
+    z-index: 14;
+  }
+
+  &__chaos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: $padding-horizontal;
+    z-index: 11;
+  }
+
+  &__order_mask {
+    background-color: $haiqu-light-grey;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 13;
+  }
+
+  &__order {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 16;
+  }
+
+  &__gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 11;
+  }
+
+  &__100x_container {
+    @include flexCenter;
+    flex-direction: column;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    position: absolute;
+    z-index: 13;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 70%;
+    left: 0;
+  }
+
+  &__line {
+    position: relative;
+    width: 0.1rem;
+    height: 8.375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__number {
+    position: relative;
+    width: 83.875rem;
+    height: 29.1875rem;
+    background-color: $main-font-color;
+    mask-image: url('./assets/100x.svg');
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    overflow-x: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: $haiqu-blue;
+      transition: left 0.8s ease;
+    }
+
+    &__hovered {
+      &::before {
+        left: 0;
+        transition: left 0.8s ease;
+      }
+    }
+  }
+
+  &__dc {
+    @include flexCenter;
+    flex-direction: column;
+    padding-top: 24rem;
+    padding-bottom: 12.1875rem;
+  }
+
+  &__dc_title {
+    @include sectionTitle;
+    margin-bottom: 13.125rem;
+  }
+
+  &__dc_description_top {
+    text-align: center;
+    width: 42.9375rem;
+    font-size: 2.125rem;
+    line-height: 2.44375rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__dc_description_bottom {
+    text-align: center;
+    width: 42.9375rem;
+    font-size: 2.125rem;
+    line-height: 2.44375rem;
+    opacity: 0.35;
+    margin-bottom: 1.875rem;
+  }
+
+  &__learn_more {
+    @include btn;
+    transition: 0.3s ease;
+    border: 1px solid rgba($main-font-color, 0.35);
+
+    &:hover {
+      opacity: 0.6;
+      transition: 0.3s ease;
+    }
+  }
+}

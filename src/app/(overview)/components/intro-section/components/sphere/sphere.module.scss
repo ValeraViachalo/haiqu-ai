@@ -1,0 +1,35 @@
+@import '/src/styles/main.module.scss';
+
+.sphere {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 7 / 3.4;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__main {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+  }
+
+  &__line_h {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    z-index: -30;
+  }
+
+  &__line_v {
+    position: absolute;
+    width: 5.297%;
+    height: auto;
+    left: 51%;
+    z-index: -20;
+  }
+}

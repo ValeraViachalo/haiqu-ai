@@ -1,0 +1,15 @@
+@import '/src/styles/main.module.scss';
+
+.testimonial {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-color: auto;
+  user-select: none;
+  cursor: grab;
+  scroll-behavior: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

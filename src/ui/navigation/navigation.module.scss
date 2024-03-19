@@ -1,0 +1,33 @@
+@import '/src/styles/main.module.scss';
+
+.navigation {
+  display: flex;
+
+  &__link {
+    text-decoration: none;
+    font-family: $fraktion-font;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: $main-font-color;
+    margin-right: 1.5625rem;
+    transition: 0.3s ease;
+
+
+    &:hover {
+      opacity: 0.3;
+      transition: 0.3s ease;
+    }
+
+    &:visited {
+      color: $main-font-color;
+    }
+
+    &:nth-last-child(2) {
+      margin-right: 6.25rem;
+    }
+
+    &:nth-last-child(1) {
+      margin-right: 0 !important;
+    }
+  }
+}

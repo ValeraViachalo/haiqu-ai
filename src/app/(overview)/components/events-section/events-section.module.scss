@@ -1,0 +1,63 @@
+@import '/src/styles/main.module.scss';
+
+.events_section {
+  padding: $padding-horizontal;
+
+  &__header {
+    display: flex;
+    margin-bottom: 4.375rem;
+  }
+
+  &__title {
+    width: 28.4375rem;
+    margin-right: 26.5625rem;
+
+    @include sectionTitle;
+  }
+
+  &__description {
+    width: 20.9375rem;
+    font-size: 1.625rem;
+    color: rgba($main-font-color, 0.35);
+    margin-bottom: 1.875rem;
+  }
+
+  &__button {
+    padding: $padding-button;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    background-color: unset;
+    border: 1px solid rgba($main-font-color, 0.35);
+    border-radius: 0.625rem;
+    transition: 0.3s ease;
+
+    &:hover {
+      transition: 0.3s ease;
+      opacity: 0.6;
+    }
+  }
+
+  &__headings {
+    display: flex;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin-left: 0.9375rem;
+    gap: 0.9375rem;
+
+    &__latest_news {
+      width: 45vw;
+    }
+  }
+
+  &__row_title {
+    font-size: 2.125rem;
+    line-height: 2.4375rem;
+    padding-bottom: 0.9375rem;
+    border-bottom: 1px solid $main-font-color;
+    margin-bottom: $padding-horizontal;
+  }
+}
