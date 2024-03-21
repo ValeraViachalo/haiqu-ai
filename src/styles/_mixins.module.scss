@@ -34,3 +34,15 @@
   line-height: 6.09rem;
   font-weight: 400;
 }
+
+@mixin tablet {
+  @media (max-width: 834px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 391px) {
+    @content;
+  }
+}

@@ -1,6 +1,10 @@
-import React from 'react';
+'use client';
+
+import { useState } from 'react';
 import styles from './navigation.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
+import { MobileNavigationMenu } from './components/mobile-navigation-menu';
 
 const links = [
   { id: 1, name: 'technology', href: '/technology' },
@@ -12,17 +16,42 @@ const links = [
 ];
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className={styles.navigation}>
-      {links.map(({ id, name, href }) => (
-        <Link
-          key={id}
-          href={href}
-          className={styles.navigation__link}
-        >
-          {name}
-        </Link>
-      ))}
+      <div
+        className={styles.navigation__burger_icon}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <Image
+          src={
+            isOpen
+              ? `${`/images/close.svg`}`
+              : `${`/images/burger-menu-icon.svg`}`
+          }
+          alt="burger menu icon"
+          fill
+        />
+      </div>
+
+      <MobileNavigationMenu
+        links={links}
+        isOpened={isOpen}
+      />
+
+      <ul className={styles.navigation__links_container}>
+        {links.map(({ id, name, href }) => (
+          <Link
+            key={id}
+            href={href}
+            className={styles.navigation__link}
+            onClick={() => setIsOpen(false)}
+          >
+            {name}
+          </Link>
+        ))}
+      </ul>
     </nav>
   );
 };

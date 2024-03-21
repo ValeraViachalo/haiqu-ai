@@ -4,7 +4,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
   padding: 1.375rem $padding-horizontal;
+
+  @include tablet {
+    padding: 0.9375rem;
+  }
 
   &__logo_group {
     position: relative;
@@ -16,11 +21,20 @@
   &__logo_container {
     width: 2.25rem;
     height: 2.25rem;
+
+    @include mobile {
+      width: 1.856875rem;
+      height: 1.856875rem;
+    }
   }
 
   &__logo_text {
     position: relative;
     left: -2rem;
     width: 7rem;
+
+    @include mobile {
+      width: 6.375rem;
+    }
   }
 }

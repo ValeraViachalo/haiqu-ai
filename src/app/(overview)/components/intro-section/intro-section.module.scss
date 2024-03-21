@@ -37,9 +37,14 @@
   }
 
   &__balls_container {
-    z-index: 10000;
+    z-index: 9999;
     min-width: 100%;
-    min-height: 50vh;
+    height: 50vh;
     display: inline-block;
+
+    @include tablet {
+      position: relative;
+      height: 44rem;
+    }
   }
 }

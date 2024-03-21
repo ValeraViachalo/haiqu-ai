@@ -4,7 +4,7 @@ import { constants } from '@/src/constants';
 import { hackathons, latestNews, seminars } from '@/src/mockedData';
 import { Hackathon, LatestNews, Seminar } from '@/src/ui';
 
-const EventsSection = () => {
+const EventsSection = ({ hacks }) => {
   return (
     <section className={styles.events_section}>
       <div className={styles.events_section__header}>
@@ -53,6 +53,7 @@ const EventsSection = () => {
                 title={title}
                 date={date}
                 photo={photo}
+                hacks={hacks}
               />
             ))}
           </div>
