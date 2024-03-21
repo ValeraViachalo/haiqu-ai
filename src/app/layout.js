@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={`${fraktionMono.variable} ${neueMontreal.variable} ${fraktionSemibold.variable}`}>
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
