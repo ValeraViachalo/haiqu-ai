@@ -1,4 +1,4 @@
-import './globals.scss';
+import styles from './globals.scss';
 import { siteConfig } from '../constants';
 import { fraktionMono, neueMontreal, fraktionSemibold } from '../fonts';
 import { Footer, Header } from '../ui';
@@ -16,10 +16,15 @@ export default function RootLayout({ children }) {
         href="favicon.ico"
         sizes="any"
       />
-      <body className={`${fraktionMono.variable} ${neueMontreal.variable} ${fraktionSemibold.variable}`}>
-        <Header />
+      <body
+        className={`${fraktionMono.variable} ${neueMontreal.variable} ${fraktionSemibold.variable}`}
+      >
+        <div className={styles.header_container}>
+          <Header />
+        </div>
+
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { useGSAP } from '@gsap/react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './intro-section.module.scss';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
@@ -44,7 +44,6 @@ const IntroSection = () => {
         <Sphere />
       </div>
 
-
       <div className={styles.intro__balls_container}>
         {balls.map((ball) => (
           <Ball
@@ -54,6 +53,22 @@ const IntroSection = () => {
           />
         ))}
       </div>
+
+      {/* <div className={styles.intro__video_container}>
+        <video
+          ref={videoRef}
+          width="360"
+          height="176"
+          controls
+          autoPlay
+          loop
+        >
+          <source
+            src="/videos/intro-video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div> */}
 
       <p className={`${styles.intro__title} ${styles.intro__title2}`}>
         Needs Careful <br />

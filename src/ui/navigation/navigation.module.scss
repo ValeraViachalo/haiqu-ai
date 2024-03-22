@@ -3,6 +3,28 @@
 .navigation {
   display: flex;
 
+  &__burger_icon {
+    display: none;
+    position: relative;
+
+    @include tablet {
+      display: block;
+      width: 1.5625rem;
+      height: 1rem;
+    }
+
+    @include mobile {
+      width: 1.125rem;
+      height: 0.75rem;
+    }
+  }
+
+  &__links_container {
+    @include tablet {
+      display: none;
+    }
+  }
+
   &__link {
     text-decoration: none;
     font-family: $fraktion-font;
@@ -11,7 +33,6 @@
     color: $main-font-color;
     margin-right: 1.5625rem;
     transition: 0.3s ease;
-
 
     &:hover {
       opacity: 0.3;

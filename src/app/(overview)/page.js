@@ -8,18 +8,20 @@ import {
   TechIntroSection,
 } from './components';
 
-
 const Home = () => {
   return (
     <main className={styles.main}>
-      <IntroSection />
-      <TechIntroSection />
-      <InterestedSection />
+      {/* <IntroSection />
+      <TechIntroSection /> */}
+      {/* <InterestedSection />
       <CaseStudySection />
       <PartnersSection />
-      <EventsSection />
+      <EventsSection /> */}
     </main>
   );
+};
+const p = {
+  fontSize: '45px',
 };
 
 export default Home;

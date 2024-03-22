@@ -23,38 +23,39 @@ const TechIntroSection = () => {
   const rectSmall = useRef(null);
   const rectBig = useRef(null);
   const orderMask = useRef(null);
+  const maskFilledBar = useRef(null);
 
   const [scaled, setScaled] = useState(false);
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: main.current,
-        start: 'top 10%',
-        end: 'top 10%',
-        toggleActions: 'restart none reverse none',
-      },
-    });
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: main.current,
+    //     start: 'top 10%',
+    //     end: 'top 10%',
+    //     toggleActions: 'restart none reverse none',
+    //   },
+    // });
 
-    tl.to(
-      filledBar.current,
-      {
-        x: '-98.2vw',
-        duration: 1,
-      },
-      '<'
-    );
+    // tl.to(
+    //   maskFilledBar.current,
+    //   {
+    //     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+    //     duration: 1,
+    //   },
+    //   '<'
+    // );
 
-    tl.to(
-      logo.current,
-      {
-        x: 0,
-        duration: 1,
-      },
-      '<'
-    );
+    // tl.to(
+    //   logo.current,
+    //   {
+    //     x: 0,
+    //     duration: 1,
+    //   },
+    //   '<'
+    // );
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
@@ -66,9 +67,18 @@ const TechIntroSection = () => {
       },
     });
 
-    tl1.to(filledBar.current, {
-      x: 0,
-    });
+    // tl1.to(filledBar.current, {
+    //   x: 0,
+    // });
+
+    tl1.to(
+      maskFilledBar.current,
+      {
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+      },
+      '<'
+    );
+
     tl1.to(
       logo.current,
       {
@@ -181,6 +191,10 @@ const TechIntroSection = () => {
       <div
         ref={filledBar}
         className={`${styles.tech_intro__process_bar} ${styles.tech_intro__process_bar__filled}`}
+      />
+      <div
+        className={styles.tech_intro__mask_filled}
+        ref={maskFilledBar}
       />
 
       <div

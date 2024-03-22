@@ -1,0 +1,154 @@
+@import '/src/styles/main.module.scss';
+
+.mobile_menu__container {
+  display: none;
+  position: absolute;
+  overflow-x: hidden;
+  top: 3.875rem;
+  right: 0.9375rem;
+  left: 0.9375rem;
+  bottom: 0.9375rem;
+  z-index: 99999999999;
+  background-color: rgba($white-color, 0.8);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__visible {
+    display: block;
+  }
+}
+
+.mobile_menu {
+  transform: translateX(110%);
+  transition: 0.15s ease;
+
+  @include tablet {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  &__visible {
+    transform: translateX(0);
+    transition: 0.15s ease;
+  }
+
+  &__links_container {
+    display: flex;
+    flex-direction: column;
+    background-color: $haiqu-light-blue;
+    border-radius: 0.9375rem;
+    padding: 1.5625rem;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__explore {
+    text-transform: uppercase;
+    font-family: $fraktion-semibold;
+    font-size: 1.125rem;
+    line-height: 1.35rem;
+
+    @include tablet {
+      margin-bottom: 11.875rem;
+      margin-bottom: 15vh;
+      
+    }
+
+    @include mobile {
+      margin-bottom: 2.9375rem;
+      margin-bottom: 8vh;
+
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 2.75rem;
+    text-transform: capitalize;
+    color: $main-font-color;
+    transition: 0.3s ease;
+    margin-bottom: 1.8125rem;
+    // margin-bottom: 10%;
+
+
+    @include mobile {
+      font-size: 2.5rem;
+      line-height: 4rem;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 0.3;
+      transition: 0.3s ease;
+    }
+
+    &:visited {
+      color: $main-font-color;
+    }
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__follow_us {
+    background-color: $haiqu-light-grey;
+    border-radius: 0.9375rem;
+    padding: 1.5625rem;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__follow_us_title {
+    font-family: $fraktion-semibold;
+    font-size: 1.125rem;
+    line-height: 1.35rem;
+    text-transform: uppercase;
+    // margin-bottom: 12.3125rem;
+    margin-bottom: 4.5vh;
+
+
+    @include mobile {
+      // margin-bottom: 4rem;
+      margin-bottom: 6vh;
+    }
+  }
+
+  &__follow_us_links {
+    a {
+      text-decoration: none;
+      color: rgba($main-font-color, 0.4);
+      display: block;
+      cursor: pointer;
+      //   margin-bottom: 1rem;
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+
+      &:visited {
+        color: rgba($main-font-color, 0.4);
+      }
+    }
+  }
+}

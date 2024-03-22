@@ -8,8 +8,23 @@
   margin: 0;
 }
 
-html, body {
-  // scroll-behavior: auto !important;
+html,
+body {
+  scroll-behavior: auto !important;
   font-size: 0.833333vw;
   font-family: var(--neue-montreal-font);
+
+  @media (max-width: 834px) {
+    font-size: 1.92vw;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 4.1vw;
+    overflow-x: hidden;
+  }
+}
+
+.header_container {
+  overflow-x: hidden;
 }
