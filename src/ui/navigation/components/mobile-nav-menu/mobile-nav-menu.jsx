@@ -15,6 +15,19 @@ const MobileNavMenu = ({ links, isOpened }) => {
     }
   }, [isOpened]);
 
+  useEffect(() => {
+    const setVhVariable = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    window.addEventListener('resize', setVhVariable);
+
+    setVhVariable();
+
+    return () => window.removeEventListener('resize', setVhVariable);
+  }, []);
+
   return (
     <div
       className={classNames(styles.mobile_menu__container, {
