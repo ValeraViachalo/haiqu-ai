@@ -15,8 +15,8 @@ const Home = () => {
       <TechIntroSection />
       <InterestedSection />
       <CaseStudySection />
-      <PartnersSection />
-      <EventsSection /> */}
+      <PartnersSection /> */}
+      <EventsSection />
     </main>
   );
 };
