@@ -15,12 +15,13 @@ body {
   font-family: var(--neue-montreal-font);
 
   @media (max-width: 834px) {
-    font-size: 1.92vw;
+    font-size: 1.34vh;
     overflow-x: hidden;
   }
 
-  @media (max-width: 390px) {
+  @media (max-width: 430px) {
     font-size: 4.1vw;
+    font-size: 1.875vh;
     overflow-x: hidden;
   }
 }

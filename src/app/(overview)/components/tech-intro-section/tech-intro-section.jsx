@@ -30,32 +30,33 @@ const TechIntroSection = () => {
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
 
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: main.current,
-    //     start: 'top 10%',
-    //     end: 'top 10%',
-    //     toggleActions: 'restart none reverse none',
-    //   },
-    // });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: main.current,
+        start: 'top 10%',
+        end: 'top 10%',
+        toggleActions: 'restart none reverse none',
+      },
+    });
 
-    // tl.to(
-    //   maskFilledBar.current,
-    //   {
-    //     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-    //     duration: 1,
-    //   },
-    //   '<'
-    // );
+    tl.to(
+      maskFilledBar.current,
+      {
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+        duration: 1,
+        xPercent: -98,
+      },
+      '<'
+    );
 
-    // tl.to(
-    //   logo.current,
-    //   {
-    //     x: 0,
-    //     duration: 1,
-    //   },
-    //   '<'
-    // );
+    tl.to(
+      logo.current,
+      {
+        x: 0,
+        duration: 1,
+      },
+      '<'
+    );
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
