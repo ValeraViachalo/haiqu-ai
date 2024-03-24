@@ -8,7 +8,7 @@ import { caseStudy } from '@/src/mockedData';
 
 const CaseStudySection = () => {
   const [isViewportSmall, setIsViewportSmall] = useState(
-    window.innerWidth < 430
+    typeof window !== 'undefined' && window.innerWidth < 430
   );
 
   useEffect(() => {
