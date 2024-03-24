@@ -12,3 +12,4 @@ export { default as ReadButton } from './read-button';
 export { default as Seminar } from './seminar';
 export { default as PageWrapper } from './page-wrapper';
 export { default as BookADemo } from './book-a-demo';
+export { default as CaseStudyMobile } from './case-study-mobile';

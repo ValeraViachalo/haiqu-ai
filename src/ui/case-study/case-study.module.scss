@@ -9,7 +9,6 @@
   border-radius: 0.9375rem;
   overflow: hidden;
   height: 59.875rem;
-
   background-color: $main-font-color;
   color: $white-color;
 
@@ -24,6 +23,11 @@
     height: 35.375rem;
     border-radius: 0.625rem;
 
+    @include mobile {
+      width: 10.625rem;
+      height: 10.3125rem;
+    }
+
     &__light {
       border-radius: 50%;
     }
@@ -37,6 +41,10 @@
     top: calc($padding-horizontal * 2);
     right: $padding-horizontal;
     z-index: 2;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__learn_button_container {
