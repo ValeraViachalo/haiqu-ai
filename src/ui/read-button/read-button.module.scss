@@ -28,6 +28,10 @@
     opacity: 0.6;
   }
 
+  &:visited {
+    color: $main-font-color;
+  }
+
   &__visible {
     opacity: 1;
     transform: translateY(0);

@@ -87,6 +87,10 @@
       opacity: 0.6;
     }
 
+    &:visited {
+      color: $main-font-color;
+    }
+
     span {
       margin-right: 0.4rem;
     }

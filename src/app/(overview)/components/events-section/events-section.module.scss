@@ -74,6 +74,10 @@
       transition: 0.3s ease;
       opacity: 0.6;
     }
+
+    &:visited {
+      color: $main-font-color;
+    }
   }
 
   &__headings {
