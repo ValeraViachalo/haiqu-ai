@@ -8,6 +8,7 @@
   transform: translateY(-4.5rem);
   font-size: 1.25rem;
   z-index: 10;
+  color: $main-font-color;
 
   @include buttonCommonStyles;
 
