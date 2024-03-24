@@ -27,10 +27,30 @@
     margin-top: 0.9375rem;
     font-size: 1.625rem;
     color: rgba($main-font-color, 0.35);
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.15rem;
+    }
+
+    @include mobile {
+      font-size: 0.875rem;
+      line-height: 1rem;
+    }
   }
 
   &__title {
     font-size: 1.625rem;
     color: $main-font-color;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.15rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      line-height: 1.4375rem;
+    }
   }
 }

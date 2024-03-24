@@ -4,9 +4,26 @@
   padding: $padding-horizontal;
   position: relative;
 
+  @include mobile {
+    padding: $padding-mobile;
+  }
+
   &__header {
     display: flex;
     margin-bottom: 4.375rem;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      align-items: start;
+      margin-bottom: 5.3rem;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -14,6 +31,20 @@
     margin-right: 26.5625rem;
 
     @include sectionTitle;
+
+    @include tablet {
+      font-size: 3.375rem;
+      line-height: 3.875rem;
+      margin-right: unset;
+    }
+
+    @include mobile {
+      @include sectionTitleMobile;
+
+      width: 70%;
+      margin-right: unset;
+      margin-bottom: 1.25rem;
+    }
   }
 
   &__description {
@@ -21,6 +52,13 @@
     font-size: 1.625rem;
     color: rgba($main-font-color, 0.35);
     margin-bottom: 1.875rem;
+
+    @include mobile {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      width: 60%;
+      margin-bottom: 1.25rem;
+    }
   }
 
   &__button {
@@ -40,14 +78,41 @@
 
   &__headings {
     display: flex;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__row_unite {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    gap: $padding-mobile;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__row {
     position: relative;
     display: flex;
     flex-direction: column;
-
     margin-right: 0.9375rem;
+    width: 100%;
+
+    @include tablet {
+      margin-right: unset;
+      margin-bottom: 3.5rem;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -59,6 +124,19 @@
       gap: 0.9375rem;
       padding-top: $padding-horizontal;
       width: 45vw;
+
+      @include tablet {
+        width: 200vw;
+        flex-direction: row;
+        overflow-x: scroll;
+      }
+
+      @include mobile {
+        width: 100%;
+        flex-direction: column;
+        padding-top: $padding-mobile;
+        overflow: hidden;
+      }
     }
 
     &__hackathons {
@@ -70,21 +148,39 @@
       top: 0;
       gap: 0.9375rem;
       height: 100%;
+
+      @include tablet {
+        width: 100%;
+      }
     }
 
     &__seminars {
-      width: 25vw;
+      width: 100%;
       position: sticky;
       top: 0;
       padding-top: $padding-horizontal;
+
+      @include tablet {
+        width: 100%;
+        position: relative;
+      }
     }
   }
 
   &__row_title {
+    width: 100%;
     font-size: 2.125rem;
     line-height: 2.4375rem;
     padding-bottom: 0.9375rem;
     border-bottom: 1px solid $main-font-color;
-    // margin-bottom: $padding-horizontal;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      padding-bottom: $padding-mobile;
+    }
   }
 }

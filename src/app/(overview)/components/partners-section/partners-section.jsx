@@ -7,11 +7,14 @@ import { constants } from '@/src/constants';
 const PartnersSection = () => {
   return (
     <section className={styles.partners_section}>
-      <Ticker
+    <div className={styles.partners_section__ticker_container}>
+    <Ticker
         title={constants.TICKER_TITLE_PARTNERS_ADOPTERS}
         logos={logos}
         dark
       />
+    </div>
+      
 
       <div className={styles.partners_section__testimonial_container}>
         <Testimonial testimonial={testimonial} />

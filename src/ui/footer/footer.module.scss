@@ -1,8 +1,15 @@
 @import '/src/styles/main.module.scss';
 
 .footer {
-  padding: $padding-horizontal;
   font-family: $neue-montreal-font;
+
+  &__container {
+    padding: $padding-horizontal;
+
+    @include mobile {
+      padding: 0.9375rem;
+    }
+  }
 
   &__top_section {
     margin-top: $padding-horizontal;
@@ -11,22 +18,61 @@
     align-items: center;
     font-size: 2rem;
     margin-bottom: 13rem;
+
+    p:last-child {
+      transition: 0.3s ease;
+
+      &:hover {
+        transition: 0.3s ease;
+        opacity: 0.35;
+      }
+    }
+
+    @include tablet {
+      align-items: flex-start;
+      margin-bottom: 10rem;
+      margin-top: unset;
+
+      p {
+        flex: 1;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 3rem;
+      margin-bottom: 8rem;
+    }
   }
 
   &__bottom_section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    opacity: 0.3;
 
-    a {
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 5rem;
+      align-items: start;
+    }
+
+    a,
+    p {
       text-decoration: none;
-      color: $main-font-color;
+      color: rgba($main-font-color, 0.35);
       display: block;
       cursor: pointer;
+      transition: 0.3s ease;
 
       &:visited {
         color: $main-font-color;
+      }
+
+      &:hover {
+        color: $main-font-color;
+        transition: 0.3s ease;
       }
     }
   }

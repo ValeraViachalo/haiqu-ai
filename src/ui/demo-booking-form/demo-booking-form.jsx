@@ -8,6 +8,12 @@ const DemoBookingForm = () => (
       <input placeholder="EMAIL*" />
       <button className={styles.container__button}>submit</button>
     </form>
+
+    <p className={styles.container__info}>
+      Clumsy hardware needs
+      <br />
+      Careful Software
+    </p>
   </section>
 );
 

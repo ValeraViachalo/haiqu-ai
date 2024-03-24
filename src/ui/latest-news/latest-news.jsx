@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { constants } from '@/src/constants';
 import ReadButton from '../read-button';
 
-const LatestNews = ({ backgroundColor, photo, date, title, dark, color }) => {
+const LatestNews = ({ backgroundColor, photo, date, title, dark }) => {
   const container = useRef(null);
   const [hovered, setHovered] = useState(false);
 

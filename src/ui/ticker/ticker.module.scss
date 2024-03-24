@@ -8,6 +8,10 @@
   @include flexCenter;
   flex-direction: column;
 
+  @include tablet {
+    padding: 10rem 0;
+  }
+
   &__title {
     font-size: 1.625rem;
     text-align: center;
@@ -16,17 +20,33 @@
     &__dark {
       color: $white-color;
     }
+
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    @include mobile {
+      font-size: 1rem;
+    }
   }
 
   &__container {
-    opacity: 0.35;
-    background-color: $haiqu-light-grey;
+    background-color: rgba($haiqu-light-grey, 0.35);
     width: 40%;
     height: auto;
     display: flex;
     border-radius: 0.95rem;
     overflow: hidden;
     text-align: center;
+
+    @include tablet {
+      width: 66%;
+    }
+
+    @include mobile {
+      width: 100%;
+      border-radius: 0.375rem;
+    }
   }
 
   &__logos {
@@ -50,6 +70,14 @@
     width: 10vw;
     height: 10vh;
     margin-right: 3.35rem;
+
+    @include tablet {
+      height: 4.125rem;
+    }
+
+    @include mobile {
+      height: 3.5rem;
+    }
 
     img {
       object-position: center;

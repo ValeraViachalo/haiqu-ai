@@ -35,6 +35,11 @@
   font-weight: 400;
 }
 
+@mixin sectionTitleMobile {
+  font-size: 2.75rem;
+  line-height: 3.1875rem;
+}
+
 @mixin tablet {
   @media (max-width: 834px) {
     @content;

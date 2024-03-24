@@ -6,6 +6,10 @@
   padding: $padding-horizontal;
   position: relative;
 
+  @include tablet {
+    flex-direction: column;
+  }
+
   &__info {
     width: 55%;
     color: $white-color;
@@ -13,13 +17,17 @@
     position: -webkit-sticky;
     top: 0;
     height: 50rem;
-    padding-top: $padding-horizontal;
   }
 
   &__title {
     font-size: 1.625rem;
     line-height: 1.86875rem;
     margin-bottom: 4.375rem;
+
+    @include tablet {
+      margin-bottom: 3.75rem;
+      font-size: 1rem;
+    }
   }
 
   &__moto {

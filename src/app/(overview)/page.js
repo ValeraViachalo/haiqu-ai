@@ -13,15 +13,12 @@ const Home = () => {
     <main className={styles.main}>
       {/* <IntroSection />
       <TechIntroSection />
-      <InterestedSection />
+      <InterestedSection /> */}
       <CaseStudySection />
-      <PartnersSection /> */}
+      <PartnersSection />
       <EventsSection />
     </main>
   );
-};
-const p = {
-  fontSize: '45px',
 };
 
 export default Home;

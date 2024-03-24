@@ -7,19 +7,38 @@
   color: $white-color;
   padding: 1.875rem;
   border-left: 0.0625rem solid rgba($haiqu-light-grey, 0.35);
-  // margin-right: 13.125rem;
+
+  @include tablet {
+    min-width: 50%;
+  }
+
+  @include mobile {
+    min-width: 100%;
+  }
 
   &__name {
     font-size: 1.625rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 
   &__role {
     font-size: 1.625rem;
     color: rgba($white-color, 0.35);
     margin-bottom: 0.9375rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 
   &__quote {
     font-size: 5.25rem;
+
+    @include tablet {
+      font-size: 3.375rem;
+    }
   }
 }

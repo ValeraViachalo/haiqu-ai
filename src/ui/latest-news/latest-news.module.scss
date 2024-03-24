@@ -8,6 +8,18 @@
   position: relative;
   overflow: hidden;
 
+  @include tablet {
+    padding: $padding-tablet;
+    width: 27.6875rem;
+    min-height: 21rem;
+  }
+
+  @include mobile {
+    width: 100%;
+    min-height: unset;
+    padding: $padding-mobile;
+  }
+
   &__dark {
     color: $white-color;
   }
@@ -19,6 +31,16 @@
     margin-bottom: $padding-horizontal;
     border-radius: 0.625rem;
     overflow: hidden;
+
+    @include tablet {
+      width: 8.875rem;
+      height: 8.875rem;
+    }
+
+    @include mobile {
+      width: 7.75rem;
+      height: 7.75rem;
+    }
   }
 
   &__image {
@@ -33,10 +55,31 @@
   &__date {
     font-size: 1.625rem;
     margin-bottom: 0.9375rem;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.15rem;
+    }
+
+    @include mobile {
+      font-size: 0.875rem;
+      line-height: 1rem;
+    }
   }
 
   &__title {
     font-size: 2.125rem;
     min-height: 10rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      min-height: unset;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      line-height: 1.4375rem;
+      min-height: 5rem;
+    }
   }
 }

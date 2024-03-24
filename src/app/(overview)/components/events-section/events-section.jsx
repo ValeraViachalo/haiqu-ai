@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './events-section.module.scss';
 import { constants } from '@/src/constants';
-import { hackathons, latestNews, seminars } from '@/src/mockedData';
-import { Hackathon, LatestNews, Seminar } from '@/src/ui';
+import { hackathons, latestNews, logos, seminars } from '@/src/mockedData';
+import { Hackathon, LatestNews, Seminar, Ticker } from '@/src/ui';
 
 const EventsSection = () => {
   return (
@@ -27,6 +27,7 @@ const EventsSection = () => {
           <p className={styles.events_section__row_title}>
             {constants.EVENTS_SECTION_LATEST_NEWS_TITLE}
           </p>
+
           <div className={styles.events_section__row__latest_news}>
             {latestNews.map(({ id, title, date, photo, color, dark }) => (
               <LatestNews
@@ -42,39 +43,47 @@ const EventsSection = () => {
           </div>
         </div>
 
-        <div className={styles.events_section__row}>
-          <p className={styles.events_section__row_title}>
-            {constants.EVENTS_SECTION_HACKATHONS_TITLE}
-          </p>
-          <div className={styles.events_section__row__hackathons}>
-            {hackathons.map(({ id, title, date, photo }) => (
-              <Hackathon
-                key={id}
-                title={title}
-                date={date}
-                photo={photo}
-              />
-            ))}
+        <div className={styles.events_section__row_unite}>
+          <div className={styles.events_section__row}>
+            <p className={styles.events_section__row_title}>
+              {constants.EVENTS_SECTION_HACKATHONS_TITLE}
+            </p>
+            <div className={styles.events_section__row__hackathons}>
+              {hackathons.map(({ id, title, date, photo }) => (
+                <Hackathon
+                  key={id}
+                  title={title}
+                  date={date}
+                  photo={photo}
+                />
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className={styles.events_section__row}>
-          <p className={styles.events_section__row_title}>
-            {constants.EVENTS_SECTION_SEMINARS}
-          </p>
+          <div className={styles.events_section__row}>
+            <p className={styles.events_section__row_title}>
+              {constants.EVENTS_SECTION_SEMINARS}
+            </p>
 
-          <div className={styles.events_section__row__seminars}>
-            {seminars.map(({ id, photo, title, description }) => (
-              <Seminar
-                key={id}
-                photo={photo}
-                title={title}
-                description={description}
-              />
-            ))}
+            <div className={styles.events_section__row__seminars}>
+              {seminars.map(({ id, photo, title, description }) => (
+                <Seminar
+                  key={id}
+                  photo={photo}
+                  title={title}
+                  description={description}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      <Ticker
+        logos={logos}
+        title={constants.TICKER_TITLE_AS_SEEN_IN}
+        dark={false}
+      />
     </section>
   );
 };

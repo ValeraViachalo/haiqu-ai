@@ -11,6 +11,18 @@
 
   @include buttonCommonStyles;
 
+  @include tablet {
+    top: $padding-tablet;
+    right: $padding-tablet;
+  }
+
+  @include mobile {
+    transform: unset;
+    font-size: 1.25rem;
+    top: $padding-mobile;
+    right: $padding-mobile;
+  }
+
   &:hover {
     transition: 0.3s ease;
     opacity: 0.6;

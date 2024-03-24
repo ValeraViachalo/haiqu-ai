@@ -8,6 +8,11 @@
   padding: $padding-horizontal;
   border: 1px solid rgba($main-font-color, 0.35);
 
+  @include mobile {
+    padding: $padding-mobile;
+    padding-bottom: 3.75rem;
+  }
+
   &__photo {
     width: 16.8125rem;
     height: 16.8125rem;
@@ -15,6 +20,16 @@
     border-radius: 0.625rem;
     overflow: hidden;
     margin-bottom: 1.875rem;
+
+    @include tablet {
+      width: 8.875rem;
+      height: 8.875rem;
+    }
+
+    @include mobile {
+      width: 7.75rem;
+      height: 7.75rem;
+    }
   }
 
   &__image {
@@ -29,6 +44,11 @@
     width: 16.8125rem;
     font-size: 2.125rem;
     margin-bottom: 0.9375rem;
+
+    @include mobile {
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+    }
   }
 
   &__description {
@@ -36,6 +56,16 @@
     font-size: 1.625rem;
     margin-bottom: 1.875rem;
     line-height: 1.86875rem;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.15rem;
+    }
+
+    @include mobile {
+      font-size: 0.875rem;
+      line-height: 1rem;
+    }
   }
 
   &__button {
