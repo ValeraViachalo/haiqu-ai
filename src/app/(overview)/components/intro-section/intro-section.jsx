@@ -58,10 +58,10 @@ const IntroSection = () => {
         <video
           width="360"
           height="176"
-          // controls
           autoPlay
           loop
           muted
+          playsinline
         >
           <source
             src="/videos/intro-video.mp4"
