@@ -17,9 +17,6 @@
   &__info {
     width: 55%;
     color: $white-color;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
 
     @include tablet {
       width: 65%;
