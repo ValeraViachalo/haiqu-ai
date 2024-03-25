@@ -1,7 +1,7 @@
 'use client';
 
 import { useGSAP } from '@gsap/react';
-import { useEffect, useRef, useState } from 'react';
+import {  useRef, useState } from 'react';
 import styles from './intro-section.module.scss';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
@@ -54,21 +54,21 @@ const IntroSection = () => {
         ))}
       </div>
 
-      {/* <div className={styles.intro__video_container}>
+      <div className={styles.intro__video_container}>
         <video
-          ref={videoRef}
           width="360"
           height="176"
-          controls
+          // controls
           autoPlay
           loop
+          muted
         >
           <source
             src="/videos/intro-video.mp4"
             type="video/mp4"
           />
         </video>
-      </div> */}
+      </div>
 
       <p className={`${styles.intro__title} ${styles.intro__title2}`}>
         Needs Careful <br />

@@ -5,7 +5,16 @@
   position: relative;
   height: calc(100vh - 5rem);
   margin-top: 4.1875rem;
-  padding: 0 1.875rem;
+  padding: 0 $padding-horizontal $padding-horizontal;
+
+  @include tablet {
+    height: calc(100vh - 8rem);
+  }
+
+  @include mobile {
+    padding: 0 $padding-mobile $padding-mobile;
+    height: calc(100vh - 7.5rem);
+  }
 
   &__video_container {
     width: 100%;
@@ -35,6 +44,25 @@
   &__title2 {
     position: relative;
     left: 50%;
+
+    @include tablet {
+      position: absolute;
+      bottom: $padding-tablet;
+    }
+  }
+
+  &__video_container {
+    position: relative;
+    top: 6.25rem;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__sphere_container {
@@ -44,6 +72,13 @@
     top: 3.23%;
     left: 13%;
     aspect-ratio: 7 / 3.4;
+
+    @include tablet {
+      width: 89.5%;
+      top: 25%;
+      left: 5.4%;
+      display: none;
+    }
   }
 
   &__trigger_zone {
@@ -54,6 +89,10 @@
     border-radius: 40rem;
     height: 36vw;
     z-index: 10000;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__balls_container {
@@ -61,5 +100,13 @@
     min-width: 100%;
     min-height: 50vh;
     display: inline-block;
+
+
+    @include tablet {
+      display: none;
+      min-height: unset;
+      width: 100%;
+      height: 23.75rem;
+    }
   }
 }

@@ -51,5 +51,3 @@ const LatestNews = ({ backgroundColor, photo, date, title, dark }) => {
 };
 
 export default LatestNews;
-
-//there will be some check for bg-color prop, and there will be a few different classes for read-butto, and font colors

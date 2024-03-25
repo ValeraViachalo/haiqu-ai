@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './events-section.module.scss';
 import { constants } from '@/src/constants';
 import { hackathons, latestNews, logos, seminars } from '@/src/mockedData';
-import { Hackathon, LatestNews, Seminar, Ticker } from '@/src/ui';
+import { Carousel, Hackathon, LatestNews, Seminar, Ticker } from '@/src/ui';
 
 const EventsSection = () => {
   return (
@@ -40,6 +40,22 @@ const EventsSection = () => {
                 color={color}
               />
             ))}
+          </div>
+
+          <div className={styles.events_section__carousel_container}>
+          <Carousel items={latestNews}>
+            {latestNews.map(({ id, title, date, photo, color, dark }) => (
+              <LatestNews
+                key={id}
+                backgroundColor={color}
+                date={date}
+                title={title}
+                photo={photo}
+                dark={dark}
+                color={color}
+              />
+            ))}
+          </Carousel>
           </div>
         </div>
 

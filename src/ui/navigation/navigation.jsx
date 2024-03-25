@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './navigation.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,6 +9,14 @@ import { links } from '@/src/constants';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'unset';
+    }
+  }, [isOpen]);
 
   return (
     <nav className={styles.navigation}>

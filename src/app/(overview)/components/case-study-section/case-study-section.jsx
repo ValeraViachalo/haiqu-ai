@@ -1,26 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import styles from './case-study-section.module.scss';
-import { CaseStudy, CaseStudyMobile } from '@/src/ui';
+import { Carousel, CaseStudy, CaseStudyMobile } from '@/src/ui';
 import { constants } from '@/src/constants';
 import { caseStudy } from '@/src/mockedData';
 
 const CaseStudySection = () => {
-  const [isViewportSmall, setIsViewportSmall] = useState(
-    typeof window !== 'undefined' && window.innerWidth < 430
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsViewportSmall(window.innerWidth < 430);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <section className={styles.case_study}>
       <div className={styles.case_study__info}>
@@ -35,19 +20,10 @@ const CaseStudySection = () => {
         </p>
       </div>
 
-      <section className={styles.case_study__cases_container}>
-        {caseStudy.map(
-          ({ id, company, category, description, photo, dark }) => {
-            return isViewportSmall ? (
-              <CaseStudyMobile
-                key={id}
-                company={company}
-                category={category}
-                description={description}
-                photo={photo}
-                dark={dark}
-              />
-            ) : (
+      <section className={styles.case_study__carousel_container}>
+        <Carousel items={caseStudy}>
+          {caseStudy.map(
+            ({ id, company, category, description, photo, dark }) => (
               <CaseStudy
                 key={id}
                 company={company}
@@ -56,9 +32,35 @@ const CaseStudySection = () => {
                 photo={photo}
                 dark={dark}
               />
-            );
-          }
+            )
+          )}
+        </Carousel>
+      </section>
+
+      <section className={styles.case_study__cases_container}>
+        {caseStudy.map(
+          ({ id, company, category, description, photo, dark }) => (
+            <>
+              <CaseStudyMobile
+                key={id}
+                company={company}
+                category={category}
+                description={description}
+                photo={photo}
+                dark={dark}
+              />
+              <CaseStudy
+                key={id}
+                company={company}
+                category={category}
+                description={description}
+                photo={photo}
+                dark={dark}
+              />
+            </>
+          )
         )}
+        ;
       </section>
     </section>
   );

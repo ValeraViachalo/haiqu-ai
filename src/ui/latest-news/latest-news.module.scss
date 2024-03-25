@@ -10,12 +10,13 @@
 
   @include tablet {
     padding: $padding-tablet;
-    width: 27.6875rem;
+    min-width: 27.6875rem;
     min-height: 21rem;
   }
 
   @include mobile {
     width: 100%;
+    min-width: unset;
     min-height: unset;
     padding: $padding-mobile;
   }

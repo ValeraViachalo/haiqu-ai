@@ -2,7 +2,7 @@
 
 .case_study {
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: $padding-mobile;
   padding-bottom: $padding-horizontal;
@@ -11,6 +11,10 @@
   overflow: hidden;
   background-color: $main-font-color;
   color: $white-color;
+
+  @include mobile {
+    display: flex;
+  }
 
   &__light {
     background-color: $white-color;

@@ -13,6 +13,7 @@
   @include buttonCommonStyles;
 
   @include tablet {
+    transform: unset;
     top: $padding-tablet;
     right: $padding-tablet;
   }

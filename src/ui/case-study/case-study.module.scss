@@ -12,6 +12,16 @@
   background-color: $main-font-color;
   color: $white-color;
 
+  @include tablet {
+    min-width: 36.0625rem;
+    height: 35.625rem;
+    padding: $padding-tablet;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
   &__light {
     background-color: $white-color;
     color: $main-font-color;
@@ -23,9 +33,10 @@
     height: 35.375rem;
     border-radius: 0.625rem;
 
-    @include mobile {
-      width: 10.625rem;
-      height: 10.3125rem;
+    @include tablet {
+      width: 18.3125rem;
+      height: 17.8125rem;
+      margin-bottom: 2.5rem;
     }
 
     &__light {
@@ -42,7 +53,7 @@
     right: $padding-horizontal;
     z-index: 2;
 
-    @include mobile {
+    @include tablet {
       display: none;
     }
   }
@@ -58,6 +69,10 @@
     &__hovered {
       transform: translateY($padding-horizontal);
       transition: 1s ease;
+
+      @include tablet {
+        transform: unset;
+      }
     }
   }
 
@@ -90,18 +105,34 @@
 
       &__light {
         border-radius: 50%;
+
+        @include tablet {
+          border-radius: unset;
+        }
+      }
+
+      @include tablet {
+        transform: unset;
       }
     }
   }
 
   &__info {
     position: absolute;
+
     bottom: -8rem;
     transition: 1s ease;
 
     &__hovered {
       transition: 1s ease;
       bottom: $padding-horizontal;
+    }
+
+    @include tablet {
+      position: relative;
+      bottom: unset;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -110,14 +141,32 @@
     margin-bottom: 0.9375rem;
     font-size: 1.625rem;
     opacity: 0.35;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.15rem;
+    }
   }
 
   &__company {
     font-size: 2.125rem;
     margin-bottom: 4.375rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+      margin-bottom: 3.75rem;
+    }
   }
 
   &__description {
     font-size: 2.125rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+      width: 23rem;
+      margin-top: auto;
+    }
   }
 }

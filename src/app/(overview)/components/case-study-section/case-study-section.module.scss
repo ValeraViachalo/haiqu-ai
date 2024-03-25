@@ -83,6 +83,18 @@
     }
   }
 
+  &__carousel_container {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
   &__cases_container {
     width: 45%;
     display: flex;
@@ -90,11 +102,11 @@
     gap: $padding-horizontal;
 
     @include tablet {
-      flex-direction: row;
-      width: 300%;
+      display: none;
     }
 
     @include mobile {
+      display: flex;
       flex-direction: column;
       width: 100%;
     }

@@ -15,53 +15,33 @@ const InterestedSection = () => {
   const ellipse = useRef(null);
 
   useGSAP(() => {
-    gsap.set(note1.current, {
-      x: '38rem',
-      y: '36.3125rem',
-    });
-
-    gsap.set(note2.current, {
-      x: '34rem',
-      y: '41rem',
-    });
-
-    gsap.set(note3.current, {
-      x: '74rem',
-      y: '42rem',
-    });
-
-    gsap.set(note4.current, {
-      x: '78rem',
-      y: '14rem',
-    });
-
     gsap.to(note1.current, {
-      x: '36rem',
-      y: '18rem',
+      x: '-150%',
+      y: '-500%',
       yoyo: true,
       repeat: -1,
       duration: 10,
     });
 
     gsap.to(note2.current, {
-      x: '35rem',
-      y: '25rem',
+      x: '50%',
+      y: '-400%',
       yoyo: true,
       repeat: -1,
       duration: 10,
     });
 
     gsap.to(note3.current, {
-      x: '38rem',
-      y: '40rem',
+      x: '-550%',
+      y: '-50%',
       yoyo: true,
       repeat: -1,
       duration: 10,
     });
 
     gsap.to(note4.current, {
-      x: '76rem',
-      y: '30rem',
+      x: '-40%',
+      y: '200%',
       yoyo: true,
       repeat: -1,
       duration: 10,
@@ -97,11 +77,11 @@ const InterestedSection = () => {
         {constants.INTERESTED_SECTION_TITLE}
       </p>
 
-      <div className={styles.interested_section__book_button}>
+      {/* <div className={styles.interested_section__book_button}>
         <BookADemo />
-      </div>
+      </div> */}
 
-      <div className={styles.interested_section__image_comntainer}>
+      <div className={styles.interested_section__image_container}>
         <Image
           fill
           src="/images/quantum-computer.svg"
@@ -155,7 +135,7 @@ const InterestedSection = () => {
       </div>
 
       <div
-        className={styles.interested_section__note}
+        className={`${styles.interested_section__note} ${styles.interested_section__note__1}`}
         ref={note1}
       >
         <div className={styles.interested_section__circle} />
@@ -166,7 +146,7 @@ const InterestedSection = () => {
       </div>
 
       <div
-        className={styles.interested_section__note}
+        className={`${styles.interested_section__note} ${styles.interested_section__note__2}`}
         ref={note2}
       >
         <div className={styles.interested_section__circle} />
@@ -177,7 +157,7 @@ const InterestedSection = () => {
       </div>
 
       <div
-        className={styles.interested_section__note}
+        className={`${styles.interested_section__note} ${styles.interested_section__note__3}`}
         ref={note3}
       >
         <div className={styles.interested_section__circle} />
@@ -188,7 +168,7 @@ const InterestedSection = () => {
       </div>
 
       <div
-        className={styles.interested_section__note}
+        className={`${styles.interested_section__note} ${styles.interested_section__note__4}`}
         ref={note4}
       >
         <div className={styles.interested_section__circle} />

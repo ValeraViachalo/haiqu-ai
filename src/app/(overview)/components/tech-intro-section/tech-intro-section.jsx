@@ -64,7 +64,7 @@ const TechIntroSection = () => {
         start: 'top top',
         end: `+=${window.innerHeight}`,
         pin: true,
-        scrub: 1,
+        scrub: true,
       },
     });
 
@@ -143,7 +143,7 @@ const TechIntroSection = () => {
         trigger: main.current,
         start: '22% top',
         end: `+=${window.innerWidth / 2}`,
-        scrub: 1,
+        scrub: true,
         pin: true,
       },
     });
