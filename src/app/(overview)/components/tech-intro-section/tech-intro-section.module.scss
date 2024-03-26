@@ -52,7 +52,7 @@
   &__text {
     font-size: 2.125rem;
     text-align: center;
-    margin-bottom: 0.625rem;
+    // margin-bottom: 0.625rem;
 
     @include tablet {
       font-size: 1.5rem;
@@ -80,32 +80,52 @@
     height: 42.1875rem;
     margin-bottom: 15.9375rem;
 
-
     @include tablet {
       padding-left: $padding-horizontal;
-      // width: 120%;
     }
   }
 
   &__rect_small {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     position: absolute;
     top: 25.5%;
     left: $padding-horizontal;
-    width: 0;
+    width: 18.5rem;
     height: 10rem;
     background-color: $haiqu-blue;
     opacity: 0.8;
     z-index: 15;
+
+    @include tablet {
+      width: 14.013125rem;
+      height: 7.5rem;
+    }
+
+    @include mobile {
+      width: 7.420625rem;
+      height: 3.138125rem;
+    }
   }
 
   &__rect_big {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     position: absolute;
     top: 25.5%;
-    width: 0;
+    width: 24.5rem;
     height: 13.1875rem;
     background-color: $haiqu-light-blue;
     opacity: 0.8;
     z-index: 14;
+
+    @include tablet {
+      width: 18.5rem;
+      height: 10rem;
+    }
+
+    @include mobile {
+      width: 11.4375rem;
+      height: 5.2475rem;
+    }
   }
 
   &__chaos {
@@ -115,11 +135,16 @@
     top: 0;
     left: $padding-horizontal;
     z-index: 11;
+
+    @include tablet {
+      top: -7.6%;
+      width: 150%;
+    }
   }
 
   &__order_mask {
     background-color: $haiqu-light-grey;
-    // background-color: $haiqu-orange;
+    background-color: $haiqu-orange;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     position: absolute;
     width: 100%;
@@ -135,11 +160,14 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    padding-left: $padding-horizontal;
+    // left: 0;
     z-index: 16;
 
     @include tablet {
-      display: none;
+      width: 150%;
+      top: -9.5%;
+      left: $padding-horizontal;
     }
   }
 
@@ -148,6 +176,28 @@
     top: 0;
     right: 0;
     z-index: 17;
+  }
+
+  &__moto {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 2.125rem;
+    position: absolute;
+    z-index: 14;
+    text-align: center;
+    background-color: $haiqu-blue;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      line-height: 1.4375rem;
+    }
   }
 
   &__100x_container {
@@ -161,6 +211,7 @@
     text-align: center;
     top: 70%;
     left: 0;
+    background-color: $haiqu-blue;
   }
 
   &__line {

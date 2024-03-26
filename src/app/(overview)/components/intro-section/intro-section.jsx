@@ -1,7 +1,7 @@
 'use client';
 
 import { useGSAP } from '@gsap/react';
-import {  useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './intro-section.module.scss';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
@@ -28,6 +28,7 @@ const IntroSection = () => {
     },
     { scope: triggerRef }
   );
+
   return (
     <section className={styles.intro}>
       <p className={styles.intro__title}>
@@ -64,7 +65,7 @@ const IntroSection = () => {
           playsinline
         >
           <source
-            src="/videos/intro-video.mp4"
+            src="/videos/intro-video-low.mp4"
             type="video/mp4"
           />
         </video>

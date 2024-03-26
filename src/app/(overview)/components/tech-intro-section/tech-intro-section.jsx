@@ -24,39 +24,40 @@ const TechIntroSection = () => {
   const rectBig = useRef(null);
   const orderMask = useRef(null);
   const maskFilledBar = useRef(null);
+  const moto = useRef(null);
 
   const [scaled, setScaled] = useState(false);
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
 
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: main.current,
-    //     start: 'top 10%',
-    //     end: 'top 10%',
-    //     toggleActions: 'restart none reverse none',
-    //   },
-    // });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: main.current,
+        start: 'top 10%',
+        end: 'top 10%',
+        toggleActions: 'restart none reverse none',
+      },
+    });
 
-    // tl.to(
-    //   maskFilledBar.current,
-    //   {
-    //     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-    //     duration: 1,
-    //     xPercent: -98,
-    //   },
-    //   '<'
-    // );
+    tl.to(
+      maskFilledBar.current,
+      {
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+        duration: 1,
+        xPercent: -98,
+      },
+      '<'
+    );
 
-    // tl.to(
-    //   logo.current,
-    //   {
-    //     x: 0,
-    //     duration: 1,
-    //   },
-    //   '<'
-    // );
+    tl.to(
+      logo.current,
+      {
+        x: 0,
+        duration: 1,
+      },
+      '<'
+    );
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
@@ -97,6 +98,14 @@ const TechIntroSection = () => {
     );
 
     tl1.to(
+      moto.current,
+      {
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+      },
+      '<'
+    );
+
+    tl1.to(
       orderMask.current,
       {
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
@@ -123,7 +132,7 @@ const TechIntroSection = () => {
     tl1.to(
       rectSmall.current,
       {
-        width: '18.5rem',
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
         duration: 0.2,
       },
       '<'
@@ -132,7 +141,7 @@ const TechIntroSection = () => {
     tl1.to(
       rectBig.current,
       {
-        width: '24.5rem',
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
         duration: 0.2,
       },
       '<'
@@ -212,6 +221,13 @@ const TechIntroSection = () => {
       </p>
 
       <div className={styles.tech_intro__illustration}>
+        <p
+          className={styles.tech_intro__moto}
+          ref={moto}
+        >
+          But they can do a lot more than you think.
+        </p>
+
         <div className={styles.tech_intro__chaos}>
           <Image
             src="/images/tech-intro-chaos.svg"
@@ -235,23 +251,12 @@ const TechIntroSection = () => {
           ref={orderMask}
         />
 
-        {/* <div
-          className={styles.tech_intro__order__tablet}
-          // ref={orderTablet}
-        >
-          <Image
-            src="/images/tech-intro-order.svg"
-            alt="tech-intro order"
-            fill
-          />
-        </div> */}
-
         <div
           className={styles.tech_intro__order}
           ref={order}
         >
           <Image
-            src="/images/tech-intro-order.svg"
+            src="/images/tech-intro-order_OLD.svg"
             alt="tech-intro order"
             fill
           />
