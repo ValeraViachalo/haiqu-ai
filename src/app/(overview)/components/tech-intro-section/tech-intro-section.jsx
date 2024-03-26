@@ -235,7 +235,7 @@ const TechIntroSection = () => {
           ref={orderMask}
         />
 
-        <div
+        {/* <div
           className={styles.tech_intro__order__tablet}
           // ref={orderTablet}
         >
@@ -244,7 +244,7 @@ const TechIntroSection = () => {
             alt="tech-intro order"
             fill
           />
-        </div>
+        </div> */}
 
         <div
           className={styles.tech_intro__order}
