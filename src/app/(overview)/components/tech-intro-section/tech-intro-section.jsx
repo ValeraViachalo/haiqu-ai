@@ -30,33 +30,33 @@ const TechIntroSection = () => {
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: main.current,
-        start: 'top 10%',
-        end: 'top 10%',
-        toggleActions: 'restart none reverse none',
-      },
-    });
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: main.current,
+    //     start: 'top 10%',
+    //     end: 'top 10%',
+    //     toggleActions: 'restart none reverse none',
+    //   },
+    // });
 
-    tl.to(
-      maskFilledBar.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 1,
-        xPercent: -98,
-      },
-      '<'
-    );
+    // tl.to(
+    //   maskFilledBar.current,
+    //   {
+    //     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+    //     duration: 1,
+    //     xPercent: -98,
+    //   },
+    //   '<'
+    // );
 
-    tl.to(
-      logo.current,
-      {
-        x: 0,
-        duration: 1,
-      },
-      '<'
-    );
+    // tl.to(
+    //   logo.current,
+    //   {
+    //     x: 0,
+    //     duration: 1,
+    //   },
+    //   '<'
+    // );
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
@@ -68,9 +68,9 @@ const TechIntroSection = () => {
       },
     });
 
-    // tl1.to(filledBar.current, {
-    //   x: 0,
-    // });
+    tl1.to(filledBar.current, {
+      x: 0,
+    });
 
     tl1.to(
       maskFilledBar.current,
@@ -181,6 +181,8 @@ const TechIntroSection = () => {
       },
       '<'
     );
+
+    ScrollTrigger.normalizeScroll(false);
   }, []);
 
   return (
@@ -205,11 +207,9 @@ const TechIntroSection = () => {
         <Logo blue />
       </div>
 
-      <div>
-        <p className={styles.tech_intro__text}>
-          Today’s quantum computers are noisy.
-        </p>
-      </div>
+      <p className={styles.tech_intro__text}>
+        Today’s quantum computers are noisy.
+      </p>
 
       <div className={styles.tech_intro__illustration}>
         <div className={styles.tech_intro__chaos}>
@@ -234,6 +234,17 @@ const TechIntroSection = () => {
           className={styles.tech_intro__order_mask}
           ref={orderMask}
         />
+
+        <div
+          className={styles.tech_intro__order__tablet}
+          // ref={orderTablet}
+        >
+          <Image
+            src="/images/tech-intro-order.svg"
+            alt="tech-intro order"
+            fill
+          />
+        </div>
 
         <div
           className={styles.tech_intro__order}

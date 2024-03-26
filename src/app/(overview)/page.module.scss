@@ -2,21 +2,7 @@
 
 .main {
   position: relative;
-  width: 100vw;
   font-family: $neue-montreal-font;
-  // overflow-x: hidden;
-
-  &__testimonial {
-    background-color: $main-font-color;
-    padding: $padding-horizontal;
-    padding-bottom: 13.125rem;
-    position: relative;
-    gap: $padding-horizontal;
-  }
-
-  &__ticker_container {
-    @include flexCenter;
-    width: 100%;
-    // overflow-x: hidden;
-  }
+  width: 100vw;
+  overflow-x: hidden;
 }

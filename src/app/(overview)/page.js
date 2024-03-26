@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <main className={styles.main}>
       <IntroSection />
-      {/* <TechIntroSection /> */}
+      <TechIntroSection />
       <InterestedSection />
       <CaseStudySection />
       <PartnersSection />

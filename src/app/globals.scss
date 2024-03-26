@@ -13,7 +13,7 @@ body {
   // scroll-behavior: auto !important;
   font-size: 0.833333vw;
   font-family: var(--neue-montreal-font);
-  height: -webkit-fill-available;
+  // overflow-x: hidden;
 
   @media (max-width: 834px) {
     font-size: 1.34vh;

@@ -3,8 +3,7 @@
 .tech_intro {
   width: 100vw;
   background-color: $haiqu-light-grey;
-  position: sticky;
-  top: 0;
+  position: relative;
 
   &__process_bar {
     position: relative;
@@ -33,7 +32,7 @@
     right: 0;
     top: 0;
     height: 0.5rem;
- 
+
     background-color: $haiqu-blue;
     z-index: 1;
   }
@@ -44,12 +43,26 @@
     width: 2.25rem;
     height: 2.25rem;
     margin-bottom: 16.875rem;
+
+    @include tablet {
+      margin-bottom: 3.8125rem;
+    }
   }
 
   &__text {
     font-size: 2.125rem;
     text-align: center;
     margin-bottom: 0.625rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      line-height: 1.4375rem;
+    }
   }
 
   &__text_mask {
@@ -66,6 +79,12 @@
     width: 100%;
     height: 42.1875rem;
     margin-bottom: 15.9375rem;
+
+
+    @include tablet {
+      padding-left: $padding-horizontal;
+      // width: 120%;
+    }
   }
 
   &__rect_small {
@@ -100,6 +119,7 @@
 
   &__order_mask {
     background-color: $haiqu-light-grey;
+    background-color: $haiqu-orange;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     position: absolute;
     width: 100%;
@@ -117,6 +137,10 @@
     top: 0;
     left: 0;
     z-index: 16;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__gradient {
@@ -157,6 +181,16 @@
     mask-repeat: no-repeat;
     overflow-x: hidden;
 
+    @include tablet {
+      width: 48.375rem;
+      height: 17.1875rem;
+    }
+
+    @include mobile {
+      width: 22.5rem;
+      height: 7.9375rem;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -181,11 +215,32 @@
     flex-direction: column;
     padding-top: 24rem;
     padding-bottom: 12.1875rem;
+
+    @include tablet {
+      padding-top: 18rem;
+      padding-bottom: 10.5rem;
+    }
+
+    @include mobile {
+      padding-top: 12rem;
+      padding-bottom: 7.6rem;
+    }
   }
 
   &__dc_title {
     @include sectionTitle;
     margin-bottom: 13.125rem;
+
+    @include tablet {
+      font-size: 3.375rem;
+      line-height: 3.915rem;
+      margin-bottom: 7.5rem;
+    }
+
+    @include mobile {
+      font-size: 2.75rem;
+      line-height: 3.19rem;
+    }
   }
 
   &__dc_description_top {
@@ -194,6 +249,18 @@
     font-size: 2.125rem;
     line-height: 2.44375rem;
     margin-bottom: 2.5rem;
+
+    @include tablet {
+      width: 30.875rem;
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+    }
+
+    @include mobile {
+      width: 19.9375rem;
+      font-size: 1.25rem;
+      line-height: 1.4375rem;
+    }
   }
 
   &__dc_description_bottom {
@@ -203,6 +270,18 @@
     line-height: 2.44375rem;
     opacity: 0.35;
     margin-bottom: 1.875rem;
+
+    @include tablet {
+      width: 30.875rem;
+      font-size: 1.5rem;
+      line-height: 1.725rem;
+    }
+
+    @include mobile {
+      width: 19.9375rem;
+      font-size: 1.25rem;
+      line-height: 1.4375rem;
+    }
   }
 
   &__learn_more {
