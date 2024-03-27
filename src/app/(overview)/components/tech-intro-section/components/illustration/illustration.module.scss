@@ -35,7 +35,7 @@
     }
 
     @include mobile {
-      top: -9%;
+      top: -11%;
       width: 300%;
     }
   }
@@ -89,7 +89,7 @@
     @include tablet {
       width: 14.013125rem;
       height: 7.5rem;
-      top: 13.5%;
+      top: 13%;
     }
 
     @include mobile {
@@ -133,11 +133,13 @@
     @include tablet {
       width: 4.1875rem;
       height: 24rem;
+      top: 0;
     }
 
     @include mobile {
-      width: 2.25rem;
-      height: 14.1875rem;
+      width: 3.25rem;
+      height: 24rem;
+      top: 0;
     }
   }
 

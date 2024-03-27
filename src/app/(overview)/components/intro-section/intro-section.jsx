@@ -62,7 +62,7 @@ const IntroSection = () => {
           autoPlay
           loop
           muted
-          playsinline
+          controls={false}
         >
           <source
             src="/videos/intro-video-low.mp4"

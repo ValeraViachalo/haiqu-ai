@@ -125,8 +125,12 @@
     text-align: center;
     left: 0;
 
+    @include tablet {
+      top: -9vh;
+    }
+
     @include mobile {
-      top: -9%;
+      top: -14vh;
     }
   }
 
@@ -256,6 +260,7 @@
     @include btn;
     transition: 0.3s ease;
     border: 1px solid rgba($main-font-color, 0.35);
+    color: $main-font-color;
 
     &:hover {
       opacity: 0.6;

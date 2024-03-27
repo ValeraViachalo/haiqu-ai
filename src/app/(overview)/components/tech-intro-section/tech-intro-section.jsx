@@ -128,13 +128,8 @@ const TechIntroSection = () => {
       transformOrigin: 'top center',
     });
 
-    // gsap.set(line.current, {
-    //   height: '8.375rem',
-    //   transformOrigin: 'top center',
-    // });
-
     tl2.to(boost.current, {
-      yPercent: 10,
+      y: isNotMobile ? '9vh' : '14vh',
     });
 
     tl2.to(
