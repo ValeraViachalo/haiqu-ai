@@ -49,6 +49,10 @@
       position: absolute;
       bottom: $padding-tablet;
     }
+
+    @include mobile {
+      left: 30%;
+    }
   }
 
   &__video_container {
@@ -100,7 +104,6 @@
     min-width: 100%;
     min-height: 50vh;
     display: inline-block;
-
 
     @include tablet {
       display: none;

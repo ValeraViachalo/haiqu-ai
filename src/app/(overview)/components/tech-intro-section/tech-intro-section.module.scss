@@ -5,6 +5,10 @@
   background-color: $haiqu-light-grey;
   position: relative;
 
+  // @include tablet {
+  //   width: 150vw;
+  // }
+
   &__process_bar {
     position: relative;
     width: 100%;
@@ -13,6 +17,10 @@
     opacity: 0.15;
     margin-bottom: 0.25rem;
 
+    @include tablet {
+      width: 150%;
+    }
+
     &__filled {
       position: absolute;
       width: 100%;
@@ -20,25 +28,34 @@
       right: 0;
       top: 0;
       background-color: $haiqu-light-grey;
-      opacity: 1;
+
+      @include tablet {
+        width: 150%;
+      }
     }
   }
 
   &__mask_filled {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 2% 0, 2% 100%, 0% 100%);
     position: absolute;
     width: 100%;
-    left: 0;
     right: 0;
     top: 0;
     height: 0.5rem;
-
     background-color: $haiqu-blue;
     z-index: 1;
+
+    @include tablet {
+      clip-path: polygon(0 0, 4% 0, 4% 100%, 0% 100%);
+    }
+
+    @include mobile {
+      clip-path: polygon(0 0, 8% 0, 8% 100%, 0% 100%);
+    }
   }
 
   &__logo {
-    transform: translateX(-2.25rem);
+    // transform: translateX(-2.25rem);
     position: relative;
     width: 2.25rem;
     height: 2.25rem;
@@ -52,9 +69,10 @@
   &__text {
     font-size: 2.125rem;
     text-align: center;
-    // margin-bottom: 0.625rem;
 
     @include tablet {
+      position: relative;
+      // left: -25vw;
       font-size: 1.5rem;
       line-height: 1.725rem;
     }
@@ -63,119 +81,6 @@
       font-size: 1.25rem;
       line-height: 1.4375rem;
     }
-  }
-
-  &__text_mask {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    background-color: $haiqu-light-grey;
-    top: 19.9375rem;
-    height: 3rem;
-    margin-bottom: 5.75rem;
-  }
-
-  &__illustration {
-    position: relative;
-    padding-left: $padding-horizontal;
-    width: 100%;
-    height: 42.1875rem;
-    margin-bottom: 15.9375rem;
-
-    @include tablet {
-      padding-left: $padding-horizontal;
-    }
-  }
-
-  &__rect_small {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    position: absolute;
-    top: 25.5%;
-    left: $padding-horizontal;
-    width: 18.5rem;
-    height: 10rem;
-    background-color: $haiqu-blue;
-    opacity: 0.8;
-    z-index: 15;
-
-    @include tablet {
-      width: 14.013125rem;
-      height: 7.5rem;
-    }
-
-    @include mobile {
-      width: 7.420625rem;
-      height: 3.138125rem;
-    }
-  }
-
-  &__rect_big {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    position: absolute;
-    top: 25.5%;
-    width: 24.5rem;
-    height: 13.1875rem;
-    background-color: $haiqu-light-blue;
-    opacity: 0.8;
-    z-index: 14;
-
-    @include tablet {
-      width: 18.5rem;
-      height: 10rem;
-    }
-
-    @include mobile {
-      width: 11.4375rem;
-      height: 5.2475rem;
-    }
-  }
-
-  &__chaos {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: $padding-horizontal;
-    z-index: 11;
-
-    @include tablet {
-      top: -7.6%;
-      width: 150%;
-    }
-  }
-
-  &__order_mask {
-    background-color: $haiqu-light-grey;
-    background-color: $haiqu-orange;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 13;
-  }
-
-  &__order {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    padding-left: $padding-horizontal;
-    // left: 0;
-    z-index: 16;
-
-    @include tablet {
-      width: 150%;
-      top: -9.5%;
-      left: $padding-horizontal;
-    }
-  }
-
-  &__gradient {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 17;
   }
 
   &__moto {
@@ -184,12 +89,13 @@
     top: 0;
     left: 0;
     font-size: 2.125rem;
-    position: absolute;
+    position: relative;
     z-index: 14;
     text-align: center;
-    background-color: $haiqu-blue;
 
     @include tablet {
+      position: relative;
+      // left: -25vw;
       font-size: 1.5rem;
       line-height: 1.725rem;
     }
@@ -200,25 +106,39 @@
     }
   }
 
+  // &__illustration {
+  //   position: relative;
+  //   width: 100%;
+  //   background-color: $haiqu-orange;
+
+  // }
+
   &__100x_container {
-    @include flexCenter;
+    display: flex;
+    align-items: center;
     flex-direction: column;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    position: absolute;
+    position: relative;
+    top: -7%;
     z-index: 13;
     width: 100%;
-    height: 100%;
     text-align: center;
-    top: 70%;
     left: 0;
-    background-color: $haiqu-blue;
+
+    @include mobile {
+      top: -9%;
+    }
   }
 
   &__line {
     position: relative;
-    width: 0.1rem;
+    width: 1px;
     height: 8.375rem;
     margin-bottom: 1.25rem;
+
+    @include tablet {
+      height: 2.6875rem;
+    }
   }
 
   &__number {
@@ -264,16 +184,13 @@
   &__dc {
     @include flexCenter;
     flex-direction: column;
-    padding-top: 24rem;
     padding-bottom: 12.1875rem;
 
     @include tablet {
-      padding-top: 18rem;
-      padding-bottom: 10.5rem;
+      padding-bottom: 17.5rem;
     }
 
     @include mobile {
-      padding-top: 12rem;
       padding-bottom: 7.6rem;
     }
   }

@@ -8,6 +8,7 @@ import { Logo } from '@/src/ui';
 import styles from './tech-intro-section.module.scss';
 import Image from 'next/image';
 import classNames from 'classnames';
+import Illustration from './components/illustration';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,13 +17,9 @@ const TechIntroSection = () => {
   const main = useRef(null);
   const logo = useRef(null);
   const text = useRef(null);
-  const order = useRef(null);
   const number = useRef(null);
   const boost = useRef(null);
   const line = useRef(null);
-  const rectSmall = useRef(null);
-  const rectBig = useRef(null);
-  const orderMask = useRef(null);
   const maskFilledBar = useRef(null);
   const moto = useRef(null);
 
@@ -30,53 +27,64 @@ const TechIntroSection = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
+    const isNotMobile = window.innerWidth > 430;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: main.current,
-        start: 'top 10%',
-        end: 'top 10%',
-        toggleActions: 'restart none reverse none',
-      },
+    gsap.set([maskFilledBar.current, logo.current], {
+      opacity: 1,
     });
 
-    tl.to(
-      maskFilledBar.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 1,
-        xPercent: -98,
-      },
-      '<'
-    );
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: main.current,
+    //     start: 'top 10%',
+    //     end: 'top 10%',
+    //     toggleActions: 'restart none reverse none',
+    //   },
+    // });
 
-    tl.to(
-      logo.current,
-      {
-        x: 0,
-        duration: 1,
-      },
-      '<'
-    );
+    // tl.to(
+    //   maskFilledBar.current,
+    //   {
+    //     x: 0,
+    //     // duration: 1,
+    //     opacity: 1,
+    //     // xPercent: -98,
+    //   },
+    //   '<'
+    // );
+
+    // tl.to(
+    //   logo.current,
+    //   {
+    //     x: 0,
+    //     // duration: 1,
+    //     opacity: 1,
+    //   },
+    //   '<'
+    // );
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: main.current,
-        start: 'top top',
-        end: `+=${window.innerHeight}`,
-        pin: true,
+        // start: 'top top',
+        start: !isNotMobile ? 'top 40%' : 'top top',
+        // end: `+=${window.innerHeight}`,
+        end: isNotMobile ? `+=${window.innerHeight}` : '+=300',
+        pin: isNotMobile,
         scrub: true,
       },
     });
 
-    tl1.to(filledBar.current, {
-      x: 0,
-    });
+    // tl1.to(filledBar.current, {
+    //   x: 0,
+    // });
 
     tl1.to(
       maskFilledBar.current,
       {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+        clipPath: isNotMobile
+          ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
+          : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
       },
       '<'
     );
@@ -84,37 +92,13 @@ const TechIntroSection = () => {
     tl1.to(
       logo.current,
       {
-        x: '98.2vw',
-      },
-      '<'
-    );
-
-    tl1.to(
-      text.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+        x: '100vw',
       },
       '<'
     );
 
     tl1.to(
       moto.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      },
-      '<'
-    );
-
-    tl1.to(
-      orderMask.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      },
-      '<'
-    );
-
-    tl1.to(
-      order.current,
       {
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
       },
@@ -129,52 +113,34 @@ const TechIntroSection = () => {
       '<'
     );
 
-    tl1.to(
-      rectSmall.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 0.2,
-      },
-      '<'
-    );
-
-    tl1.to(
-      rectBig.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 0.2,
-      },
-      '<'
-    );
-
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: main.current,
-        start: '22% top',
-        end: `+=${window.innerWidth / 2}`,
+        start: isNotMobile ? '22% top' : 'top 10%',
+        end: isNotMobile ? `+=${window.innerWidth / 2}` : '+=400',
         scrub: true,
-        pin: true,
+        pin: isNotMobile,
       },
     });
 
     gsap.set(number.current, {
-      scale: 0.05,
+      scale: isNotMobile ? 0.05 : 0.1,
       transformOrigin: 'top center',
     });
 
-    gsap.set(line.current, {
-      height: '8.375rem',
-      transformOrigin: 'top center',
-    });
+    // gsap.set(line.current, {
+    //   height: '8.375rem',
+    //   transformOrigin: 'top center',
+    // });
 
     tl2.to(boost.current, {
-      y: 100,
+      yPercent: 10,
     });
 
     tl2.to(
       line.current,
       {
-        height: '14.9375rem',
+        height: isNotMobile ? '14.9375rem' : '7rem',
         transformOrigin: 'top center',
       },
       '<'
@@ -198,8 +164,10 @@ const TechIntroSection = () => {
     <section
       className={`${styles.tech_intro} main`}
       ref={main}
+      id="tech_intro"
     >
       <div className={styles.tech_intro__process_bar} />
+
       <div
         ref={filledBar}
         className={`${styles.tech_intro__process_bar} ${styles.tech_intro__process_bar__filled}`}
@@ -220,79 +188,36 @@ const TechIntroSection = () => {
         Today’s quantum computers are noisy.
       </p>
 
-      <div className={styles.tech_intro__illustration}>
-        <p
-          className={styles.tech_intro__moto}
-          ref={moto}
-        >
-          But they can do a lot more than you think.
-        </p>
+      <p
+        className={styles.tech_intro__moto}
+        ref={moto}
+      >
+        But they can do a lot more than you think.
+      </p>
 
-        <div className={styles.tech_intro__chaos}>
+      <Illustration />
+
+      <div
+        className={styles.tech_intro__100x_container}
+        ref={boost}
+      >
+        <div
+          className={styles.tech_intro__line}
+          ref={line}
+        >
           <Image
-            src="/images/tech-intro-chaos.svg"
-            alt="tech-intro chaos"
+            src="/images/line.svg"
+            alt="line"
             fill
           />
         </div>
 
         <div
-          className={styles.tech_intro__rect_small}
-          ref={rectSmall}
-        />
-
-        <div
-          className={styles.tech_intro__rect_big}
-          ref={rectBig}
-        />
-
-        <div
-          className={styles.tech_intro__order_mask}
-          ref={orderMask}
-        />
-
-        <div
-          className={styles.tech_intro__order}
-          ref={order}
-        >
-          <Image
-            src="/images/tech-intro-order_OLD.svg"
-            alt="tech-intro order"
-            fill
-          />
-        </div>
-
-        <div className={styles.tech_intro__gradient}>
-          <Image
-            src="/images/gradient.svg"
-            alt="gradient"
-            width={84}
-            height={504}
-          />
-        </div>
-
-        <div
-          className={styles.tech_intro__100x_container}
-          ref={boost}
-        >
-          <div
-            className={styles.tech_intro__line}
-            ref={line}
-          >
-            <Image
-              src="/images/line.svg"
-              alt="line"
-              fill
-            />
-          </div>
-
-          <div
-            className={classNames(`${styles.tech_intro__number} number`, {
-              [styles.tech_intro__number__hovered]: scaled,
-            })}
-            ref={number}
-          ></div>
-        </div>
+          className={classNames(`${styles.tech_intro__number} number`, {
+            [styles.tech_intro__number__hovered]: scaled,
+          })}
+          ref={number}
+        ></div>
       </div>
 
       <div className={styles.tech_intro__dc}>
