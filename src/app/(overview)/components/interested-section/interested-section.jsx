@@ -90,7 +90,6 @@ const InterestedSection = () => {
           autoPlay
           webkit-playsinline="true"
           playsInline
-          loading="lazy"
         >
           <source
             src="/videos/quant-comp-desktop.mp4"

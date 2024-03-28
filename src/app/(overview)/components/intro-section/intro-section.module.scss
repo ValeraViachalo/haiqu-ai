@@ -14,8 +14,8 @@
   @include mobile {
     padding: 0 $padding-mobile $padding-mobile;
     height: calc(100dvh - 4.0175rem);
+    transition: height 0.5s linear;
   }
-  
 
   video {
     width: 100%;
@@ -61,7 +61,7 @@
 
   &__video_container {
     position: absolute;
-    top: 3rem;
+    top: 3vh;
     left: 17rem;
     width: 72%;
 

@@ -95,14 +95,15 @@
 
     @include tablet {
       position: relative;
-      // left: -25vw;
       font-size: 1.5rem;
       line-height: 1.725rem;
+      margin-bottom: 2.75rem;
     }
 
     @include mobile {
       font-size: 1.25rem;
       line-height: 1.4375rem;
+      margin-bottom: 3.75rem;
     }
   }
 

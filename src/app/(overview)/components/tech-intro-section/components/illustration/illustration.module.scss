@@ -96,7 +96,7 @@
       width: 7.420625rem;
       height: 3.138125rem;
       left: $padding-tablet;
-      top: 13%;
+      top: 2.2dvh;
     }
   }
 
@@ -117,6 +117,7 @@
     }
 
     @include mobile {
+      top: 2.2dvh;
       width: 11.4375rem;
       height: 5.2475rem;
     }
