@@ -10,7 +10,7 @@ const Footer = () => {
       <div className={styles.footer__container}>
         <div className={styles.footer__top_section}>
           <p>©2023 Haiqu. All rights reserved.</p>
-          <p>+1 650 788 6011</p>
+          <a href="tel:+16507886011" className={styles.footer__phone}>+1 650 788 6011</a>
         </div>
 
         <div className={styles.footer__bottom_section}>

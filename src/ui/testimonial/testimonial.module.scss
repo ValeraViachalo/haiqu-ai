@@ -8,6 +8,15 @@
   user-select: none;
   cursor: grab;
   scroll-behavior: auto;
+  padding-left: $padding-horizontal;
+
+  @include tablet {
+    padding-left: $padding-tablet;
+  }
+
+  @include mobile {
+    padding-left: $padding-mobile;
+  }
 
   &::-webkit-scrollbar {
     display: none;

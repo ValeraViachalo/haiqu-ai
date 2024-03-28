@@ -5,10 +5,11 @@
   position: fixed;
   overflow-x: hidden;
   overflow-y: auto;
+  box-sizing: border-box;
+  height: 100dvh;
   top: 3.875rem;
   right: 0.9375rem;
   left: 0.9375rem;
-  bottom: 0.9375rem;
   z-index: 99999999999;
   background-color: rgba($white-color, 0.8);
 
@@ -19,7 +20,6 @@
   &__visible {
     display: none;
 
-
     @include tablet {
       display: block;
     }
@@ -27,20 +27,21 @@
 }
 
 .mobile_menu {
-  transform: translateX(110%);
-  transition: 0.15s ease;
-
   @include tablet {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
     gap: 0.9375rem;
+    transform: translateX(110%);
+    transition: 0.15s ease;
   }
 
   @include mobile {
     display: flex;
     flex-direction: column;
     gap: 0.9375rem;
+    transform: translateX(110%);
+    transition: 0.15s ease;
   }
 
   &__visible {
@@ -72,7 +73,6 @@
 
     @include tablet {
       margin-bottom: 11.875rem;
-      // margin-bottom: 15vh;
       
     }
 
@@ -89,7 +89,6 @@
     color: $main-font-color;
     transition: 0.3s ease;
     margin-bottom: 1.8125rem;
-    // margin-bottom: 10%;
 
 
     @include mobile {

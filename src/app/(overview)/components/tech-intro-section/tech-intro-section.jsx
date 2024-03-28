@@ -16,7 +16,6 @@ const TechIntroSection = () => {
   const filledBar = useRef(null);
   const main = useRef(null);
   const logo = useRef(null);
-  const text = useRef(null);
   const number = useRef(null);
   const boost = useRef(null);
   const line = useRef(null);
@@ -27,7 +26,7 @@ const TechIntroSection = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
-    const isNotMobile = window.innerWidth > 430;
+    const isNotMobile = window.innerWidth >= 460;
 
     gsap.set([maskFilledBar.current, logo.current], {
       opacity: 1,

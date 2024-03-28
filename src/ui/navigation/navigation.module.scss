@@ -17,6 +17,11 @@
       width: 1.125rem;
       height: 0.75rem;
     }
+
+    @include mobile {
+      width: 1.25rem; 
+      height: 0.875rem; 
+    }
   }
 
   &__links_container {
@@ -56,3 +61,4 @@
     overflow: hidden;
   }
 }
+

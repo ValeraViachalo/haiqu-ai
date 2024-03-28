@@ -69,14 +69,19 @@
     align-items: center;
     width: 10vw;
     height: 10vh;
+    width: 7rem;
     margin-right: 3.35rem;
 
     @include tablet {
       height: 4.125rem;
+      transform: scale(1.2);
+      margin-right: 1rem;
     }
 
     @include mobile {
+      transform: scale(1.2);
       height: 3.5rem;
+      margin-right: 1rem;
     }
 
     img {

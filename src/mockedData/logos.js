@@ -50,3 +50,31 @@ export const logos = [
     photo: '/mocked/logos/10.png',
   },
 ];
+
+export const logosLight = [
+  {
+    id: 1,
+    alt: 'logo',
+    photo: '/mocked/logos-light/1.svg',
+  },
+  {
+    id: 2,
+    alt: 'logo',
+    photo: '/mocked/logos-light/2.svg',
+  },
+  {
+    id: 3,
+    alt: 'logo',
+    photo: '/mocked/logos-light/3.svg',
+  },
+  {
+    id: 4,
+    alt: 'logo',
+    photo: '/mocked/logos-light/4.svg',
+  },
+  {
+    id: 5,
+    alt: 'logo',
+    photo: '/mocked/logos-light/5.svg',
+  },
+];

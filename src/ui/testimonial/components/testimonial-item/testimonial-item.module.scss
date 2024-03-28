@@ -6,21 +6,31 @@
   flex-direction: column;
   color: $white-color;
   padding: 1.875rem;
-  border-left: 0.0625rem solid rgba($haiqu-light-grey, 0.35);
+  border-left: 1px solid rgba($haiqu-light-grey, 0.35);
 
   @include tablet {
+    padding: $padding-tablet;
     min-width: 50%;
   }
 
   @include mobile {
+    padding: $padding-tablet;
     min-width: 80%;
   }
 
   &__name {
     font-size: 1.625rem;
+    line-height: 1.86875rem;
+
 
     @include tablet {
       font-size: 1rem;
+      line-height: 1.15rem;
+    }
+
+    @include mobile {
+      font-size: 0.875rem;
+      line-height: 1.00625rem;
     }
   }
 
@@ -31,14 +41,27 @@
 
     @include tablet {
       font-size: 1rem;
+      line-height: 1.15rem;
+    }
+
+    @include mobile {
+      font-size: 0.875rem;
+      line-height: 1.00625rem;
     }
   }
 
   &__quote {
     font-size: 5.25rem;
+    line-height: 6.09rem;
 
     @include tablet {
       font-size: 3.375rem;
+      line-height: 3.915rem;
+    }
+
+    @include mobile {
+      font-size: 2.75rem;
+      line-height: 3.19rem;
     }
   }
 }

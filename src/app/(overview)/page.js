@@ -13,7 +13,7 @@ const Home = () => {
     <main className={styles.main}>
       <IntroSection />
       <TechIntroSection />
-      <InterestedSection />
+      {/* <InterestedSection /> */}
       <CaseStudySection />
       <PartnersSection />
       <EventsSection />

@@ -4,3 +4,4 @@ export { latestNews } from './latestNews';
 export { seminars } from './seminars';
 export { testimonial } from './testimonial';
 export { caseStudy } from './caseStudy';
+export { logosLight } from './logos';

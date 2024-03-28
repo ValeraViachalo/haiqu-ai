@@ -71,6 +71,11 @@
     transition: 0.3s ease;
     color: $main-font-color;
 
+    @include mobile {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+
     &:hover {
       transition: 0.3s ease;
       opacity: 0.6;
