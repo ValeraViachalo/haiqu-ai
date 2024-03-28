@@ -7,7 +7,7 @@
   overflow-y: auto;
   box-sizing: border-box;
   height: 100dvh;
-  top: 3.875rem;
+  top: 3.7rem;
   // right: 0.9375rem;
   // left: 0.9375rem;
 
@@ -15,6 +15,8 @@
   left: 0;
   z-index: 99999999999;
   background-color: rgba($white-color, 0.8);
+  background-color: rgba($white-color, 1);
+
 
   &::-webkit-scrollbar {
     display: none;
@@ -78,14 +80,11 @@
 
     @include tablet {
       margin-bottom: 11.875rem;
-      margin-bottom: 2%;
-
     }
 
     @include mobile {
       margin-bottom: 2.9375rem;
       margin-bottom: 8dvh;
-      // margin-bottom: 22%;
     }
   }
 
@@ -136,7 +135,6 @@
     font-size: 1.125rem;
     line-height: 1.35rem;
     text-transform: uppercase;
-
     margin-bottom: 4.5vh;
 
     @include tablet {
@@ -161,5 +159,30 @@
         color: rgba($main-font-color, 0.4);
       }
     }
+  }
+}
+
+.mob_menu {
+  display: none;
+
+  @include mobile {
+    padding: 0.93rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.93rem;
+  }
+
+  &__top {
+    background-color: $haiqu-light-blue;
+    height: 50dvh;
+    border-radius: 0.9375rem;
+    @include flexCenter;
+  }
+
+  &__bottom {
+    background-color: $haiqu-light-grey;
+    height: 35dvh;
+    border-radius: 0.9375rem;
+    @include flexCenter;
   }
 }

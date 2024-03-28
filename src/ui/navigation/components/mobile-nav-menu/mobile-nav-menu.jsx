@@ -34,7 +34,12 @@ const MobileNavMenu = ({ links, isOpened }) => {
         [styles.mobile_menu__container__visible]: isOpened,
       })}
     >
-      <div
+      <div className={styles.mob_menu}>
+        <div className={styles.mob_menu__top}>top</div>
+        <div className={styles.mob_menu__bottom}>bottom</div>
+      </div>
+
+      {/* <div
         className={classNames([styles.mobile_menu], {
           [styles.mobile_menu__visible]: isVisible,
         })}
@@ -77,7 +82,7 @@ const MobileNavMenu = ({ links, isOpened }) => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

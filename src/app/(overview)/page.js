@@ -11,12 +11,12 @@ import {
 const Home = () => {
   return (
     <main className={styles.main}>
-      <IntroSection />
-      <TechIntroSection />
+      {/* <IntroSection />
+      <TechIntroSection /> */}
       {/* <InterestedSection /> */}
-      <CaseStudySection />
+      {/* <CaseStudySection />
       <PartnersSection />
-      <EventsSection />
+      <EventsSection /> */}
     </main>
   );
 };
