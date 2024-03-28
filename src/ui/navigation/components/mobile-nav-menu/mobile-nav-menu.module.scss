@@ -8,16 +8,26 @@
   box-sizing: border-box;
   height: 100dvh;
   top: 3.7rem;
-  // right: 0.9375rem;
-  // left: 0.9375rem;
-
   right: 0;
   left: 0;
   z-index: 99999999999;
   background-color: rgba($white-color, 0.8);
+  transform: translateX(110%);
+  transition: 0.15s ease;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @include tablet {
+    display: block;
+    height: calc(100vh - 3.7rem);
+  }
+
+  @include mobile {
+    display: block;
+    height: calc(100dvh - 3.7rem);
+    background-color: rgba($white-color, 1);
   }
 
   &__visible {
@@ -25,40 +35,171 @@
 
     @include tablet {
       display: block;
+      transform: translateX(0);
+      transition: 0.15s ease;
+    }
+
+    @include mobile {
+      transform: translateX(0);
+      transition: 0.15s ease;
     }
   }
 }
 
-.mobile_menu {
-  padding: 0 0.9375rem;
+// .mobile_menu {
+//   padding: 0 0.9375rem;
+//   display: none;
+//   transform: translateX(110%);
+//   transition: 0.15s ease;
+
+//   @include tablet {
+//     display: flex;
+//     align-items: flex-end;
+//     flex-direction: column;
+//     gap: 0.9375rem;
+//   }
+
+//   @include mobile {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 0.9375rem;
+//   }
+
+//   &__visible {
+//     transform: translateX(0);
+//     transition: 0.15s ease;
+//   }
+
+//   &__links_container {
+//     display: flex;
+//     flex-direction: column;
+//     background-color: $haiqu-light-blue;
+//     border-radius: 0.9375rem;
+//     padding: 1.5625rem;
+
+//     @include tablet {
+//       width: 50%;
+//     }
+
+//     @include mobile {
+//       width: 100%;
+//     }
+//   }
+
+//   &__explore {
+//     text-transform: uppercase;
+//     font-family: $fraktion-semibold;
+//     font-size: 1.125rem;
+//     line-height: 1.35rem;
+
+//     @include tablet {
+//       margin-bottom: 11.875rem;
+//     }
+
+//     @include mobile {
+//       margin-bottom: 8dvh;
+//     }
+//   }
+
+//   &__link {
+//     text-decoration: none;
+//     font-size: 2.75rem;
+//     text-transform: capitalize;
+//     color: $main-font-color;
+//     transition: 0.3s ease;
+//     margin-bottom: 1.8125rem;
+
+//     @include mobile {
+//       font-size: 2.5rem;
+//       line-height: 4rem;
+//       margin-bottom: 0;
+//     }
+
+//     &:hover {
+//       opacity: 0.3;
+//       transition: 0.3s ease;
+//     }
+
+//     &:visited {
+//       color: $main-font-color;
+//     }
+
+//     &:nth-last-child(1) {
+//       margin-bottom: 0;
+//     }
+//   }
+
+//   &__follow_us {
+//     background-color: $haiqu-light-grey;
+//     border-radius: 0.9375rem;
+//     padding: 1.5625rem;
+
+//     @include tablet {
+//       width: 50%;
+//     }
+
+//     @include mobile {
+//       width: 100%;
+//     }
+//   }
+
+//   &__follow_us_title {
+//     font-family: $fraktion-semibold;
+//     font-size: 1.125rem;
+//     line-height: 1.35rem;
+//     text-transform: uppercase;
+//     // margin-bottom: 4.5vh;
+
+//     @include tablet {
+//       margin-bottom: 12.3125rem;
+//     }
+
+//     @include mobile {
+//       margin-bottom: 0dvh;
+//     }
+//   }
+
+//   &__follow_us_links {
+//     a {
+//       text-decoration: none;
+//       color: rgba($main-font-color, 0.4);
+//       display: block;
+//       cursor: pointer;
+//       font-size: 1.5rem;
+//       line-height: 2.4rem;
+
+//       &:visited {
+//         color: rgba($main-font-color, 0.4);
+//       }
+//     }
+//   }
+// }
+
+.mob_menu {
   display: none;
-  transform: translateX(110%);
-  transition: 0.15s ease;
 
   @include tablet {
+    border-radius: 0.9375rem;
     display: flex;
-    align-items: flex-end;
     flex-direction: column;
+    align-items: flex-end;
+    padding: 0.9375rem;
     gap: 0.9375rem;
   }
 
   @include mobile {
+    border-radius: 0.9375rem;
     display: flex;
     flex-direction: column;
+    padding: 0.9375rem;
     gap: 0.9375rem;
   }
 
-  &__visible {
-    transform: translateX(0);
-    transition: 0.15s ease;
-  }
-
-  &__links_container {
-    display: flex;
-    flex-direction: column;
+  &__top {
+    width: 100%;
+    padding: 0.9375rem;
     background-color: $haiqu-light-blue;
     border-radius: 0.9375rem;
-    padding: 1.5625rem;
 
     @include tablet {
       width: 50%;
@@ -69,18 +210,25 @@
     }
   }
 
+  &__links_container {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__explore {
     text-transform: uppercase;
     font-family: $fraktion-semibold;
     font-size: 1.125rem;
     line-height: 1.35rem;
+    font-size: 1.125em;
+    line-height: 1.35em;
 
     @include tablet {
       margin-bottom: 11.875rem;
     }
 
     @include mobile {
-      margin-bottom: 8dvh;
+      margin-bottom: 5.56dvh;
     }
   }
 
@@ -94,8 +242,10 @@
 
     @include mobile {
       font-size: 2.5rem;
-      line-height: 4rem;
-      margin-bottom: 0;
+      line-height: 3.5rem;
+      // font-size: 10.25vw;
+      // line-height: 16.4vw;
+      margin-bottom: unset;
     }
 
     &:hover {
@@ -112,10 +262,24 @@
     }
   }
 
+  &__bottom {
+    padding: 0.9375rem;
+    background-color: $haiqu-light-grey;
+    border-radius: 0.9375rem;
+    width: 100%;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
   &__follow_us {
     background-color: $haiqu-light-grey;
     border-radius: 0.9375rem;
-    padding: 1.5625rem;
 
     @include tablet {
       width: 50%;
@@ -130,15 +294,15 @@
     font-family: $fraktion-semibold;
     font-size: 1.125rem;
     line-height: 1.35rem;
+
     text-transform: uppercase;
-    // margin-bottom: 4.5vh;
 
     @include tablet {
       margin-bottom: 12.3125rem;
     }
 
     @include mobile {
-      margin-bottom: 5.2dvh;
+      margin-bottom: 9.12dvh;
     }
   }
 
@@ -155,31 +319,5 @@
         color: rgba($main-font-color, 0.4);
       }
     }
-  }
-}
-
-.mob_menu {
-  display: none;
-
-  @include mobile {
-    border-radius: 0.9375rem;
-    display: flex;
-    flex-direction: column;
-    padding: 0.9375rem;
-    gap: 0.9375rem;
-  }
-
-  &__top {
-    background-color: $haiqu-light-blue;
-    height: 52.8dvh;
-    border-radius: 0.9375rem;
-    @include flexCenter;
-  }
-
-  &__bottom {
-    background-color: $haiqu-light-grey;
-    height: 35dvh;
-    border-radius: 0.9375rem;
-    @include flexCenter;
   }
 }

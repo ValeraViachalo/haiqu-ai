@@ -1,15 +1,15 @@
 @import '/src/styles/main.module.scss';
 
 .book_a_demo {
-  position: absolute;
+  position: relative;
   font-size: 2.125rem;
   line-height: 2.44375rem;
-  font-family: $fraktion-font;
+  font-family: $fraktion-semibold;
   padding: 0.3125rem 0.75rem 0.4375rem 0.75rem;
-  color: $white-color;
+  color: $main-font-color;
   border: unset;
   border-radius: 0.625rem;
-  background-color: rgba($haiqu-light-blue, 0.35);
+  background-color: rgba($haiqu-light-grey, 0.35);
   text-transform: uppercase;
   z-index: 10;
   transition: 0.3s ease;
@@ -18,5 +18,10 @@
   &:hover {
     transition: 0.3s ease;
     opacity: 0.6;
+  }
+
+  @include tablet {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
   }
 }

@@ -4,15 +4,14 @@
   font-family: $neue-montreal-font;
 
   &__container {
-    padding: $padding-horizontal;
+    padding: 4.375rem $padding-horizontal $padding-horizontal;
 
     @include mobile {
-      padding: 0.9375rem;
+      padding: $padding-horizontal $padding-mobile $padding-horizontal;
     }
   }
 
   &__top_section {
-    margin-top: $padding-horizontal;
     display: flex;
     justify-content: space-between;
     align-items: center;

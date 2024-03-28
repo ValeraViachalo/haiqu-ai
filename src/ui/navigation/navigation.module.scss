@@ -2,24 +2,51 @@
 
 .navigation {
   display: flex;
+  align-items: center;
 
-  &__burger_icon {
+  &__book_a_demo_container {
     display: none;
-    position: relative;
+    width: max-content;
+    margin-right: $padding-mobile;
 
     @include tablet {
       display: block;
-      width: 1.5625rem;
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    height: 100%;
+
+    @include tablet {
+      // background-color: $haiqu-blue;
+      @include flexCenter;
+
+      width: 3rem;
+      height: 3rem;
+
+    }
+
+    @include mobile {
+      width: 1.375rem;
       height: 1rem;
     }
+  }
 
-    @include mobile {
-      width: 1.125rem;
-      height: 0.75rem;
+  &__icon {
+    position: relative;
+
+    @include tablet {
+
+      display: block;
+      // width: 1.5625rem;
+      width: 3rem;
+      height: 1.3rem;
     }
 
     @include mobile {
-      width: 1.375rem; 
+      width: 1.375rem;
       height: 1rem;
     }
   }
@@ -61,4 +88,3 @@
     overflow: hidden;
   }
 }
-

@@ -51,12 +51,14 @@
     input {
       width: 70.4%;
       background-color: $haiqu-blue;
-      border: none;
-      border-bottom: 1px solid #fff;
       margin-right: 1.875rem;
       font-family: $fraktion-font;
       font-size: 1.25rem;
       color: $white-color;
+      outline: none;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #fff;
 
       &:focus {
         outline: none;
@@ -64,6 +66,10 @@
 
       &::placeholder {
         color: $white-color;
+      }
+
+      @include mobile {
+        margin-right: unset;
       }
     }
   }

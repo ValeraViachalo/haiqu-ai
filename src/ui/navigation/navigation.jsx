@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import MobileNavMenu from './components/mobile-nav-menu';
 import { links } from '@/src/constants';
+import BookADemo from '../book-a-demo';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +23,9 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsOpen(false);
     };
-  
+
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -32,25 +33,30 @@ const Navigation = () => {
 
   return (
     <nav className={styles.navigation}>
+      <div className={styles.navigation__book_a_demo_container}>
+        <BookADemo />
+      </div>
+
       <div
-        className={styles.navigation__burger_icon}
+        className={styles.navigation__burger}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Image
-          src={
-            isOpen
-              ? `${`/images/close.svg`}`
-              : `${`/images/burger-menu-icon.svg`}`
-          }
-          alt="burger menu icon"
-          fill
-        />
+        <div className={styles.navigation__icon}>
+          <Image
+            src={
+              isOpen
+                ? `${`/images/close.svg`}`
+                : `${`/images/burger-menu-icon.svg`}`
+            }
+            alt="burger menu icon"
+            fill
+          />
+        </div>
       </div>
 
       <MobileNavMenu
         links={links}
         isOpened={isOpen}
-        setIsOpen={setIsOpen}
       />
 
       <div className={styles.navigation__links_container}>

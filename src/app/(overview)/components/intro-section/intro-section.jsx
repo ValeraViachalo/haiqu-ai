@@ -6,28 +6,29 @@ import styles from './intro-section.module.scss';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
 import Sphere from './components/sphere';
+import { BookADemo } from '@/src/ui';
 
 const IntroSection = () => {
-  const triggerRef = useRef(null);
-  const [trigger, setTrigger] = useState(false);
+  // const triggerRef = useRef(null);
+  // const [trigger, setTrigger] = useState(false);
 
-  const handleOnEnter = () => {
-    setTrigger(true);
-  };
+  // const handleOnEnter = () => {
+  //   setTrigger(true);
+  // };
 
-  const handleOnLeave = () => {
-    setTrigger(false);
-  };
+  // const handleOnLeave = () => {
+  //   setTrigger(false);
+  // };
 
-  useGSAP(
-    () => {
-      const trigger = triggerRef.current;
+  // useGSAP(
+  //   () => {
+  //     const trigger = triggerRef.current;
 
-      trigger.addEventListener('mouseenter', handleOnEnter);
-      trigger.addEventListener('mouseleave', handleOnLeave);
-    },
-    { scope: triggerRef }
-  );
+  //     trigger.addEventListener('mouseenter', handleOnEnter);
+  //     trigger.addEventListener('mouseleave', handleOnLeave);
+  //   },
+  //   { scope: triggerRef }
+  // );
 
   return (
     <section className={styles.intro}>
@@ -36,16 +37,16 @@ const IntroSection = () => {
         Hardware
       </p>
 
-      <div
+      {/* <div
         ref={triggerRef}
         className={styles.intro__trigger_zone}
-      />
+      /> */}
 
-      <div className={styles.intro__sphere_container}>
+      {/* <div className={styles.intro__sphere_container}>
         <Sphere />
-      </div>
+      </div> */}
 
-      <div className={styles.intro__balls_container}>
+      {/* <div className={styles.intro__balls_container}>
         {balls.map((ball) => (
           <Ball
             trigger={trigger}
@@ -53,16 +54,17 @@ const IntroSection = () => {
             {...ball}
           />
         ))}
-      </div>
+      </div> */}
 
       <div className={styles.intro__video_container}>
         <video
           width="360"
           height="176"
-          autoPlay
           loop
           muted
-          controls={false}
+          autoPlay
+          webkit-playsinline="true"
+          playsInline
         >
           <source
             src="/videos/intro-video-low.mp4"
@@ -71,10 +73,14 @@ const IntroSection = () => {
         </video>
       </div>
 
-      <p className={`${styles.intro__title} ${styles.intro__title2}`}>
+      <p className={styles.intro__title2}>
         Needs Careful <br />
         Software
       </p>
+
+      <div className={styles.intro__book_a_demo_container}>
+        <BookADemo />
+      </div>
     </section>
   );
 };
