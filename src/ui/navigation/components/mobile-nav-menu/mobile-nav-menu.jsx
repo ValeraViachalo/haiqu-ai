@@ -4,7 +4,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import styles from './mobile-nav-menu.module.scss';
 
-const MobileNavMenu = ({ links, isOpened }) => {
+const MobileNavMenu = ({ links, isOpened, setIsOpen }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

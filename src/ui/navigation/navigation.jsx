@@ -10,13 +10,25 @@ import { links } from '@/src/constants';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.documentElement.style.overflow = 'hidden';
+  //   } else {
+  //     document.documentElement.style.overflow = 'unset';
+  //   }
+  // }, [isOpen]);
+
   useEffect(() => {
-    if (isOpen) {
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = 'unset';
-    }
-  }, [isOpen]);
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <nav className={styles.navigation}>
@@ -38,6 +50,7 @@ const Navigation = () => {
       <MobileNavMenu
         links={links}
         isOpened={isOpen}
+        setIsOpen={setIsOpen}
       />
 
       <div className={styles.navigation__links_container}>
