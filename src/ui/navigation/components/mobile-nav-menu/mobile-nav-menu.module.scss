@@ -8,8 +8,11 @@
   box-sizing: border-box;
   height: 100dvh;
   top: 3.875rem;
-  right: 0.9375rem;
-  left: 0.9375rem;
+  // right: 0.9375rem;
+  // left: 0.9375rem;
+
+  right: 0;
+  left: 0;
   z-index: 99999999999;
   background-color: rgba($white-color, 0.8);
 
@@ -27,6 +30,8 @@
 }
 
 .mobile_menu {
+  padding: 0 0.9375rem;
+
   @include tablet {
     display: flex;
     align-items: flex-end;
@@ -73,12 +78,14 @@
 
     @include tablet {
       margin-bottom: 11.875rem;
-      
+      margin-bottom: 2%;
+
     }
 
     @include mobile {
       margin-bottom: 2.9375rem;
-      margin-bottom: 8vh;
+      margin-bottom: 8dvh;
+      // margin-bottom: 22%;
     }
   }
 
@@ -89,7 +96,6 @@
     color: $main-font-color;
     transition: 0.3s ease;
     margin-bottom: 1.8125rem;
-
 
     @include mobile {
       font-size: 2.5rem;
@@ -137,10 +143,8 @@
       margin-bottom: 12.3125rem;
     }
 
-
     @include mobile {
-      // margin-bottom: 4rem;
-      margin-bottom: 6vh;
+      margin-bottom: 5.2dvh;
     }
   }
 
@@ -150,7 +154,6 @@
       color: rgba($main-font-color, 0.4);
       display: block;
       cursor: pointer;
-      //   margin-bottom: 1rem;
       font-size: 1.5rem;
       line-height: 2.4rem;
 
