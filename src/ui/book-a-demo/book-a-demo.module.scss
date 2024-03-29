@@ -15,13 +15,17 @@
   transition: 0.3s ease;
   cursor: pointer;
 
+  @include tablet {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+
   &:hover {
     transition: 0.3s ease;
     opacity: 0.6;
   }
 
-  @include tablet {
-    font-size: 1.25rem;
-    line-height: 1.4375rem;
+  &__light {
+    color: $white-color;
   }
 }

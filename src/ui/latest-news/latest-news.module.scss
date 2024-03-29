@@ -17,8 +17,9 @@
   @include mobile {
     width: 100%;
     min-width: unset;
-    min-height: unset;
+    min-height: 16.75rem;
     padding: $padding-mobile;
+    // aspect-ratio: 360 / 268;
   }
 
   &__dark {

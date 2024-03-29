@@ -29,11 +29,6 @@
   background-color: rgba($haiqu-light-grey, 0.35);
 }
 
-@mixin sectionTitle {
-  font-size: 5.25rem;
-  line-height: 6.09rem;
-  font-weight: 400;
-}
 
 @mixin sectionTitleMobile {
   font-size: 2.75rem;
@@ -49,5 +44,21 @@
 @mixin mobile {
   @media (max-width: 430px) {
     @content;
+  }
+}
+
+@mixin sectionTitle {
+  font-size: 5.25rem;
+  line-height: 6.09rem;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 3.375rem;
+    line-height: 3.915rem;
+  }
+
+  @include mobile {
+    font-size: 2.75rem;
+    line-height: 3.19rem;
   }
 }

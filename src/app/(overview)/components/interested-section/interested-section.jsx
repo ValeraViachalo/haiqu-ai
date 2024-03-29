@@ -1,76 +1,9 @@
 'use client';
-import { useRef } from 'react';
-import Image from 'next/image';
 import styles from './interested-section.module.scss';
 import { constants } from '@/src/constants';
 import { BookADemo } from '@/src/ui';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
 
 const InterestedSection = () => {
-  const note1 = useRef(null);
-  const note2 = useRef(null);
-  const note3 = useRef(null);
-  const note4 = useRef(null);
-  const ellipse = useRef(null);
-
-  // useGSAP(() => {
-  //   gsap.to(note1.current, {
-  //     x: '-150%',
-  //     y: '-500%',
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-
-  //   gsap.to(note2.current, {
-  //     x: '50%',
-  //     y: '-400%',
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-
-  //   gsap.to(note3.current, {
-  //     x: '-550%',
-  //     y: '-50%',
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-
-  //   gsap.to(note4.current, {
-  //     x: '-40%',
-  //     y: '200%',
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-
-  //   gsap.to('.ellipse', {
-  //     y: '-8rem',
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-
-  //   gsap.to('.ellipse_first', {
-  //     y: '-8rem',
-  //     opacity: 0.3,
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-
-  //   gsap.to('.ellipse_last', {
-  //     y: '-8rem',
-  //     opacity: 0.95,
-  //     yoyo: true,
-  //     repeat: -1,
-  //     duration: 10,
-  //   });
-  // }, []);
-
   return (
     <section className={styles.interested_section}>
       <p className={styles.interested_section__title}>
@@ -78,7 +11,7 @@ const InterestedSection = () => {
       </p>
 
       <div className={styles.interested_section__book_button}>
-        <BookADemo />
+        <BookADemo light />
       </div>
 
       <div className={styles.interested_section__video_container}>

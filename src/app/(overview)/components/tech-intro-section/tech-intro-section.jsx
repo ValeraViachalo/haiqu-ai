@@ -135,6 +135,7 @@ const TechIntroSection = () => {
       line.current,
       {
         height: isNotMobile ? '14.9375rem' : '7rem',
+        height: isNotMobile ? '9rem' : '7rem',
         transformOrigin: 'top center',
       },
       '<'
@@ -145,6 +146,7 @@ const TechIntroSection = () => {
       {
         scale: 1,
         transformOrigin: 'top center',
+        duration:2,
         onComplete: () => setScaled(true),
         onReverseComplete: () => setScaled(false),
       },

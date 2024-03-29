@@ -120,7 +120,7 @@
     flex-direction: column;
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     position: relative;
-    top: -7%;
+    top: -5.8%;
     z-index: 13;
     width: 100%;
     text-align: center;
@@ -139,6 +139,7 @@
     position: relative;
     width: 1px;
     height: 8.375rem;
+    height: 4rem;
     margin-bottom: 1.25rem;
 
     @include tablet {
@@ -187,6 +188,8 @@
   }
 
   &__dc {
+    position: relative;
+    // top: -6rem;
     @include flexCenter;
     flex-direction: column;
     padding-bottom: 12.1875rem;

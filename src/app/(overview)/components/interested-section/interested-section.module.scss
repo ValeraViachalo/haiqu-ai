@@ -27,8 +27,6 @@
 
     @include tablet {
       display: block;
-      font-size: 3.375rem;
-      line-height: 3.915rem;
       top: 10.9375rem;
     }
 
@@ -40,10 +38,21 @@
   &__book_button {
     position: relative;
     top: 30.5rem;
+    display: none;
+
+    @include tablet {
+      display: block;
+      top: 16.125rem;
+    }
+
+    @include mobile {
+      top: 28.125rem;
+    }
   }
 
   &__video_container {
     position: relative;
+    top: -3rem;
 
     @include tablet {
       top: -2rem;
