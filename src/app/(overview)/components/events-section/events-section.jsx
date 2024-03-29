@@ -1,10 +1,47 @@
-import React from 'react';
+'use client';
+
+import { useRef } from 'react';
 import styles from './events-section.module.scss';
 import { constants } from '@/src/constants';
 import { hackathons, latestNews, logos, seminars } from '@/src/mockedData';
 import { Carousel, Hackathon, LatestNews, Seminar, Ticker } from '@/src/ui';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const EventsSection = () => {
+  const hackathonsRef = useRef(null);
+  const seminarsRef = useRef(null);
+
+  useGSAP(() => {
+    const mediaQuery = window.matchMedia('(min-width: 835px)');
+
+    // Функція для запуску GSAP анімацій
+    const runAnimations = () => {
+      gsap.set(hackathonsRef.current, { y: '7%' });
+      gsap.set(seminarsRef.current, { y: '6%' });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: hackathonsRef.current,
+          start: 'top 70%',
+          end: '+=300',
+          scrub: 3,
+        },
+      });
+
+      tl.to([hackathonsRef.current, seminarsRef.current], {
+        y: 0,
+      });
+    };
+
+    if (mediaQuery.matches) {
+      runAnimations();
+    }
+  }, []);
+
   return (
     <section className={styles.events_section}>
       <div className={styles.events_section__header}>
@@ -24,7 +61,9 @@ const EventsSection = () => {
 
       <div className={styles.events_section__headings}>
         <div className={styles.events_section__row}>
-          <p className={styles.events_section__row_title}>
+          <p
+            className={`${styles.events_section__row_title} ${styles.events_section__row_title__latest_news}`}
+          >
             {constants.EVENTS_SECTION_LATEST_NEWS_TITLE}
           </p>
 
@@ -43,19 +82,19 @@ const EventsSection = () => {
           </div>
 
           <div className={styles.events_section__carousel_container}>
-          <Carousel items={latestNews}>
-            {latestNews.map(({ id, title, date, photo, color, dark }) => (
-              <LatestNews
-                key={id}
-                backgroundColor={color}
-                date={date}
-                title={title}
-                photo={photo}
-                dark={dark}
-                color={color}
-              />
-            ))}
-          </Carousel>
+            <Carousel items={latestNews}>
+              {latestNews.map(({ id, title, date, photo, color, dark }) => (
+                <LatestNews
+                  key={id}
+                  backgroundColor={color}
+                  date={date}
+                  title={title}
+                  photo={photo}
+                  dark={dark}
+                  color={color}
+                />
+              ))}
+            </Carousel>
           </div>
         </div>
 
@@ -64,7 +103,10 @@ const EventsSection = () => {
             <p className={styles.events_section__row_title}>
               {constants.EVENTS_SECTION_HACKATHONS_TITLE}
             </p>
-            <div className={styles.events_section__row__hackathons}>
+            <div
+              className={styles.events_section__row__hackathons}
+              ref={hackathonsRef}
+            >
               {hackathons.map(({ id, title, date, photo }) => (
                 <Hackathon
                   key={id}
@@ -81,7 +123,10 @@ const EventsSection = () => {
               {constants.EVENTS_SECTION_SEMINARS}
             </p>
 
-            <div className={styles.events_section__row__seminars}>
+            <div
+              className={styles.events_section__row__seminars}
+              ref={seminarsRef}
+            >
               {seminars.map(({ id, photo, title, description }) => (
                 <Seminar
                   key={id}

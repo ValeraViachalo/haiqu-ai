@@ -5,9 +5,11 @@
   background-color: $main-font-color;
   padding: $padding-horizontal;
   position: relative;
+  border: 1px;
 
   @include tablet {
     flex-direction: column;
+    align-items: stretch;
   }
 
   @include mobile {
@@ -17,7 +19,7 @@
   &__info {
     width: 55%;
     color: $white-color;
-
+    position: relative;
 
 
     @include tablet {
@@ -47,7 +49,6 @@
 
   &__moto {
     @include sectionTitle;
-
     max-width: 50.5rem;
     margin-bottom: 1.875rem;
 
@@ -68,8 +69,11 @@
   &__description {
     max-width: 42.9375rem;
     font-size: 2.125rem;
+    position: sticky;
+    top: 0;
 
     @include tablet {
+      position: static;
       font-size: 1.5rem;
       line-height: 1.725rem;
       margin-bottom: 2.75rem;

@@ -27,7 +27,7 @@ const InterestedSection = () => {
           <source
             src="/videos/quant-comp-desktop.mp4"
             type="video/mp4"
-            media="(min-width: 834px)"
+            media="(min-width: 835px)"
           />
 
           <source
@@ -37,7 +37,7 @@ const InterestedSection = () => {
           />
 
           <source
-            media="(max-width: 834px)"
+            media="(max-width: 835px)"
             src="/videos/quant-comp-tablet.mp4"
             type="video/mp4"
           />

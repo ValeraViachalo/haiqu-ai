@@ -17,9 +17,8 @@
   &__chaos {
     width: 100%;
     height: 100%;
-    overflow: hidden;
     position: absolute;
-    object-fit: cover;
+    // object-fit: cover;
     top: 0;
     z-index: 11;
   }
@@ -30,8 +29,9 @@
 
     @include tablet {
       position: absolute;
-      top: -7%;
-      width: 150%;
+      // top: -6.4%;
+      top: -16%;
+      width: 180%;
     }
 
     @include mobile {
@@ -48,6 +48,11 @@
     height: 100%;
     top: 0;
     z-index: 13;
+
+    @include tablet {
+      height: 110%;
+      top: -15%;
+    }
   }
 
   &__order {
@@ -65,8 +70,8 @@
 
     @include tablet {
       position: absolute;
-      width: 150%;
-      top: -7.5%;
+      width: 180%;
+      top: -15%;
     }
 
     @include mobile {
@@ -87,16 +92,18 @@
     z-index: 15;
 
     @include tablet {
-      width: 14.013125rem;
+      width: 14rem;
       height: 7.5rem;
-      top: 13%;
+      top: 0;
+      // top: 8%;
+      // top: 4.8vw;
     }
 
     @include mobile {
       width: 7.420625rem;
       height: 3.138125rem;
       left: $padding-tablet;
-      top: 2.2dvh;
+      top: 13%;
     }
   }
 
@@ -111,15 +118,16 @@
     z-index: 14;
 
     @include tablet {
-      top: 13.5%;
-      width: 18.5rem;
-      height: 10rem;
+      width: 17.5rem;
+      height: 9.8rem;
+      top: 0;
+      // top: 4.8vw;
     }
 
     @include mobile {
-      top: 2.2dvh;
       width: 11.4375rem;
       height: 5.2475rem;
+      top: 13%;
     }
   }
 
@@ -140,7 +148,7 @@
     @include mobile {
       width: 3.25rem;
       height: 24rem;
-      top: 0;
+      top: -10%;
     }
   }
 

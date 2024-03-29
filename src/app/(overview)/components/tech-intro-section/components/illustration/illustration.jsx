@@ -14,6 +14,7 @@ const Illustration = () => {
   const order = useRef(null);
   const rectSmall = useRef(null);
   const rectBig = useRef(null);
+  const rects = useRef(null);
   const note = useRef(null);
 
   useGSAP(() => {
@@ -27,7 +28,7 @@ const Illustration = () => {
         // start: 'top 80%',
         // end: `+=${window.innerHeight}`,
         end: applyPin ? `+=${window.innerHeight}` : '+=300',
-        scrub: true,
+        scrub: 1.5,
       },
     });
 
@@ -104,7 +105,6 @@ const Illustration = () => {
         className={styles.illustration__rect_small}
         ref={rectSmall}
       />
-
       <div
         className={styles.illustration__rect_big}
         ref={rectBig}

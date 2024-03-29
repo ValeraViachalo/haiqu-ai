@@ -70,7 +70,7 @@ const TechIntroSection = () => {
         // end: `+=${window.innerHeight}`,
         end: isNotMobile ? `+=${window.innerHeight}` : '+=300',
         pin: isNotMobile,
-        scrub: true,
+        scrub: 1.5,
       },
     });
 
@@ -117,7 +117,7 @@ const TechIntroSection = () => {
         trigger: main.current,
         start: isNotMobile ? '22% top' : 'top 10%',
         end: isNotMobile ? `+=${window.innerWidth / 2}` : '+=400',
-        scrub: true,
+        scrub: 1.5,
         pin: isNotMobile,
       },
     });

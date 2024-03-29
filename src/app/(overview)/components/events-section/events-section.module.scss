@@ -1,11 +1,11 @@
 @import '/src/styles/main.module.scss';
 
 .events_section {
-  padding: $padding-horizontal;
+  padding: $padding-section $padding-horizontal 0;
   position: relative;
 
   @include mobile {
-    padding: $padding-mobile;
+    padding: $padding-section-mobile $padding-mobile 0;
   }
 
   &__header {
@@ -62,6 +62,7 @@
   }
 
   &__button {
+    width: max-content;
     padding: $padding-button;
     font-family: $fraktion-semibold;
     text-transform: uppercase;
@@ -114,10 +115,10 @@
   }
 
   &__row_unite {
+    position: relative;
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    position: relative;
+    // align-items: flex-start;
     gap: $padding-mobile;
 
     @include mobile {
@@ -161,12 +162,11 @@
     }
 
     &__hackathons {
+      // transform: translateY(3rem);
       width: 25vw;
       display: flex;
       flex-direction: column;
       padding-top: $padding-horizontal;
-      position: sticky;
-      top: 0;
       gap: 0.9375rem;
       height: 100%;
 
@@ -202,6 +202,12 @@
     @include mobile {
       font-size: 1.25rem;
       padding-bottom: $padding-mobile;
+    }
+
+    &__latest_news {
+      @include mobile {
+        display: none;
+      }
     }
   }
 }

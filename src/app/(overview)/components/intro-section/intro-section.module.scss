@@ -125,6 +125,9 @@
     position: absolute;
     bottom: $padding-horizontal;
     right: $padding-horizontal;
+    // background-color: rgba($haiqu-orange, 0.35);
+    // height: 200vh;
+    z-index: 9999999999;
 
     @include tablet {
       display: none;

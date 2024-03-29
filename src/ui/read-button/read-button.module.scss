@@ -1,6 +1,7 @@
 @import '/src/styles/main.module.scss';
 
 .read_button {
+  width: max-content;
   position: absolute;
   top: $padding-horizontal;
   right: $padding-horizontal;
