@@ -4,7 +4,7 @@
   font-family: $neue-montreal-font;
 
   &__container {
-    padding: 4.375rem $padding-horizontal $padding-horizontal;
+    padding: $padding-horizontal $padding-horizontal $padding-horizontal;
 
     @include mobile {
       padding: $padding-horizontal $padding-mobile $padding-horizontal;
