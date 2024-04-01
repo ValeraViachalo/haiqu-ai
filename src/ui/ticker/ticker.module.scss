@@ -33,8 +33,9 @@
   &__container {
     background-color: rgba($haiqu-light-grey, 0.35);
     width: 40%;
-    height: auto;
+    height: 7rem;
     display: flex;
+    align-items: center;
     border-radius: 0.95rem;
     overflow: hidden;
     text-align: center;
