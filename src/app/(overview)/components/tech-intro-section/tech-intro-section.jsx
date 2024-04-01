@@ -147,7 +147,7 @@ const TechIntroSection = () => {
         scale: 1,
         transformOrigin: 'top center',
         duration:2,
-        onComplete: () => setScaled(true),
+        onUpdate: () => setScaled(true),
         onReverseComplete: () => setScaled(false),
       },
       '<'
