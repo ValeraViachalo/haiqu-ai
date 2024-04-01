@@ -42,11 +42,13 @@
 
     @include tablet {
       width: 66%;
+      height: 4.171875rem;
     }
 
     @include mobile {
       width: 100%;
       border-radius: 0.375rem;
+      height: 3.5rem;
     }
   }
 
