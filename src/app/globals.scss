@@ -26,3 +26,13 @@ body {
   }
 }
 
+.book_a_demo_container {
+  position: fixed;
+  bottom: 1.875rem;
+  right: 1.875rem;
+  z-index: 9999999999;
+
+  @media (max-width: 834px) {
+    display: none;
+  }
+}

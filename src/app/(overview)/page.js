@@ -7,6 +7,7 @@ import {
   PartnersSection,
   TechIntroSection,
 } from './components';
+import { BookADemo } from '@/src/ui';
 
 const Home = () => {
   return (
@@ -17,6 +18,9 @@ const Home = () => {
       <CaseStudySection />
       <PartnersSection />
       <EventsSection />
+      <div className={styles.book_a_demo_container}>
+        <BookADemo />
+      </div>
     </main>
   );
 };

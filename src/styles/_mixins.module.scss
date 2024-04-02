@@ -47,6 +47,13 @@
   }
 }
 
+@mixin portrait {
+  @media (orientation: portrait) and (min-width: 834px) {
+    @content;
+  }
+}
+
+
 @mixin sectionTitle {
   font-size: 5.25rem;
   line-height: 6.09rem;

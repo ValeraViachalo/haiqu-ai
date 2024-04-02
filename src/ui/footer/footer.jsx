@@ -4,13 +4,21 @@ import DemoBookingForm from '../demo-booking-form';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      id="footer"
+    >
       <DemoBookingForm />
 
       <div className={styles.footer__container}>
         <div className={styles.footer__top_section}>
           <p>©2023 Haiqu. All rights reserved.</p>
-          <a href="tel:+16507886011" className={styles.footer__phone}>+1 650 788 6011</a>
+          <a
+            href="tel:+16507886011"
+            className={styles.footer__phone}
+          >
+            +1 650 788 6011
+          </a>
         </div>
 
         <div className={styles.footer__bottom_section}>

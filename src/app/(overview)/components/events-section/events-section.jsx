@@ -43,7 +43,7 @@ const EventsSection = () => {
   }, []);
 
   return (
-    <section className={styles.events_section}>
+    <section className={styles.events_section} id="events-section">
       <div className={styles.events_section__header}>
         <p className={styles.events_section__title}>
           {constants.EVENTS_SECTION_TITLE}

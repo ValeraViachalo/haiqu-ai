@@ -5,7 +5,7 @@ import { BookADemo } from '@/src/ui';
 
 const InterestedSection = () => {
   return (
-    <section className={styles.interested_section}>
+    <section className={styles.interested_section} id="interested-section">
       <p className={styles.interested_section__title}>
         {constants.INTERESTED_SECTION_TITLE}
       </p>

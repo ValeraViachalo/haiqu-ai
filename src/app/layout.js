@@ -1,7 +1,7 @@
 import styles from './globals.scss';
 import { siteConfig } from '../constants';
 import { fraktionMono, neueMontreal, fraktionSemibold } from '../fonts';
-import { Footer, Header } from '../ui';
+import { BookADemo, Footer, Header } from '../ui';
 
 export const metadata = {
   title: siteConfig.name,

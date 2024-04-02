@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 const Ticker = ({logos = [], title, dark}) => {
   return (
-    <section className={styles.ticker}>
+    <section className={styles.ticker} id="case-study-section">
       <p className={classNames(styles.ticker__title, {
         [styles.ticker__title__dark]: dark,
       })}>{title}</p>
