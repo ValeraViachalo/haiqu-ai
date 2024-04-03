@@ -5,7 +5,7 @@ export const constants = {
   CASE_STUDY_SECTION_TITLE: 'Case study',
   CASE_STUDY_SECTION_MOTO: 'Deeper Circuits, Broader Applications',
   CASE_STUDY_SECTION_DESCRIPTION:
-    'We enable quantum subroutines and applications that have been years away for years. See what others are doing on real hardware across verticals with our technology.',
+    'We enable quantum subroutines thought to be years away, bringing useful applications years forward. See what others are doing across verticals with our technology.',
   EVENTS_SECTION_TITLE: 'Our Events and Updates',
   EVENTS_SECTION_DESCRIPTION:
     'Get early access to our technology at these events',
@@ -17,5 +17,4 @@ export const constants = {
   TICKER_TITLE_PARTNERS_ADOPTERS: 'Early adopters & partners',
   SEMINAR__BUTTON: 'get invited to webinar',
   INTERESTED_SECTION_TITLE: 'Interested?',
-
 };

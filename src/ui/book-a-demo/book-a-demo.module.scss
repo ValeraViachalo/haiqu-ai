@@ -9,7 +9,7 @@
   color: $main-font-color;
   border: unset;
   border-radius: 0.625rem;
-  background-color:  $haiqu-header-bg;
+  background-color: $haiqu-header-bg;
   text-transform: uppercase;
   z-index: 10;
   transition: 0.3s ease;
@@ -27,9 +27,6 @@
 
   &__light {
     color: $white-color;
+    background-color: rgba($haiqu-light-grey, 0.35);
   }
-
-  // &__grey {
-  //   background-color: rgba(255, 255, 255, 0.503);
-  // }
 }

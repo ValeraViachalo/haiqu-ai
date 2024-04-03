@@ -9,11 +9,11 @@ const BookADemo = ({ light }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      // Перевіряємо, чи ширина вікна менше 430px
+
       if (window.matchMedia('(max-width: 430px)').matches) {
-        setIsVisible(true); // Якщо так, завжди показуємо кнопку
+        setIsVisible(true);
       } else {
-        // В іншому випадку, застосовуємо логіку IntersectionObserver
+
         const observer = new IntersectionObserver(
           ([entry]) => {
             setIsVisible(!entry.isIntersecting);
@@ -37,11 +37,9 @@ const BookADemo = ({ light }) => {
       }
     };
 
-    // Виконуємо перевірку при ініціалізації та підписуємося на події зміни розміру
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    // Прибирання за собою
     return () => {
       window.removeEventListener('resize', handleResize);
     };

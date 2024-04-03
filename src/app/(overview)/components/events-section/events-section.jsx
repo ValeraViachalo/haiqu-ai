@@ -18,7 +18,6 @@ const EventsSection = () => {
   useGSAP(() => {
     const mediaQuery = window.matchMedia('(min-width: 835px)');
 
-    // Функція для запуску GSAP анімацій
     const runAnimations = () => {
       gsap.set(hackathonsRef.current, { y: '7%' });
       gsap.set(seminarsRef.current, { y: '6%' });
@@ -60,7 +59,8 @@ const EventsSection = () => {
       </div>
 
       <div className={styles.events_section__headings}>
-        <div className={styles.events_section__row}>
+      <div className={styles.events_section__row_single}>
+      <div className={styles.events_section__row}>
           <p
             className={`${styles.events_section__row_title} ${styles.events_section__row_title__latest_news}`}
           >
@@ -97,6 +97,8 @@ const EventsSection = () => {
             </Carousel>
           </div>
         </div>
+      </div>
+
 
         <div className={styles.events_section__row_unite}>
           <div className={styles.events_section__row}>

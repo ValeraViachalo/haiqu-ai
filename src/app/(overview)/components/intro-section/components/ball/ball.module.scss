@@ -1,36 +1,40 @@
 @import '/src/styles/main.module.scss';
 
 .ball {
-    position: absolute;
-    display: inline-block;
-    width: 15.5rem;
-    height: 15.5rem;
-    width: 14.5rem;
-    height: 14.5rem;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    opacity: 0;
+  position: absolute;
+  display: inline-block;
+  width: 15.5rem;
+  height: 15.5rem;
+  width: 14.5rem;
+  height: 14.5rem;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
-    @include tablet {
-      width: 8.3125rem;
-      height: 8.3125rem;
-    }
-  
-    &__gradient {
-      background-image: url('./assets/ball-gradient.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
-  
-    &__fill {
-      background-image: url('./assets/ball-filled.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
-  
-    img {
-      width: 100%;
-      height: 100%s;
-    }
+  @include tablet {
+    display: none;
+    width: 8.3125rem;
+    height: 8.3125rem;
   }
+
+  @include mobile {
+    display: none;
+  }
+
+  &__gradient {
+    background-image: url('./assets/ball-gradient.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__fill {
+    background-image: url('./assets/ball-filled.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  img {
+    width: 100%;
+    height: 100%s;
+  }
+}

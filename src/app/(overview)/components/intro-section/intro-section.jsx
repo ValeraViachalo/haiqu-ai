@@ -5,8 +5,6 @@ import { useRef, useState, useEffect } from 'react';
 import styles from './intro-section.module.scss';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
-import Sphere from './components/sphere';
-import { BookADemo } from '@/src/ui';
 import gsap from 'gsap';
 import Image from 'next/image';
 
@@ -15,6 +13,7 @@ const IntroSection = () => {
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
   const sphereRef = useRef(null);
+  const ballsContainer = useRef(null);
 
   const [trigger, setTrigger] = useState(false);
   const [ballTrigger, setBallTrigger] = useState(false);
@@ -39,18 +38,15 @@ const IntroSection = () => {
     { scope: triggerRef }
   );
 
-  const transitionDuration = 0.4;
-
   useEffect(() => {
     if (ballTrigger) {
-      // Animate to full transparency when trigger is true
       gsap.to(videoContainerRef.current, {
         opacity: 0,
-        duration: transitionDuration,
+        duration: 0,
       });
-      gsap.to(sphereRef.current, { opacity: 1, duration: transitionDuration });
+      gsap.to(sphereRef.current, { opacity: 1, duration: 0.2 });
+      gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
     } else {
-      // Animate back to full opacity when trigger is false
       gsap.to(videoContainerRef.current, {
         opacity: 1,
         duration: 0.2,
@@ -59,27 +55,14 @@ const IntroSection = () => {
       gsap.to(sphereRef.current, {
         opacity: 0,
         duration: 0.1,
-
+      });
+      gsap.to(ballsContainer.current, {
+        opacity: 0,
+        duration: 0,
+        delay: 0.2,
       });
     }
   }, [ballTrigger]);
-
-  // useEffect(() => {
-  //   const video = videoRef.current;
-  //   if (!video) return;
-
-  //   if (trigger) {
-  //     // Якщо trigger true, паузити відео
-  //     video.pause();
-  //   } else {
-  //     // Інакше, якщо trigger false, продовжити відтворення відео
-  //     if (video.paused) {
-  //       video.play();
-  //     }
-  //   }
-  // }, [trigger]);
-
-  // useEffect(() => {
   //   const video = videoRef.current;
   //   if (!video) return;
 
@@ -114,60 +97,10 @@ const IntroSection = () => {
   //       cancelAnimationFrame(animationFrameId);
   //     }
   //   };
-  // }, [trigger]);
-
-  // useEffect(() => {
-  //   const video = videoRef.current;
-  //   if (!video || video.readyState < 1) {
-  //     // Виходимо, якщо відео не завантажено або ref не ініціалізовано
-  //     return;
-  //   }
-
-  //   let animationFrameId;
-
-  //   const checkAndPauseAtMiddle = () => {
-  //     if (!video) return;
-
-  //     const middleTime = video.duration / 2;
-  //     if (video.currentTime >= middleTime) {
-  //       video.pause();
-  //       setBallTrigger(true);
-  //       if (animationFrameId) {
-  //         cancelAnimationFrame(animationFrameId); // Зупиняємо перевірку, якщо досягли середини
-  //       }
-  //     } else {
-  //       // Планування наступної перевірки
-  //       animationFrameId = requestAnimationFrame(checkAndPauseAtMiddle);
-  //     }
-  //   };
-
-  //   if (trigger) {
-  //     if (video.paused) {
-  //       video.play();
-  //       // Відновлюємо відтворення, якщо на паузі
-  //     }
-  //     checkAndPauseAtMiddle(); // Розпочинаємо моніторинг досягнення середини
-  //   } else {
-  //     if (animationFrameId) {
-  //       cancelAnimationFrame(animationFrameId); // Скасовуємо перевірку, якщо trigger стає false
-  //     }
-  //     if (video.paused) {
-  //       video.play();
-  //       setBallTrigger(false); // Відновлюємо відтворення, якщо було на паузі
-  //     }
-  //   }
-
-  //   return () => {
-  //     if (animationFrameId) {
-  //       cancelAnimationFrame(animationFrameId); // Очищення при демонтажі компонента
-  //     }
-  //   };
-  // }, [trigger]);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video || video.readyState < 1) {
-      // Виходимо, якщо відео не завантажено або ref не ініціалізовано
       return;
     }
 
@@ -181,39 +114,46 @@ const IntroSection = () => {
         video.pause();
         setBallTrigger(true);
         if (animationFrameId) {
-          cancelAnimationFrame(animationFrameId); // Зупиняємо перевірку, якщо досягли середини
+          cancelAnimationFrame(animationFrameId);
         }
       } else {
-        // Планування наступної перевірки
         animationFrameId = requestAnimationFrame(checkAndPauseAtMiddle);
       }
     };
 
     if (trigger) {
-      video.playbackRate = 4; // Збільшуємо швидкість відтворення, наприклад, у 2 рази
+      video.playbackRate = 4;
       if (video.paused) {
-        video.play()
+        video.play();
       }
-      checkAndPauseAtMiddle(); // Розпочинаємо моніторинг досягнення середини
+      checkAndPauseAtMiddle();
     } else {
-      video.playbackRate = 1; // Відновлюємо нормальну швидкість відтворення
+      video.playbackRate = 1;
       if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId); // Скасовуємо перевірку, якщо trigger стає false
+        cancelAnimationFrame(animationFrameId);
       }
       if (video.paused) {
         video.play();
-        setBallTrigger(false); // Відновлюємо відтворення, якщо було на паузі
+        setBallTrigger(false);
+        video.playbackRate = 2;
       }
     }
 
+    const handleVideoEnd = () => {
+      video.playbackRate = 1;
+      video.currentTime = 0;
+      video.play();
+    };
+
+    video.addEventListener('ended', handleVideoEnd);
+
     return () => {
+      video.removeEventListener('ended', handleVideoEnd);
       if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId); // Очищення при демонтажі компонента
+        cancelAnimationFrame(animationFrameId);
       }
     };
   }, [trigger]);
-
-  
 
   return (
     <section className={styles.intro}>
@@ -236,10 +176,14 @@ const IntroSection = () => {
             src="/images/sphere.svg"
             alt="sphere"
             fill
+            className={styles.intro__sphere_svg}
           />
         </div>
 
-        <div className={styles.intro__balls_container}>
+        <div
+          className={styles.intro__balls_container}
+          ref={ballsContainer}
+        >
           {balls.map((ball) => (
             <Ball
               // trigger={trigger}
@@ -257,7 +201,7 @@ const IntroSection = () => {
           <video
             width="360"
             height="176"
-            loop
+            // loop
             muted
             autoPlay
             webkit-playsinline="true"
@@ -265,7 +209,7 @@ const IntroSection = () => {
             ref={videoRef}
           >
             <source
-              src="/videos/intro-video-low.mp4"
+              src="/videos/intro-video-new.mp4"
               type="video/mp4"
             />
           </video>
@@ -276,10 +220,6 @@ const IntroSection = () => {
         Needs Careful <br />
         Software
       </p>
-
-      {/* <div className={styles.intro__book_a_demo_container}>
-        <BookADemo />
-      </div> */}
     </section>
   );
 };

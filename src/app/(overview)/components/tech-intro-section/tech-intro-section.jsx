@@ -146,7 +146,7 @@ const TechIntroSection = () => {
       {
         scale: 1,
         transformOrigin: 'top center',
-        duration:2,
+        duration: 2,
         onUpdate: () => setScaled(true),
         onReverseComplete: () => setScaled(false),
       },
@@ -219,13 +219,14 @@ const TechIntroSection = () => {
       <div className={styles.tech_intro__dc}>
         <p className={styles.tech_intro__dc_title}>Deeper circuits</p>
         <p className={styles.tech_intro__dc_description_top}>
-          Running any circuit on a noisy device is an approximation — at least
-          approximate it well.
+          Executing algorithms on a quantum device is fundamentally an
+          approximate process, which is especially difficult to control in the
+          presence of noise.
         </p>
         <p className={styles.tech_intro__dc_description_bottom}>
-          Our middleware uses noise-mitigation and approximate execution to
-          maximize the capabilities of current QPUs. Run 100x deeper circuits
-          automatically with Haiqu.
+          Our middleware embraces approximation by design to maximize the
+          capabilities of current QPUs. Run up to 100X deeper circuits with
+          Haiqu.
         </p>
 
         <button className={styles.tech_intro__learn_more}>learn more</button>

@@ -35,7 +35,6 @@ const Ball = ({
     if (ballRef.current) {
       ballRef.current.style.top = trigger ? `${yTransform}%` : `${yPercent}%`;
       ballRef.current.style.left = trigger ? `${xTransform}%` : `${xPercent}%`;
-      ballRef.current.style.opacity = trigger ? 1 : 0;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trigger]);
