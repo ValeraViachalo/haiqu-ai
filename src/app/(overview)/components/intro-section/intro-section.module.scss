@@ -73,8 +73,13 @@
   &__video_container {
     position: absolute;
     top: 3vh;
-    left: 17rem;
-    width: 74%;
+    // left: 17rem;
+    left: 8vw;
+    width: 74% ;
+    width: 74vw;
+    height: 63vh;
+    width: 81vw;
+    height: 70vh;
 
     @include tablet {
       display: block;
@@ -91,11 +96,13 @@
 
   &__sphere_container {
     position: absolute;
-    aspect-ratio: 1416 / 689;
-    width: 71%;
-    top: 10%;
-    left: 2.5%;
-    left: 15.66%;
+    // width: 82vw;
+    // height: 52.1vh;
+    width: 87vw;
+    height: 57.92vh;
+    top: 9vh;
+
+    left: 5.03vw;
     z-index: 10000;
     opacity: 0;
 
@@ -119,15 +126,17 @@
   }
 
   &__balls_container {
+    display: inline-block;
     position: relative;
     z-index: 10000;
-    min-width: 100%;
-    top: 4%;
-    left: 2%;
-    min-height: 100%;
-    display: inline-block;
+    width: 94vw;
+    top: 5vh;
+    // left: 2vw;
+    height: 78vh;
+
     z-index: 99999;
     opacity: 0;
+    // background-color: rgba(chartreuse, 0.3);
 
     @include tablet {
       display: none;

@@ -22,7 +22,7 @@
     height: max-content;
     position: sticky;
     top: 0;
-
+    padding-top: $padding-horizontal;
 
     @include tablet {
       width: 65%;
@@ -89,6 +89,7 @@
   }
 
   &__carousel_container {
+    padding-top: $padding-horizontal;
     display: none;
 
     @include tablet {
