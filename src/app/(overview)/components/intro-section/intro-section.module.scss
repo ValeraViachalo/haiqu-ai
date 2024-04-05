@@ -1,28 +1,13 @@
 @import '/src/styles/main.module.scss';
 
 .intro {
-  width: 100vw;
+  position: fixed;
+  top: 5rem;
   width: 100%;
-  position: relative;
   height: calc(100vh - 5rem);
   overflow-x: hidden;
   padding: 0 $padding-horizontal $padding-horizontal;
-
-  @include tablet {
-    height: calc(100dvh - 3.536875rem);
-    padding: 0 $padding-horizontal 0;
-  }
-
-  @include mobile {
-    padding: 0 $padding-mobile $padding-mobile;
-    height: calc(100dvh - 4.0175rem);
-    transition: height 0.5s linear;
-  }
-
-  video {
-    width: 100%;
-    height: 100%;
-  }
+  z-index: 1;
 
   &__title {
     position: relative;
@@ -43,7 +28,7 @@
     }
   }
 
-  &__title2 {
+  &__title_bottom {
     position: absolute;
     left: 50%;
     bottom: $padding-horizontal;
@@ -63,61 +48,32 @@
     }
   }
 
-  &__scene {
+  &__animation_container {
     position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__video_container {
-    position: absolute;
-    top: 3vh;
-    // left: 17rem;
-    left: 8vw;
-    width: 74% ;
-    width: 74vw;
-    height: 63vh;
-    width: 81vw;
-    height: 70vh;
+    width: 1387px;
+    height: 689px;
+    width: calc(74vw - $padding-horizontal);
+    height: 60vh;
+    top: 5vw;
+    left: 15vw;
 
     @include tablet {
-      display: block;
-      width: 94%;
-      left: 0;
-      top: 10%;
+      width: 90%;
+      top: 24vh;
+      left: 5vw;
     }
 
     @include mobile {
-      display: block;
-      top: 10%;
-    }
-  }
-
-  &__sphere_container {
-    position: absolute;
-    // width: 82vw;
-    // height: 52.1vh;
-    width: 87vw;
-    height: 57.92vh;
-    top: 9vh;
-
-    left: 5.03vw;
-    z-index: 10000;
-    opacity: 0;
-
-    @include tablet {
-      display: none;
+      top: 35%;
+      left: 5vw;
     }
   }
 
   &__trigger_zone {
     position: absolute;
-    top: 3.23%;
-    left: 13%;
-    width: 73.6vw;
+    width: 100%;
+    height: 100%;
     border-radius: 40rem;
-    height: 36vw;
     z-index: 999999999;
 
     @include tablet {
@@ -125,24 +81,59 @@
     }
   }
 
+  &__video_container {
+    width: 100%;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__sphere_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    aspect-ratio: 16 / 9;
+    background-image: url('/images/sphere.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top 5%;
+    opacity: 0;
+
+    &::after {
+      content: '';
+      background-image: url('./assets/Hn_icon.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left;
+      position: absolute;
+      display: inline-block;
+      width: 1.95rem;
+      height: 1.65rem;
+      bottom: 9.6rem;
+      right: 3.5rem;
+    }
+  }
+
   &__balls_container {
     display: inline-block;
-    position: relative;
+    position: absolute;
     z-index: 10000;
-    width: 94vw;
-    top: 5.2vh;
-    // left: 2vw;
-    height: 78vh;
-
-    z-index: 99999;
+    width: 100%;
+    top: 5vh;
+    height: 98%;
     opacity: 0;
-    // background-color: rgba(chartreuse, 0.3);
 
     @include tablet {
       display: none;
-      min-height: unset;
-      width: 100%;
-      height: 23.75rem;
+    }
+
+    @include portrait {
+      height: 50vh;
     }
   }
 }

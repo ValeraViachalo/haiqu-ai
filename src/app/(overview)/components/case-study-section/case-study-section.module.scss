@@ -6,6 +6,7 @@
   padding: $padding-horizontal;
   position: relative;
   border: 1px;
+  z-index: 2;
 
   @include tablet {
     flex-direction: column;

@@ -1,8 +1,10 @@
 @import '/src/styles/main.module.scss';
 
 .partners_section {
+    position: relative;
     background-color: $main-font-color;
     padding-bottom: 13.125rem;
+    z-index: 2;
 
     @include tablet {
         padding-bottom: 5rem;

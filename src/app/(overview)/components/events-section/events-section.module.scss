@@ -3,6 +3,8 @@
 .events_section {
   padding: $padding-section $padding-horizontal 0;
   position: relative;
+  background-color: $white-color;
+  z-index: 2;
 
   @include mobile {
     padding: $padding-section-mobile $padding-mobile 0;

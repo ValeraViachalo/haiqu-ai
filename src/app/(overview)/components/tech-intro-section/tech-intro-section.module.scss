@@ -6,6 +6,8 @@
   background-color: $haiqu-light-grey;
   position: relative;
   overflow: hidden;
+  margin-top: 100vh;
+  z-index: 2;
 
   &__process_bar {
     position: relative;

@@ -28,7 +28,7 @@ const Footer = () => {
             <a href="#">LinkedIn</a>
           </div>
 
-          <div>
+          <div className={styles.footer__terms}>
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Cookie Policy</a>

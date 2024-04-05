@@ -1,7 +1,10 @@
 @import '/src/styles/main.module.scss';
 
 .footer {
+  position: relative;
   font-family: $neue-montreal-font;
+  background-color: $white-color;
+  z-index: 2;
 
   &__container {
     padding: $padding-horizontal $padding-horizontal $padding-horizontal;
@@ -54,8 +57,6 @@
     color: $main-font-color;
     text-decoration: none;
 
-
-
     &:visited {
       color: $main-font-color;
     }
@@ -91,5 +92,9 @@
         transition: 0.3s ease;
       }
     }
+  }
+
+  &__terms {
+    visibility: hidden;
   }
 }

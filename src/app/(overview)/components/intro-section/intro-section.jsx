@@ -1,42 +1,21 @@
 'use client';
 
-import { useGSAP } from '@gsap/react';
-import { useRef, useState, useEffect } from 'react';
 import styles from './intro-section.module.scss';
+import { useRef, useState, useEffect } from 'react';
+import gsap from 'gsap';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
-import gsap from 'gsap';
-import Image from 'next/image';
 
-const IntroSection = () => {
+const IntroSectionAlt = () => {
   const triggerRef = useRef(null);
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
   const sphereRef = useRef(null);
   const ballsContainer = useRef(null);
+  const formulaRef = useRef(null);
 
   const [trigger, setTrigger] = useState(false);
   const [ballTrigger, setBallTrigger] = useState(false);
-
-  console.log('balls trig', ballTrigger);
-
-  const handleOnEnter = () => {
-    setTrigger(true);
-  };
-
-  const handleOnLeave = () => {
-    setTrigger(false);
-  };
-
-  useGSAP(
-    () => {
-      const trigger = triggerRef.current;
-
-      trigger.addEventListener('mouseenter', handleOnEnter);
-      trigger.addEventListener('mouseleave', handleOnLeave);
-    },
-    { scope: triggerRef }
-  );
 
   useEffect(() => {
     if (ballTrigger) {
@@ -44,7 +23,7 @@ const IntroSection = () => {
         opacity: 0,
         duration: 0,
       });
-      gsap.to(sphereRef.current, { opacity: 1, duration: 0.2 });
+      gsap.to(sphereRef.current, { opacity: 1, duration: 0 });
       gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
     } else {
       gsap.to(videoContainerRef.current, {
@@ -54,7 +33,8 @@ const IntroSection = () => {
       });
       gsap.to(sphereRef.current, {
         opacity: 0,
-        duration: 0.1,
+        duration: 0,
+        delay: 0.2,
       });
       gsap.to(ballsContainer.current, {
         opacity: 0,
@@ -63,40 +43,6 @@ const IntroSection = () => {
       });
     }
   }, [ballTrigger]);
-  //   const video = videoRef.current;
-  //   if (!video) return;
-
-  //   let animationFrameId;
-
-  //   const checkAndPauseAtMiddle = () => {
-  //     if (!video) return;
-
-  //     const middleTime = video.duration / 2;
-  //     if (video.currentTime >= middleTime) {
-  //       video.pause();
-  //       setBallTrigger(true);
-  //     } else {
-  //       // Планування наступної перевірки
-  //       animationFrameId = requestAnimationFrame(checkAndPauseAtMiddle);
-  //     }
-  //   };
-
-  //   if (trigger) {
-  //     // Перезапуск відео з початку для демонстрації
-  //     video.currentTime = 0;
-  //     video.play();
-  //     checkAndPauseAtMiddle();
-  //   } else {
-  //     if (animationFrameId) {
-  //       cancelAnimationFrame(animationFrameId);
-  //     }
-  //   }
-
-  //   return () => {
-  //     if (animationFrameId) {
-  //       cancelAnimationFrame(animationFrameId);
-  //     }
-  //   };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -162,46 +108,19 @@ const IntroSection = () => {
         Hardware
       </p>
 
-      <div className={styles.intro__scene}>
+      <div className={styles.intro__animation_container}>
         <div
           ref={triggerRef}
           className={styles.intro__trigger_zone}
+          onMouseEnter={() => setTrigger(true)}
+          onMouseLeave={() => setTrigger(false)}
         />
-
-        <div
-          className={styles.intro__sphere_container}
-          ref={sphereRef}
-        >
-          <Image
-            src="/images/sphere.svg"
-            alt="sphere"
-            fill
-            className={styles.intro__sphere_svg}
-          />
-        </div>
-
-        <div
-          className={styles.intro__balls_container}
-          ref={ballsContainer}
-        >
-          {balls.map((ball) => (
-            <Ball
-              // trigger={trigger}
-              trigger={ballTrigger}
-              key={ball.id}
-              {...ball}
-            />
-          ))}
-        </div>
 
         <div
           className={styles.intro__video_container}
           ref={videoContainerRef}
         >
           <video
-            width="360"
-            height="176"
-            // loop
             muted
             autoPlay
             webkit-playsinline="true"
@@ -209,14 +128,32 @@ const IntroSection = () => {
             ref={videoRef}
           >
             <source
-              src="/videos/intro-video-new.mp4"
+              src="/videos/intro-video.mp4"
               type="video/mp4"
             />
           </video>
         </div>
+
+        <div
+          className={styles.intro__sphere_container}
+          ref={sphereRef}
+        />
       </div>
 
-      <p className={styles.intro__title2}>
+      <div
+        className={styles.intro__balls_container}
+        ref={ballsContainer}
+      >
+        {balls.map((ball) => (
+          <Ball
+            trigger={ballTrigger}
+            key={ball.id}
+            {...ball}
+          />
+        ))}
+      </div>
+
+      <p className={styles.intro__title_bottom}>
         Needs Careful <br />
         Software
       </p>
@@ -224,4 +161,4 @@ const IntroSection = () => {
   );
 };
 
-export default IntroSection;
+export default IntroSectionAlt;

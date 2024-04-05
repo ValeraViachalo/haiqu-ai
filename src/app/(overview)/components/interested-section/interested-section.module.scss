@@ -6,6 +6,7 @@
   height: 68.875rem;
   padding: 0 $padding-horizontal;
   overflow: hidden;
+  z-index: 2;
 
   @include tablet {
     height: 35.3rem;
