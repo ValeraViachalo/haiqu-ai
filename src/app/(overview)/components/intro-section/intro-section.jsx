@@ -12,7 +12,6 @@ const IntroSectionAlt = () => {
   const videoContainerRef = useRef(null);
   const sphereRef = useRef(null);
   const ballsContainer = useRef(null);
-  const formulaRef = useRef(null);
 
   const [trigger, setTrigger] = useState(false);
   const [ballTrigger, setBallTrigger] = useState(false);

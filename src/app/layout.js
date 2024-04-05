@@ -2,6 +2,7 @@ import styles from './globals.scss';
 import { siteConfig } from '../constants';
 import { fraktionMono, neueMontreal, fraktionSemibold } from '../fonts';
 import { BookADemo, Footer, Header } from '../ui';
+import { ScrollProvider } from '../context/scrollProvider';
 
 export const metadata = {
   title: siteConfig.name,
@@ -22,8 +23,7 @@ export default function RootLayout({ children }) {
         <div className={styles.header_container}>
           <Header />
         </div>
-
-        {children}
+        <ScrollProvider>{children}</ScrollProvider>
         <Footer />
       </body>
     </html>
