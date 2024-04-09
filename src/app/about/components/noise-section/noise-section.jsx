@@ -10,7 +10,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const path =
-  '"M0.5 129.5L37.5 95L95.5 57.5L163.5 27L230 8L302.5 0.5L376 8L444 27L493 45.5L532 68L571 95L609.5 129.5';
+  'M0.5 129.5L37.5 95L95.5 57.5L163.5 27L230 8L302.5 0.5L376 8L444 27L493 45.5L532 68L571 95L609.5 129.5';
 
 const NoiseSection = () => {
   const noiseRef = useRef(null);
@@ -51,6 +51,7 @@ const NoiseSection = () => {
         transformOrigin: 'center',
         duration: 3,
       },
+
     );
   }, []);
 
