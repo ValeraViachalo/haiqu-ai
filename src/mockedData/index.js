@@ -5,3 +5,5 @@ export { seminars } from './seminars';
 export { testimonial } from './testimonial';
 export { caseStudy } from './caseStudy';
 export { logosLight } from './logos';
+export { team } from './team';
+export { locations } from './locations';

@@ -1,0 +1,46 @@
+@import '/src/styles/main.module.scss';
+
+.illustration {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: url('/images/about-page/intro-bubbles-bg.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  width: 25.875rem;
+  height: 42.25rem;
+  height: 61.5625rem;
+
+  &__bubble {
+    position: absolute;
+    background-image: url('/images/about-page/intro-bubbles.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 17.25rem;
+    top: 6.4375rem;
+    z-index: 2;
+
+    &:nth-child(2) {
+      top: calc(6.4375rem * 3);
+      z-index: 3;
+    }
+  
+    &:nth-child(3) {
+      top: calc(6.4375rem * 5);
+      z-index: 4;
+    }
+  }
+
+  &__bubble_last {
+    position: absolute;
+    background-image: url('/images/about-page/intro-bubbles-last.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 36.203125rem;
+    z-index: 5;
+    top: calc(6.4375rem * 7);
+  }
+}

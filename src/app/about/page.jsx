@@ -1,8 +1,26 @@
-import { PageWrapper } from '@/src/ui';
-import React from 'react';
+import styles from './page.module.scss';
+import {
+  GrowingSection,
+  IntroSection,
+  LabSection,
+  LocationsSection,
+  NoiseSection,
+  TeamSection,
+  WeAreSection,
+} from './components';
 
 const About = () => {
-  return <PageWrapper>🪄 this will be about page</PageWrapper>;
+  return (
+    <main className={styles.about}>
+      <IntroSection />
+      <NoiseSection />
+      <LabSection />
+      <TeamSection />
+      <WeAreSection />
+      <GrowingSection />
+      <LocationsSection />
+    </main>
+  );
 };
 
 export default About;

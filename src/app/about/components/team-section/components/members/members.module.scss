@@ -1,0 +1,120 @@
+@import '/src/styles/main.module.scss';
+
+.members {
+  width: 100%;
+  display: flex;
+  gap: $padding-mobile;
+  position: relative;
+
+  &__info {
+    padding-top: $padding-horizontal;
+    display: flex;
+    gap: $padding-mobile;
+    height: 12.5rem;
+    overflow-y: hidden;
+    transition: height 0.3s ease;
+
+    &__opened {
+      height: 30.875rem;
+      transition: height 0.3s ease;
+    }
+  }
+
+  &__details {
+    width: 57.625rem;
+    border-top: 1px solid $main-font-color;
+  }
+
+  &__name {
+    font-size: 10rem;
+    font-weight: 116%;
+    color: rgba($main-font-color, 0.35);
+    transition: 0.3s ease;
+
+    &__opened {
+      color: $main-font-color;
+      transition: 0.3s ease;
+    }
+  }
+
+  &__description {
+    font-size: 1.625rem;
+    width: 42.125rem;
+    margin-bottom: 3.75rem;
+  }
+
+  &__icons {
+    position: relative;
+    width: 100%;
+    height: 7rem;
+  }
+
+  &__role_container {
+    position: relative;
+    padding-top: $padding-mobile;
+    width: 28.3125rem;
+    font-size: 1.625rem;
+    border-top: 1px solid $main-font-color;
+    color: rgba($main-font-color, 0.35);
+    transition: 0.3s ease;
+
+    &__opened {
+      color: $main-font-color;
+      transition: 0.3s ease;
+    }
+  }
+
+  &__role {
+    position: absolute;
+    left: 0;
+    transition: 0.3s ease;
+
+    &__opened {
+      color: $main-font-color;
+      transition: 0.3s ease;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 20rem;
+    height: 25.375rem;
+    top: 12.5rem;
+    right: 4.5rem;
+    z-index: 20;
+
+    img {
+      border-radius: 0.9375rem;
+      filter: grayscale(100%);
+    }
+  }
+
+  &__spot {
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    width: 10.625rem;
+    height: 6.6875rem;
+    background-image: url('/images/about-page/members-spot.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 222;
+  }
+
+  &__video_container {
+    position: relative;
+    width: 28.375rem;
+    height: 50.375rem;
+
+    video {
+      position: absolute;
+      border-radius: 0.625rem;
+      top: 0;
+      right: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '/src/styles/main.module.scss';
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $haiqu-header-bg;
+  padding: 4.375rem 0 6.8125rem 0;
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1.25rem;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $haiqu-light-grey;
+    }
+
+    &::before {
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+    }
+
+    &::after {
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1px;
+    }
+  }
+
+  &__title {
+    @include sectionTitle;
+    margin-bottom: $padding-horizontal;
+  }
+}

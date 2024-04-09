@@ -1,0 +1,60 @@
+@import '/src/styles/main.module.scss';
+
+.noise {
+  position: absolute;
+  background-color: $haiqu-light-grey;
+  width: 100vw;
+  height: 190vh;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    width: 55.5rem;
+    padding-top: 16.875rem;
+    text-align: center;
+    margin-bottom: 13.125rem;
+
+    @include sectionTitle;
+  }
+
+  &__text {
+    text-align: center;
+    width: 38.75rem;
+    font-size: 2.125rem;
+    line-height: 115%;
+    margin-bottom: 6.875rem;
+  }
+
+  &__union {
+    position: relative;
+    width: 38.04375rem;
+    height: 7.87rem;
+    background-image: url('/images/about-page/union.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    margin-bottom: 9.9375rem;
+  }
+
+  &__spot {
+    position: absolute;
+    width: 11.0625rem;
+    height: 11.0625rem;
+    left: -5rem;
+    top: 3rem;
+    background-image: url('/images/about-page/noise-spot.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+  }
+
+  &__description {
+    width: 38.75rem;
+    text-align: center;
+    font-size: 2.125rem;
+    line-height: 115%;
+    color: rgba($main-font-color, 0.35);
+  }
+}

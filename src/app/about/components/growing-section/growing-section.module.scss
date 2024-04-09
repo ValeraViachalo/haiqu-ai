@@ -1,0 +1,54 @@
+@import '/src/styles/main.module.scss';
+
+.growing {
+    position: relative;
+  width: 100%;
+  display: flex;
+  padding: 0 $padding-horizontal;
+
+  &__title {
+    width: 47.125rem;
+    font-size: 10rem;
+    line-height: 100%;
+    margin-top: 15.75rem;
+    margin-bottom: 13.125rem;
+  }
+
+  &__graph {
+    position: absolute;
+    left: 58rem;
+    width: 63.8125rem;
+    height: 42.5625rem;
+  }
+
+  &__button {
+    position: absolute;
+    left: $padding-horizontal;
+    bottom: 7.125rem;
+    width: max-content;
+    padding: $padding-button;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    background-color: unset;
+    border: 1px solid rgba($main-font-color, 0.35);
+    border-radius: 0.625rem;
+    transition: 0.3s ease;
+    color: $main-font-color;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+
+    @include mobile {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+
+    &:hover {
+      transition: 0.3s ease;
+      opacity: 0.6;
+    }
+
+    &:visited {
+      color: $main-font-color;
+    }
+  }
+}

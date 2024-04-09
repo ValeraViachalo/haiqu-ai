@@ -1,0 +1,58 @@
+@import '/src/styles/main.module.scss';
+
+.we_are {
+  padding: 0 $padding-horizontal;
+  color: $white-color;
+  position: relative;
+  margin-bottom: 8.4375rem;
+
+  &__content {
+    background-color: $haiqu-blue;
+    border-radius: 0.9375rem;
+    width: 100%;
+    height: 11.75rem;
+    padding: $padding-horizontal 4.375rem;
+    display: flex;
+  }
+
+  &__title {
+    font-size: 2.125rem;
+    margin-right: 9rem;
+  }
+
+  &__line {
+    position: absolute;
+    width: 107.5rem;
+    top: 50%;
+    height: 1px;
+    background-color: rgba($white-color, 0.35);
+  }
+
+  &__professions {
+    padding-top: 0.625rem;
+    display: flex;
+  }
+
+  &__profession {
+    font-size: 1.25rem;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    position: relative;
+    margin-right: 3.5rem;
+
+    &:nth-child(even) {
+      margin-top: 5.375rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: calc(0.9375rem / 2);
+      width: 0.9375rem;
+      height: 0.9375rem;
+      background-color: $white-color;
+      border-radius: 50%;
+    }
+  }
+}

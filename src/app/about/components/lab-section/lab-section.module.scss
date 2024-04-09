@@ -1,0 +1,81 @@
+@import '/src/styles/main.module.scss';
+
+.lab {
+  position: relative;
+  margin-top: 190vh;
+  width: 100%;
+  color: $white-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__bg {
+    position: absolute;
+    background-color: $main-font-color;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &__bg__gray {
+    position: absolute;
+    background-color: $white-color;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__october {
+    font-size: 1.625rem;
+    line-height: 116%;
+    margin-top: 13.6875rem;
+
+    @include tablet {
+      margin-top: 10rem;
+      font-size: 1rem;
+    }
+
+    @include mobile {
+      margin-top: 7.5rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__year {
+    font-size: 37.9375rem;
+    // margin-top: -10rem;
+
+    @include tablet {
+      font-size: 24rem;
+    }
+  }
+
+  &__creative_lab {
+    font-size: 5.25rem;
+    margin-bottom: 13.125rem;
+    margin-top: -5%;
+
+    @include tablet {
+      font-size: 3.375rem;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    width: 39.6875rem;
+    font-size: 2.125rem;
+    margin-bottom: 16.125rem;
+    line-height: 116%;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+    }
+  }
+}

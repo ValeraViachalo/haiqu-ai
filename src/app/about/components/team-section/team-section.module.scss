@@ -1,0 +1,19 @@
+@import '/src/styles/main.module.scss';
+
+.team {
+  background-color: $white-color;
+  width: 100%;
+  padding: 4.375rem $padding-horizontal 20.375rem $padding-horizontal;
+
+  &__title {
+    @include sectionTitle;
+    margin-bottom: 12.5rem;
+  }
+
+  &__members {
+    display: flex;
+    gap: $padding-mobile;
+  }
+
+  
+}
