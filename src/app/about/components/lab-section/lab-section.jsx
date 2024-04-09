@@ -53,7 +53,6 @@ const LabSection = () => {
           start: 'top top',
           end: '+=300',
           scrub: 1,
-          markers: true,
         },
       });
 
