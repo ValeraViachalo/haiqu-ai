@@ -61,13 +61,15 @@
 
   &__role {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 15.25rem;
     position: absolute;
     left: 0;
     transition: 0.3s ease;
 
     &__opened {
+
+      justify-content: flex-end;
       color: $main-font-color;
       transition: 0.3s ease;
     }
