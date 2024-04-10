@@ -2,5 +2,6 @@
 
 .about {
   position: relative;
-  overflow-x: hidden;
+
+  //не ставь тут оверфлоу, тому що це зламає стікі!
 }

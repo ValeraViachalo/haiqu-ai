@@ -1,0 +1,156 @@
+@import '/src/styles/main.module.scss';
+
+.member {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid $main-font-color;
+  position: relative;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    padding: $padding-mobile 0 2.5rem 0;
+    overflow-y: hidden;
+    transition: height 0.5s ease;
+    height: 26rem;
+
+    &__opened {
+      transition: height 0.5s ease;
+      height: 14rem;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      padding: $padding-mobile 0 2.5rem;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    overflow-y: hidden;
+
+    @include mobile {
+      height: 7.2rem;
+      transition: height 0.5s ease;
+    }
+
+    &__opened {
+      @include mobile {
+        height: 18.4rem;
+        transition: height 0.5s ease;
+      }
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: 11.1875rem;
+    height: 9.125rem;
+    margin-right: 1.25rem;
+
+    img {
+      border-radius: 0.5rem;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(100%);
+    }
+
+    @include mobile {
+      width: 22.5rem;
+      height: 18.25rem;
+      margin-right: unset;
+      margin-bottom: $padding-mobile;
+    }
+  }
+
+  &__role {
+    color: rgba($main-font-color, 0.3);
+    font-size: 1rem;
+    line-height: 116%;
+    margin-bottom: 1.9375rem;
+
+    @include mobile {
+      font-size: 1.043125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__name {
+    font-size: 6.5625rem;
+    line-height: 116%;
+    margin-bottom: $padding-mobile;
+    color: rgba($main-font-color, 0.3);
+    transition: color 0.5s ease;
+
+    @include mobile {
+      font-size: 4.375rem;
+    }
+
+    &__opened {
+      color: $main-font-color;
+      transition: color 0.5s ease;
+
+      @include mobile {
+        margin-bottom: $padding-mobile;
+      }
+    }
+  }
+
+  &__description {
+    width: 26.5625rem;
+    font-size: 1rem;
+    line-height: 116%;
+    margin-bottom: 3.75rem;
+
+    @include mobile {
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__icons {
+    position: relative;
+    width: 100%;
+    height: 4.125rem;
+
+    @include mobile {
+      height: 3.5rem;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: $padding-mobile;
+    right: $padding-mobile;
+    border: 1px solid rgba($main-font-color, 0.35);
+    border-radius: 50%;
+    width: 2.5625rem;
+    height: 2.5625rem;
+    background-image: url('/images/polygon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.6875rem 0.6875rem;
+
+    @include mobile {
+      top: 19.75rem;
+      width: 1.9375rem;
+      height: 1.9375rem;
+      background-image: url('/images/arrow.svg');
+    }
+
+    &__opened {
+      border: 1px solid $main-font-color;
+      background-image: url('/images/polygon-black.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 0.6875rem 0.6875rem;
+
+      @include mobile {
+        transform: rotate(180deg);
+        background-image: url('/images/arrow.svg');
+      }
+    }
+
+
+  }
+}

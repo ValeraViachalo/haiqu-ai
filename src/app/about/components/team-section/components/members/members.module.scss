@@ -1,77 +1,28 @@
 @import '/src/styles/main.module.scss';
 
 .members {
+  position: relative;
   width: 100%;
   display: flex;
   gap: $padding-mobile;
-  position: relative;
+  height: 86.75rem;
 
-  &__info {
-    padding-top: $padding-horizontal;
-    display: flex;
-    gap: $padding-mobile;
-    height: 12.5rem;
-    overflow-y: hidden;
-    transition: height 0.3s ease;
+  &__video_container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 28.375rem;
+    height: 50.375rem;
+    border-radius: 0.625rem;
 
-    &__opened {
-      height: 30.875rem;
-      transition: height 0.3s ease;
-    }
-  }
-
-  &__details {
-    width: 57.625rem;
-    border-top: 1px solid $main-font-color;
-  }
-
-  &__name {
-    font-size: 10rem;
-    font-weight: 116%;
-    color: rgba($main-font-color, 0.35);
-    transition: 0.3s ease;
-
-    &__opened {
-      color: $main-font-color;
-      transition: 0.3s ease;
-    }
-  }
-
-  &__description {
-    font-size: 1.625rem;
-    width: 42.125rem;
-    margin-bottom: 3.75rem;
-  }
-
-  &__icons {
-    position: relative;
-    width: 100%;
-    height: 7rem;
-  }
-
-  &__role_container {
-    position: relative;
-    padding-top: $padding-mobile;
-    width: 28.3125rem;
-    font-size: 1.625rem;
-    border-top: 1px solid $main-font-color;
-    color: rgba($main-font-color, 0.35);
-    transition: 0.3s ease;
-
-    &__opened {
-      color: $main-font-color;
-      transition: 0.3s ease;
-    }
-  }
-
-  &__role {
-    position: absolute;
-    left: 0;
-    transition: 0.3s ease;
-
-    &__opened {
-      color: $main-font-color;
-      transition: 0.3s ease;
+    video {
+      position: absolute;
+      border-radius: 0.625rem;
+      top: 0;
+      right: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
     }
   }
 
@@ -85,7 +36,7 @@
 
     img {
       border-radius: 0.9375rem;
-      filter: grayscale(100%);
+        filter: grayscale(100%);
     }
   }
 
@@ -100,21 +51,5 @@
     background-position: center;
     background-size: contain;
     z-index: 222;
-  }
-
-  &__video_container {
-    position: relative;
-    width: 28.375rem;
-    height: 50.375rem;
-
-    video {
-      position: absolute;
-      border-radius: 0.625rem;
-      top: 0;
-      right: 0;
-      left: 0;
-      object-fit: cover;
-      object-position: center center;
-    }
   }
 }

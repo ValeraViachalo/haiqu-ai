@@ -5,15 +5,20 @@
   width: 100%;
   padding: 4.375rem $padding-horizontal 20.375rem $padding-horizontal;
 
+  @include tablet {
+    padding: 5rem $padding-horizontal 11.25rem $padding-horizontal;
+  }
+
+  @include mobile {
+    padding: $padding-mobile;
+  }
+
   &__title {
     @include sectionTitle;
     margin-bottom: 12.5rem;
-  }
 
-  &__members {
-    display: flex;
-    gap: $padding-mobile;
+    @include tablet {
+      margin-bottom: 3.625rem;
+    }
   }
-
-  
 }

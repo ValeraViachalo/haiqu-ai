@@ -4,6 +4,7 @@
   position: relative;
   width: 100vw;
   height: 200vh;
+  // height: 118.125rem;
   padding-top: 2.5rem;
   display: flex;
   align-items: center;
@@ -30,6 +31,7 @@
     line-height: 21.75rem;
     position: absolute;
     top: 41rem;
+    bottom: 0;
 
     @include tablet {
       font-size: 7.8125rem;

@@ -1,0 +1,66 @@
+@import '/src/styles/main.module.scss';
+
+.we_are {
+  padding: 0 $padding-mobile;
+
+  &__content {
+    background-color: $haiqu-blue;
+    border-radius: 0.5rem;
+    padding: $padding-horizontal $padding-mobile;
+  }
+
+  &__title {
+    color: $white-color;
+    font-size: 2.125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__professions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    padding: 0.5rem 0;
+  }
+
+  &__row_shifted {
+    margin-left: 2.8125rem;
+    width: 100%;
+    display: flex;
+    padding: 0.5rem 0;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: rgba($white-color, 0.35);
+  }
+
+  &__profession_container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__profession {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    position: relative;
+    font-size: 0.875rem;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    color: $white-color;
+  }
+
+  &__dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: $white-color;
+    border-radius: 50%;
+    margin-right: 0.625rem;
+  }
+}

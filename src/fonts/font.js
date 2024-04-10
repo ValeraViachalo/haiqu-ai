@@ -19,7 +19,7 @@ export const fraktionSemibold = localFont({
 });
 
 export const neueMontreal = localFont({
-  src: './PPNeueMontreal-Book.otf',
+  src: './PPNeueMontreal-Book.woff2',
   display: 'swap',
   variable: '--neue-montreal-font',
 });

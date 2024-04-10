@@ -4,7 +4,7 @@
   @include flexCenter;
   width: 57.1875rem;
   height: 48.125rem;
-  transition: 0.3s ease;
+//   transition: 0.3s ease;
   border-radius: 0.625rem;
 
   &:hover {
@@ -15,28 +15,28 @@
 
   &__1 {
     &:hover {
-      transition: 0.3s ease;
+    //   transition: 0.3s ease;
       background-color: #cde9f7;
     }
   }
 
   &__2 {
     &:hover {
-      transition: 0.3s ease;
+    //   transition: 0.3s ease;
       background-color: #d9d9d9;
     }
   }
 
   &__3 {
     &:hover {
-      transition: 0.3s ease;
+    //   transition: 0.3s ease;
       background-color: #ffeabf;
     }
   }
 
   &__4 {
     &:hover {
-      transition: 0.3s ease;
+    //   transition: 0.3s ease;
       background-color: #f7cfc6;
     }
   }
