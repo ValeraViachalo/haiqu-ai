@@ -4,8 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   background-color: $haiqu-header-bg;
   padding: 4.375rem 0 6.8125rem 0;
+
+  @include mobile {
+    padding: 3.75rem $padding-mobile 3.75rem;
+  }
 
   &__grid {
     position: relative;
@@ -14,11 +19,24 @@
     grid-template-rows: 1fr 1fr;
     grid-gap: $padding-horizontal;
 
+    @include tablet {
+      padding: 0 $padding-horizontal;
+      width: 100%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
     &::before,
     &::after {
       content: '';
       position: absolute;
       background-color: $haiqu-light-grey;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &::before {
@@ -41,5 +59,31 @@
   &__title {
     @include sectionTitle;
     margin-bottom: $padding-horizontal;
+
+    @include tablet {
+      margin-bottom: 3.875rem;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $padding-mobile;
+  }
+
+  &__list_item {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    color: rgba($main-font-color, 0.35);
+    font-size: 1.25rem;
+    line-height: 116%;
+
+    &__selected {
+      text-decoration: underline;
+      text-underline-offset: 0.4rem;
+      color: $main-font-color;
+    }
   }
 }

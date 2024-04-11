@@ -1,10 +1,19 @@
 @import '/src/styles/main.module.scss';
 
 .growing {
-    position: relative;
+  position: relative;
   width: 100%;
   display: flex;
   padding: 0 $padding-horizontal;
+
+  @include tablet {
+    flex-direction: column;
+    padding-bottom: 7.5rem;
+  }
+
+  @include mobile {
+    padding: 0 $padding-mobile;
+  }
 
   &__title {
     width: 47.125rem;
@@ -12,6 +21,17 @@
     line-height: 100%;
     margin-top: 15.75rem;
     margin-bottom: 13.125rem;
+
+    @include tablet {
+      font-size: 6.5625rem;
+      margin-top: unset;
+      margin-bottom: 2.5rem;
+    }
+
+    @include mobile {
+      font-size: 4.375rem;
+      width: 100%;
+    }
   }
 
   &__graph {
@@ -19,6 +39,21 @@
     left: 58rem;
     width: 63.8125rem;
     height: 42.5625rem;
+
+    @include tablet {
+      position: relative;
+      left: -$padding-horizontal;
+      top: 0;
+      width: 60.8125rem;
+      height: 39.5625rem;
+    }
+
+    @include mobile {
+      width: 24.4375rem;
+      height: 25.5625rem;
+      left: -$padding-mobile;
+      margin-bottom: 10rem;
+    }
   }
 
   &__button {
@@ -37,9 +72,16 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
 
+    @include tablet {
+      position: relative;
+      bottom: unset;
+      left: unset;
+    }
+
     @include mobile {
       font-size: 1.25rem;
       line-height: 1.5rem;
+      margin-bottom: 5rem;
     }
 
     &:hover {

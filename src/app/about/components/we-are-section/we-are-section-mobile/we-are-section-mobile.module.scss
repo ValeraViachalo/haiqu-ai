@@ -1,12 +1,13 @@
 @import '/src/styles/main.module.scss';
 
 .we_are {
-  padding: 0 $padding-mobile;
+  padding: 0 $padding-mobile  7.5rem;
 
   &__content {
     background-color: $haiqu-blue;
     border-radius: 0.5rem;
     padding: $padding-horizontal $padding-mobile;
+
   }
 
   &__title {

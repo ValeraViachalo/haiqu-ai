@@ -5,8 +5,9 @@ import Image from 'next/image';
 import styles from './member-mobile.module.scss';
 import classNames from 'classnames';
 
-const MemberMobile = ({ id, name, description, role, photo }) => {
+const MemberMobile = ({ name, description, role, photo }) => {
   const [opened, setOpened] = useState(false);
+
   return (
     <div className={styles.member}>
       <div

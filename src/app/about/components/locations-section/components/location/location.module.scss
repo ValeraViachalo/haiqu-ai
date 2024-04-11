@@ -4,65 +4,112 @@
   @include flexCenter;
   width: 57.1875rem;
   height: 48.125rem;
-//   transition: 0.3s ease;
+  transition: 0.3s ease;
   border-radius: 0.625rem;
 
-  &:hover {
+  @include tablet {
+    // width: 23.5625rem;
+    width: 100%;
+    height: 29rem;
+  }
+
+  @include mobile {
+    height: 23.875rem;
+  }
+
+  &__hovered {
     flex-direction: column;
     justify-content: unset;
     padding: $padding-horizontal;
+
+    @include tablet {
+      padding: 1.25rem;
+    }
   }
 
   &__1 {
-    &:hover {
-    //   transition: 0.3s ease;
-      background-color: #cde9f7;
-    }
+    transition: 0.3s ease;
+    background-color: #cde9f7;
   }
 
   &__2 {
-    &:hover {
-    //   transition: 0.3s ease;
-      background-color: #d9d9d9;
-    }
+    transition: 0.3s ease;
+    background-color: #d9d9d9;
   }
 
   &__3 {
-    &:hover {
-    //   transition: 0.3s ease;
-      background-color: #ffeabf;
-    }
+    transition: 0.3s ease;
+    background-color: #ffeabf;
   }
 
   &__4 {
-    &:hover {
-    //   transition: 0.3s ease;
-      background-color: #f7cfc6;
+    transition: 0.3s ease;
+    background-color: #f7cfc6;
+  }
+
+  &__title {
+    display: none;
+    @include sectionTitle;
+    color: $main-font-color;
+    margin-bottom: $padding-horizontal;
+
+    @include tablet {
+      font-size: 2.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    &__hovered {
+      display: block;
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 
   &__city {
     @include sectionTitle;
     color: $haiqu-light-grey;
-    margin-bottom: $padding-horizontal;
+
+    @include tablet {
+      font-size: 2.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @include mobile {
+      display: none;
+    }
 
     &__hovered {
-      color: $main-font-color;
+      display: none;
     }
   }
 
   &__photo {
     display: none;
     margin-bottom: $padding-horizontal;
+    width: 53.4375rem;
+    height: 18.75rem;
+
+    @include tablet {
+      // width: 21.0625rem;
+      width: 100%;
+      height: 7.5625rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @include mobile {
+      height: 7.3125rem;
+      width: 100%;
+    }
 
     &__hovered {
       display: block;
       position: relative;
-      width: 53.4375rem;
-      height: 18.75rem;
 
       img {
         border-radius: 1rem;
+        object-fit: cover;
       }
     }
   }
@@ -72,19 +119,52 @@
     width: 100%;
     margin-bottom: 6.75rem;
 
+    @include tablet {
+      margin-bottom: 3.75rem;
+    }
+
     &__hovered {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        div:first-child {
+          margin-bottom: 1.25rem;
+        }
+
+        div:last-child {
+          margin-bottom: unset;
+        }
+      }
     }
   }
 
   &__info_title {
     font-size: 1.625rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    @include mobile {
+      font-size: 0.875rem;
+    }
   }
 
   &__info_content {
     font-size: 2.125rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 1.4375rem;
+    }
   }
 
   &__address {
@@ -93,8 +173,13 @@
     font-size: 1.625rem;
     align-self: flex-start;
 
+    @include tablet {
+      font-size: 1rem;
+      width: 19.4375rem;
+    }
+
     &__hovered {
-        display: block;
+      display: block;
     }
   }
 }

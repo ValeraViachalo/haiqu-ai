@@ -10,7 +10,7 @@
   }
 
   @include mobile {
-    padding: $padding-mobile;
+    padding: 3.75rem $padding-mobile 10rem;
   }
 
   &__title {

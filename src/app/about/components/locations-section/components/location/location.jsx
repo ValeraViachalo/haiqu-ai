@@ -1,22 +1,61 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import styles from './location.module.scss';
 import Image from 'next/image';
+import { useIsMobile } from '@/src/hooks';
+import { mediaQueries } from '@/src/constants';
 
 const Location = ({ city, id, photo }) => {
   const [hovered, setHovered] = useState(false);
 
+  const isTablet = useIsMobile(mediaQueries.tablet);
+
+  useEffect(() => {
+    if (isTablet) {
+      setHovered(true);
+    }
+  }, [isTablet]);
+
+  const handleMouseEnter = () => {
+    if (isTablet) {
+      setHovered(true);
+      return;
+    }
+
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (isTablet) {
+      setHovered(true);
+      return;
+    }
+
+    setHovered(false);
+  };
+
   return (
     <div
-      className={`${styles.location} ${styles[`location__${id}`]}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className={classNames(styles.location, {
+        [styles.location__hovered]: hovered,
+        [styles[`location__${id}`]]: hovered,
+      })}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
         className={classNames(styles.location__city, {
           [styles.location__city__hovered]: hovered,
+        })}
+      >
+        {city}
+      </div>
+
+      <div
+        className={classNames(styles.location__title, {
+          [styles.location__title__hovered]: hovered,
         })}
       >
         {city}
@@ -39,10 +78,15 @@ const Location = ({ city, id, photo }) => {
           [styles.location__info__hovered]: hovered,
         })}
       >
-        <p className={styles.location__info_title}>Email</p>
-        <p className={styles.location__info_title}>Phone</p>
-        <p className={styles.location__info_content}>contact@haiqu.com</p>
-        <p className={styles.location__info_content}>+34 943 371-956</p>
+        <div>
+          <p className={styles.location__info_title}>Email</p>
+          <p className={styles.location__info_content}>contact@haiqu.com</p>
+        </div>
+
+        <div>
+          <p className={styles.location__info_title}>Phone</p>
+          <p className={styles.location__info_content}>+34 943 371-956</p>
+        </div>
       </div>
 
       <p
