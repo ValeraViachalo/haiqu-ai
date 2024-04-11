@@ -16,40 +16,63 @@ const NoiseSection = () => {
   const noiseRef = useRef(null);
   const spotRef = useRef(null);
   const soonRef = useRef(null);
+  const soonBlockRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: noiseRef.current,
-        start: 'center 50%',
-        end: '+=500',
-        scrub: true,
-        // pin: true,
-        // pinSpacing: false,
-      },
-    });
+    const mm = gsap.matchMedia();
 
-    tl.to(
-      spotRef.current,
+    mm.add(
       {
-        motionPath: {
-          path: '#motionPath',
-          align: '#motionPath',
-          alignOrigin: [0.5, 0.5],
-        },
-        scale: 0.1,
-        duration: 5,
-        yoyo: false,
+        isMobile: '(max-width: 430px)',
+        isTablet: '(max-width: 834px)',
+        isDesktop: '(min-width: 834px)',
       },
-      '<'
-    );
+      (context) => {
+        const { isMobile, isTablet } = context.conditions;
 
-    tl.to(soonRef.current, {
-      y: '15.1875rem',
-      fontSize: '18.75rem',
-      transformOrigin: 'center',
-      duration: 3,
-    });
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: noiseRef.current,
+            start: 'center 50%',
+            end: '+=500',
+            scrub: true,
+            // pin: true,
+            // pinSpacing: false,
+          },
+        });
+
+        tl.to(
+          spotRef.current,
+          {
+            motionPath: {
+              path: '#motionPath',
+              align: '#motionPath',
+              alignOrigin: [0.5, 0.5],
+            },
+            scale: 0.1,
+            duration: 5,
+            yoyo: false,
+          },
+          '<'
+        );
+
+        if (!isMobile) {
+          tl.to(soonRef.current, {
+            y: isTablet ? '11.75rem' : '15.1875rem',
+            fontSize: isTablet ? '7.8125rem' : '18.75rem',
+            duration: 3,
+          });
+
+          tl.to(
+            soonBlockRef.current,
+            {
+              height: isTablet ? '20rem' : '30rem',
+            },
+            '<'
+          );
+        }
+      }
+    );
   }, []);
 
   return (
@@ -82,16 +105,20 @@ const NoiseSection = () => {
           ref={spotRef}
         />
       </div>
+
       <p className={styles.noise__description}>
         Hardware advancements will get us there eventually. We believe advanced
         software is necessary to get us there
       </p>
-      <p
-        className={styles.noise__description}
-        ref={soonRef}
-      >
-        soon.
-      </p>
+
+      <div ref={soonBlockRef}>
+        <p
+          className={styles.noise__soon}
+          ref={soonRef}
+        >
+          soon.
+        </p>
+      </div>
     </div>
   );
 };

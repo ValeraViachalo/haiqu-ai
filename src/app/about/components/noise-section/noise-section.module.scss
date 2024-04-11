@@ -1,14 +1,23 @@
 @import '/src/styles/main.module.scss';
 
 .noise {
-  position: absolute;
+  position: relative;
   background-color: $haiqu-light-grey;
   width: 100vw;
-  height: 190vh;
+  // height: 190vh;
   z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 13.125rem;
+
+  @include tablet {
+    padding-bottom: 10rem;
+  }
+
+  @include mobile {
+    padding-bottom: 5rem;
+  }
 
   &__heading {
     width: 55.5rem;
@@ -17,6 +26,19 @@
     margin-bottom: 13.125rem;
 
     @include sectionTitle;
+
+    @include tablet {
+      padding-top: 11.25rem;
+      width: 25.375rem;
+      margin-bottom: 7.5rem;
+    }
+
+    @include mobile {
+      padding-top: 8.75rem;
+      width: 20.25rem;
+      align-items: center;
+      margin-bottom: 7.5rem;
+    }
   }
 
   &__text {
@@ -25,6 +47,18 @@
     font-size: 2.125rem;
     line-height: 115%;
     margin-bottom: 6.875rem;
+
+    @include tablet {
+      width: 28.25rem;
+      font-size: 1.5rem;
+      margin-bottom: 5rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      width: 18.125rem;
+      margin-bottom: 3.75rem;
+    }
   }
 
   &__union {
@@ -36,6 +70,27 @@
     background-position: top;
     background-size: contain;
     margin-bottom: 9.9375rem;
+
+    @include tablet {
+      width: 32.25rem;
+      height: 9.875rem;
+
+      svg {
+        position: relative;
+        top: -2rem;
+      }
+
+    }
+
+    @include mobile {
+      width: 22.5rem;
+      margin-bottom: 3.75rem;
+
+      svg {
+        position: relative;
+        top: -2.5rem;
+      }
+    }
   }
 
   &__spot {
@@ -43,11 +98,26 @@
     width: 11.0625rem;
     height: 11.0625rem;
     left: -5rem;
-    top: 3rem;
+    top: 5rem;
     background-image: url('/images/about-page/noise-spot.svg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
+
+    @include tablet {
+      width: 8.125rem;
+      height: 8.125rem;
+      left: -3rem;
+      top: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    @include mobile {
+      left: -1rem;
+      top: 3rem;
+      width: 3.125rem;
+      height: 3.125rem;
+    }
   }
 
   &__description {
@@ -56,5 +126,34 @@
     font-size: 2.125rem;
     line-height: 115%;
     color: rgba($main-font-color, 0.35);
+
+    @include tablet {
+      width: 31.0625rem;
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      width: 18.125rem;
+    }
+  }
+
+  &__soon {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2.125rem;
+    line-height: 115%;
+    color: rgba($main-font-color, 0.35);
+
+    @include tablet {
+      width: 31.0625rem;
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+      width: 18.125rem;
+    }
   }
 }

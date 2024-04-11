@@ -12,7 +12,8 @@ import {
 const About = () => {
   return (
     <main className={styles.about}>
-      <IntroSection />
+      {/* <div style={{ height: '200vh', backgroundColor: 'pink' }}></div> */}
+      {/* <IntroSection /> */}
       <NoiseSection />
       <LabSection />
       <TeamSection />

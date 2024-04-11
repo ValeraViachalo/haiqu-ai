@@ -16,74 +16,53 @@ const LabSection = () => {
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
-    mm.add('(max-width: 834px)', () => {
-      console.log('match media inside!');
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: labRef.current,
-          start: 'top top',
-          end: '+=50',
-          scrub: 1,
-        },
-      });
+    mm.add(
+      {
+        isMobile: '(max-width: 430px)',
+        isTablet: '(max-width: 834px)',
+        isDesktop: '(min-width: 834px)',
+      },
+      (context) => {
+        const { isMobile, isTablet } = context.conditions;
 
-      tl.to(
-        yearRef.current,
-        {
-          fontSize: '16.875rem',
-          duration: 0.4,
-        },
-        '<'
-      );
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: labRef.current,
+            start: 'top top',
+            end: '+=150',
+            scrub: 1,
+          },
+        });
 
-      tl.to(
-        bgRef.current,
-        {
-          scaleX: 0.6,
-          transformOrigin: 'center center',
-        },
-        '<'
-      );
-    });
+        if (!isMobile) {
+          tl.to(
+            yearRef.current,
+            {
+              fontSize: isTablet ? '14.375rem' : '23.875rem',
+              duration: 0.4,
+            },
+            '<'
+          );
 
-    mm.add('(min-width: 834px', () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: labRef.current,
-          start: 'top top',
-          end: '+=300',
-          scrub: 1,
-        },
-      });
-
-      tl.to(
-        yearRef.current,
-        {
-          fontSize: '23.875rem',
-          duration: 0.4,
-        },
-        '<'
-      );
-
-      tl.to(
-        bgRef.current,
-        {
-          scaleX: 0.5,
-          transformOrigin: 'center center',
-        },
-        '<'
-      );
-    });
+          tl.to(
+            bgRef.current,
+            {
+              scaleX: 0.8,
+              transformOrigin: 'center center',
+            },
+            '<'
+          );
+        }
+      }
+    );
   }, []);
 
   return (
-    <div
+    <section
       className={styles.lab}
       ref={labRef}
     >
-      <div
-        className={styles.lab__bg__gray}
-      />
+      <div className={styles.lab__bg__gray} />
       <div
         className={styles.lab__bg}
         ref={bgRef}
@@ -104,7 +83,7 @@ const LabSection = () => {
         We combine deep expertise with creativity to deliver performance
         breakthroughs. 
       </p>
-    </div>
+    </section>
   );
 };
 
