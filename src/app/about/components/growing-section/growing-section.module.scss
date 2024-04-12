@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   padding: 0 $padding-horizontal;
+  overflow-x: hidden;
 
   @include tablet {
     flex-direction: column;

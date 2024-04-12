@@ -13,7 +13,7 @@ const About = () => {
   return (
     <main className={styles.about}>
       {/* <div style={{ height: '200vh', backgroundColor: 'pink' }}></div> */}
-      {/* <IntroSection /> */}
+      <IntroSection />
       <NoiseSection />
       <LabSection />
       <TeamSection />

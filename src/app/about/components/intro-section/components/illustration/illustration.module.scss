@@ -1,5 +1,17 @@
 @import '/src/styles/main.module.scss';
 
+.illustration__container {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .illustration {
   display: flex;
   justify-content: center;
@@ -9,8 +21,21 @@
   background-size: contain;
   background-position: bottom;
   width: 25.875rem;
-  height: 42.25rem;
   height: 61.5625rem;
+  margin-top: 5rem;
+
+  @include tablet {
+    width: 17.5625rem;
+    height: 41.9375rem;
+    margin-top: 5rem;
+  }
+
+  @include mobile {
+    width: 11.6875rem;
+    height: 27.875rem;
+    margin-top: unset;
+    margin-bottom: 2.875rem;
+  }
 
   &__bubble {
     position: absolute;
@@ -22,19 +47,44 @@
     top: 6.4375rem;
     z-index: 2;
 
+    @include tablet {
+      top: 4.26125rem;
+    }
+
+    @include mobile {
+      top: 0;
+    }
+
     &:nth-child(2) {
       top: calc(6.4375rem * 3);
       z-index: 3;
+
+      @include tablet {
+        top: calc(4.26125rem * 3);
+      }
+
+      @include mobile {
+        top: 2.8125rem;
+      }
     }
-  
+
     &:nth-child(3) {
       top: calc(6.4375rem * 5);
       z-index: 4;
+
+      @include tablet {
+        top: calc(4.26125rem * 5);
+      }
+
+      @include mobile {
+        top: calc(2.8125rem * 2);
+      }
     }
   }
 
   &__bubble_last {
     position: absolute;
+    top: 0;
     background-image: url('/images/about-page/intro-bubbles-last.svg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -42,5 +92,99 @@
     height: 36.203125rem;
     z-index: 5;
     top: calc(6.4375rem * 7);
+
+    @include tablet {
+      top: calc(4.26125rem * 7);
+    }
+
+    @include mobile {
+      height: 16.375rem;
+      top: calc(2.8125rem * 3);
+    }
+  }
+
+  &__info_dots_container {
+    position: absolute;
+    width: 100%;
+    height: 40.5625rem;
+    padding: 0 $padding-mobile;
+
+    @include mobile {
+      position: relative;
+      display: flex;
+      overflow-x: scroll;
+      margin-bottom: 7.5rem;
+      height: max-content;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__info_dot {
+    position: absolute;
+    display: flex;
+    width: 15.625rem;
+    margin-right: 9.375rem;
+
+    @include mobile {
+      position: static;
+    }
+
+    &__1 {
+      top: 36rem;
+      left: 15.3125rem;
+
+      @include tablet {
+        top: 21.125rem;
+        left: 2.8125rem;
+      }
+    }
+
+    &__2 {
+      top: 30.625rem;
+      left: 74.125rem;
+
+      @include tablet {
+        top: 19.25rem;
+        left: 37.8125rem;
+      }
+    }
+
+    &__3 {
+      top: 50.625rem;
+      left: 79.125rem;
+
+      @include tablet {
+        top: 36rem;
+        left: 37.8125rem;
+      }
+    }
+  }
+
+  &__dot {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 50%;
+    background-color: $main-font-color;
+
+    @include mobile {
+      width: 0.634375rem;
+      height: 0.634375rem;
+    }
+  }
+
+  &__info {
+    width: 15.625rem;
+    text-transform: uppercase;
+    font-family: $fraktion-semibold;
+    padding: 1.25rem 0 0 0.9379rem;
+
+    @include mobile {
+      font-size: 0.875rem;
+      width: 7.5rem;
+      padding: 0.75rem 0 0 0.625rem;
+    }
   }
 }

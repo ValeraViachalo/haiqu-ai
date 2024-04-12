@@ -19,6 +19,7 @@ const NoiseSection = () => {
   const soonBlockRef = useRef(null);
 
   useGSAP(() => {
+    ScrollTrigger.normalizeScroll(true);
     const mm = gsap.matchMedia();
 
     mm.add(
@@ -36,8 +37,6 @@ const NoiseSection = () => {
             start: 'center 50%',
             end: '+=500',
             scrub: true,
-            // pin: true,
-            // pinSpacing: false,
           },
         });
 
@@ -60,19 +59,22 @@ const NoiseSection = () => {
           tl.to(soonRef.current, {
             y: isTablet ? '11.75rem' : '15.1875rem',
             fontSize: isTablet ? '7.8125rem' : '18.75rem',
-            duration: 3,
+            duration: 5,
           });
 
           tl.to(
             soonBlockRef.current,
             {
               height: isTablet ? '20rem' : '30rem',
+              duration: 5,
             },
             '<'
           );
         }
       }
     );
+
+    ScrollTrigger.normalizeScroll(false);
   }, []);
 
   return (

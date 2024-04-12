@@ -14,6 +14,8 @@ const LabSection = () => {
   const bgRef = useRef(null);
 
   useGSAP(() => {
+    ScrollTrigger.normalizeScroll(true);
+
     const mm = gsap.matchMedia();
 
     mm.add(
@@ -55,6 +57,8 @@ const LabSection = () => {
         }
       }
     );
+
+    ScrollTrigger.normalizeScroll(false);
   }, []);
 
   return (
