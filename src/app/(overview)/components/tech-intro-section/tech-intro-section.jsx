@@ -68,9 +68,9 @@ const TechIntroSection = () => {
         // start: 'top top',
         start: !isNotMobile ? 'top 40%' : 'top top',
         // end: `+=${window.innerHeight}`,
-        end: isNotMobile ? `+=${window.innerHeight}` : '+=300',
+        end: isNotMobile ? `+=${window.innerHeight * 1.5}` : '+=300',
         pin: isNotMobile,
-        scrub: 1.5,
+        scrub: 0.2,
       },
     });
 
@@ -84,7 +84,7 @@ const TechIntroSection = () => {
         clipPath: isNotMobile
           ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
           : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
-          delay: 0.3,
+          delay: 0.8,
       },
       '<'
       // '<'

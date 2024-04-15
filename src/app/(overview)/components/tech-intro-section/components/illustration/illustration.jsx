@@ -27,8 +27,8 @@ const Illustration = () => {
         start: !applyPin ? 'top 40%' : 'top top',
         // start: 'top 80%',
         // end: `+=${window.innerHeight}`,
-        end: applyPin ? `+=${window.innerHeight}` : '+=300',
-        scrub: 1.5,
+        end: applyPin ? `+=${window.innerHeight * 1.5} ` : '+=300',
+        scrub: 0.2,
       },
     });
 
@@ -36,7 +36,7 @@ const Illustration = () => {
       orderMask.current,
       {
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        delay: 0.3,
+        delay: 0.8,
       },
       '<'
     );
