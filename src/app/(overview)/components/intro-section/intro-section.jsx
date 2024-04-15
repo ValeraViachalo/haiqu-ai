@@ -43,62 +43,62 @@ const IntroSectionAlt = () => {
     }
   }, [ballTrigger]);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || video.readyState < 1) {
-      return;
-    }
+  // useEffect(() => {
+  //   const video = videoRef.current;
+  //   if (!video || video.readyState < 1) {
+  //     return;
+  //   }
 
-    let animationFrameId;
+  //   let animationFrameId;
 
-    const checkAndPauseAtMiddle = () => {
-      if (!video) return;
+  //   const checkAndPauseAtMiddle = () => {
+  //     if (!video) return;
 
-      const middleTime = video.duration / 2;
-      if (video.currentTime >= middleTime) {
-        video.pause();
-        setBallTrigger(true);
-        if (animationFrameId) {
-          cancelAnimationFrame(animationFrameId);
-        }
-      } else {
-        animationFrameId = requestAnimationFrame(checkAndPauseAtMiddle);
-      }
-    };
+  //     const middleTime = video.duration / 2;
+  //     if (video.currentTime >= middleTime) {
+  //       video.pause();
+  //       setBallTrigger(true);
+  //       if (animationFrameId) {
+  //         cancelAnimationFrame(animationFrameId);
+  //       }
+  //     } else {
+  //       animationFrameId = requestAnimationFrame(checkAndPauseAtMiddle);
+  //     }
+  //   };
 
-    if (trigger) {
-      video.playbackRate = 4;
-      if (video.paused) {
-        video.play();
-      }
-      checkAndPauseAtMiddle();
-    } else {
-      video.playbackRate = 1;
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-      if (video.paused) {
-        video.play();
-        setBallTrigger(false);
-        video.playbackRate = 2;
-      }
-    }
+  //   if (trigger) {
+  //     video.playbackRate = 4;
+  //     if (video.paused) {
+  //       video.play();
+  //     }
+  //     checkAndPauseAtMiddle();
+  //   } else {
+  //     video.playbackRate = 1;
+  //     if (animationFrameId) {
+  //       cancelAnimationFrame(animationFrameId);
+  //     }
+  //     if (video.paused) {
+  //       video.play();
+  //       setBallTrigger(false);
+  //       video.playbackRate = 2;
+  //     }
+  //   }
 
-    const handleVideoEnd = () => {
-      video.playbackRate = 1;
-      video.currentTime = 0;
-      video.play();
-    };
+  //   const handleVideoEnd = () => {
+  //     video.playbackRate = 1;
+  //     video.currentTime = 0;
+  //     video.play();
+  //   };
 
-    video.addEventListener('ended', handleVideoEnd);
+  //   video.addEventListener('ended', handleVideoEnd);
 
-    return () => {
-      video.removeEventListener('ended', handleVideoEnd);
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, [trigger]);
+  //   return () => {
+  //     video.removeEventListener('ended', handleVideoEnd);
+  //     if (animationFrameId) {
+  //       cancelAnimationFrame(animationFrameId);
+  //     }
+  //   };
+  // }, [trigger]);
 
   return (
     <section className={styles.intro}>
@@ -111,8 +111,8 @@ const IntroSectionAlt = () => {
         <div
           ref={triggerRef}
           className={styles.intro__trigger_zone}
-          onMouseEnter={() => setTrigger(true)}
-          onMouseLeave={() => setTrigger(false)}
+          onMouseEnter={() => setBallTrigger(true)}
+          onMouseLeave={() => setBallTrigger(false)}
         />
 
         <div
@@ -124,6 +124,7 @@ const IntroSectionAlt = () => {
             autoPlay
             webkit-playsinline="true"
             playsInline
+            loop
             ref={videoRef}
           >
             <source

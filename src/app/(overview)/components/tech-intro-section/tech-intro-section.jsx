@@ -84,8 +84,10 @@ const TechIntroSection = () => {
         clipPath: isNotMobile
           ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
           : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
+          delay: 0.3,
       },
       '<'
+      // '<'
     );
 
     tl1.to(
@@ -116,7 +118,7 @@ const TechIntroSection = () => {
       scrollTrigger: {
         trigger: main.current,
         start: isNotMobile ? '22% top' : 'top 10%',
-        end: isNotMobile ? `+=${window.innerWidth / 2}` : '+=400',
+        end: isNotMobile ? `+=400` : '+=400',
         scrub: 1.5,
         pin: isNotMobile,
       },
@@ -146,7 +148,7 @@ const TechIntroSection = () => {
       {
         scale: 1,
         transformOrigin: 'top center',
-        duration: 2,
+        duration: 1,
         onUpdate: () => setScaled(true),
         onReverseComplete: () => setScaled(false),
       },

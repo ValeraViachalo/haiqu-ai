@@ -5,6 +5,8 @@ import { useGSAP } from '@gsap/react';
 import styles from './we-are-section.module.scss';
 import gsap from 'gsap';
 import WeAreSectionMobile from './we-are-section-mobile';
+import { useIsMobile } from '@/src/hooks';
+import { mediaQueries } from '@/src/constants';
 
 const professions = [
   'engineers',
@@ -18,20 +20,15 @@ const professions = [
 ];
 
 const WeAreSection = () => {
-  const [isMobile, setIsMobile] = useState(null);
+  const isMobile = useIsMobile(mediaQueries.mobile);
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 430);
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 430);
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // swap elements
+  }
+  return array;
+}
 
   useGSAP(() => {
     const elements = gsap.utils.toArray(`.${styles.we_are__profession}`);

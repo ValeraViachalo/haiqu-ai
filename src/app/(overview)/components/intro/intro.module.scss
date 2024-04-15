@@ -1,0 +1,59 @@
+@import '/src/styles/main.module.scss';
+
+.intro {
+//   background-color: $haiqu-orange;
+overflow-x: hidden;
+padding: 0 $padding-horizontal;
+height: calc(100vh - 5rem);
+
+  &__title {
+    position: absolute;
+    @include sectionTitle;
+    padding-top: 4.1875rem;
+    z-index: 10;
+
+    @include tablet {
+      font-size: 3.375rem;
+      line-height: 3.875rem;
+      padding-top: 3.3125rem;
+    }
+
+    @include mobile {
+      font-size: 2.75rem;
+      line-height: 3.1875rem;
+      padding-top: 3.75rem;
+    }
+  }
+
+  &__title_bottom {
+    position: absolute;
+    left: 50%;
+    bottom: $padding-horizontal;
+    @include sectionTitle;
+
+    @include tablet {
+      position: absolute;
+      bottom: $padding-tablet;
+      font-size: 3.375rem;
+      line-height: 3.875rem;
+    }
+
+    @include mobile {
+      left: 30%;
+      font-size: 2.75rem;
+      line-height: 3.1875rem;
+    }
+  }
+
+  &__video_container {
+    width: 100%;
+    height: 67vh;
+    padding: 3rem 10rem 2.5625rem;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
