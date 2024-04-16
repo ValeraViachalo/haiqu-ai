@@ -17,6 +17,8 @@ const IntroSectionAlt = () => {
   const [ballTrigger, setBallTrigger] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     if (ballTrigger) {
       gsap.to(videoContainerRef.current, {
         opacity: 0,

@@ -36,7 +36,7 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: mainRef.current,
               start: '8% 7%',
-              end: `+=100`,
+              end: `+=300`,
               scrub: 1,
               pinSpacing: false,
             },
@@ -65,7 +65,7 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: bubblesRef.current,
               start: 'bottom 15%',
-              end: `+=200`,
+              end: `+=400`,
               scrub: true,
               duration: 4,
             },

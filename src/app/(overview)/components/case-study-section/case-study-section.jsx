@@ -1,14 +1,14 @@
 'use client';
+
 import styles from './case-study-section.module.scss';
 import { Carousel, CaseStudy, CaseStudyMobile } from '@/src/ui';
 import { constants } from '@/src/constants';
 import { caseStudy } from '@/src/mockedData';
 
+
 const CaseStudySection = () => {
   return (
-    <section
-      className={styles.case_study}
-    >
+    <section className={styles.case_study}>
       <div className={styles.case_study__info}>
         <p className={styles.case_study__title}>
           {constants.CASE_STUDY_SECTION_TITLE}
@@ -16,9 +16,7 @@ const CaseStudySection = () => {
         <p className={styles.case_study__moto}>
           {constants.CASE_STUDY_SECTION_MOTO}
         </p>
-        <p
-          className={styles.case_study__description}
-        >
+        <p className={styles.case_study__description}>
           {constants.CASE_STUDY_SECTION_DESCRIPTION}
         </p>
       </div>
@@ -41,7 +39,7 @@ const CaseStudySection = () => {
       </section>
 
       <section className={styles.case_study__cases_container}>
-        {caseStudy.map(
+        {caseStudy?.map(
           ({ id, company, category, description, photo, dark }) => (
             <div key={id}>
               <CaseStudyMobile

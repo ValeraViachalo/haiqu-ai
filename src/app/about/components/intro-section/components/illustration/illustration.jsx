@@ -50,7 +50,7 @@ const Illustration = () => {
                 y: isTablet
                   ? `-=${4.26125 * (index + 1)}rem`
                   : `-=${6.4375 * (index + 1)}rem`,
-                duration: 1,
+                duration: 2,
               },
               '<'
             );

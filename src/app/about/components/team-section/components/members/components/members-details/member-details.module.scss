@@ -7,11 +7,11 @@
     gap: $padding-mobile;
     height: 13.5rem;
     overflow-y: hidden;
-    transition: height 0.3s ease;
+    transition: height 0.8s ease;
 
     &__opened {
       height: 30.875rem;
-      transition: height 0.3s ease;
+      transition: height 0.8s ease;
     }
   }
 
@@ -28,7 +28,7 @@
 
     &__opened {
       color: $main-font-color;
-      transition: 0.3s ease;
+      transition: 0.8s ease;
     }
   }
 
@@ -51,11 +51,11 @@
     font-size: 1.625rem;
     border-top: 1px solid $main-font-color;
     color: rgba($main-font-color, 0.35);
-    transition: 0.3s ease;
+    transition: 0.8s ease;
 
     &__opened {
       color: $main-font-color;
-      transition: 0.3s ease;
+      transition: 0.8s ease;
     }
   }
 
@@ -65,13 +65,13 @@
     width: 15.25rem;
     position: absolute;
     left: 0;
-    transition: 0.3s ease;
+    transition: 0.8s ease;
 
     &__opened {
 
       justify-content: flex-end;
       color: $main-font-color;
-      transition: 0.3s ease;
+      transition: 0.8s ease;
     }
   }
 }

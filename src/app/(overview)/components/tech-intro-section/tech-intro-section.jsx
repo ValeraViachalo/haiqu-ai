@@ -26,133 +26,111 @@ const TechIntroSection = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
-    const isNotMobile = window.innerWidth >= 460;
 
     gsap.set([maskFilledBar.current, logo.current], {
       opacity: 1,
     });
 
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: main.current,
-    //     start: 'top 10%',
-    //     end: 'top 10%',
-    //     toggleActions: 'restart none reverse none',
-    //   },
-    // });
+    const mm = gsap.matchMedia();
 
-    // tl.to(
-    //   maskFilledBar.current,
-    //   {
-    //     x: 0,
-    //     // duration: 1,
-    //     opacity: 1,
-    //     // xPercent: -98,
-    //   },
-    //   '<'
-    // );
-
-    // tl.to(
-    //   logo.current,
-    //   {
-    //     x: 0,
-    //     // duration: 1,
-    //     opacity: 1,
-    //   },
-    //   '<'
-    // );
-
-    const tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: main.current,
-        // start: 'top top',
-        start: !isNotMobile ? 'top 40%' : 'top top',
-        // end: `+=${window.innerHeight}`,
-        end: isNotMobile ? `+=${window.innerHeight}` : '+=300',
-        pin: isNotMobile,
-        scrub: 1.5,
-      },
-    });
-
-    // tl1.to(filledBar.current, {
-    //   x: 0,
-    // });
-
-    tl1.to(
-      maskFilledBar.current,
+    mm.add(
       {
-        clipPath: isNotMobile
-          ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
-          : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
-          delay: 0.3,
+        isMobile: '(max-width: 430px)',
+        isTablet: '(max-width: 834px)',
+        isDesktop: '(min-width: 834px)',
       },
-      '<'
-      // '<'
-    );
+      (context) => {
+        const { isMobile, isTablet, isDesktop } = context.conditions;
 
-    tl1.to(
-      logo.current,
-      {
-        x: '100vw',
-      },
-      '<'
-    );
+        console.log('yeap', isDesktop, isTablet, isMobile);
 
-    tl1.to(
-      moto.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      },
-      '<'
-    );
+        const tl1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: main.current,
+            start: isMobile ? 'top 40%' : 'top top',
+            end: !isMobile ? `+=${window.innerHeight}` : '+=300',
+            pin: !isMobile,
+            scrub: 1.5,
+          },
+        });
 
-    tl1.to(
-      boost.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      },
-      '<'
-    );
+        tl1.to(
+          maskFilledBar.current,
+          {
+            clipPath:
+              !isMobile
+                ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
+                : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
+            delay: !isMobile ? 0.3 : 0,
+          },
+          '<'
+        );
 
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: main.current,
-        start: isNotMobile ? '22% top' : 'top 10%',
-        end: isNotMobile ? `+=400` : '+=400',
-        scrub: 1.5,
-        pin: isNotMobile,
-      },
-    });
+        tl1.to(
+          logo.current,
+          {
+            x: '100vw',
+          },
+          '<'
+        );
 
-    gsap.set(number.current, {
-      scale: isNotMobile ? 0.05 : 0.1,
-      transformOrigin: 'top center',
-    });
+        tl1.to(
+          moto.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+          },
+          '<'
+        );
 
-    tl2.to(boost.current, {
-      y: isNotMobile ? '9vh' : '14vh',
-    });
+        tl1.to(
+          boost.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+          },
+          '<'
+        );
 
-    tl2.to(
-      line.current,
-      {
-        height: isNotMobile ? '14.9375rem' : '7rem',
-        height: isNotMobile ? '9rem' : '7rem',
-        transformOrigin: 'top center',
-      },
-      '<'
-    );
+        const tl2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: main.current,
+            start: !isMobile ? '22% top' : 'top 10%',
+            end: '+=400',
+            scrub: 1.5,
+            pin: !isMobile,
+          },
+        });
 
-    tl2.to(
-      number.current,
-      {
-        scale: 1,
-        transformOrigin: 'top center',
-        duration: 1,
-        onUpdate: () => setScaled(true),
-        onReverseComplete: () => setScaled(false),
-      },
-      '<'
+        gsap.set(number.current, {
+          scale: !isMobile ? 0.05 : 0.1,
+          transformOrigin: 'top center',
+        });
+
+        tl2.to(boost.current, {
+          y: !isMobile ? '9vh' : '14vh',
+        });
+
+        tl2.to(
+          line.current,
+          {
+            height: !isMobile ? '9rem' : '7rem',
+            transformOrigin: 'top center',
+            onComplete: () => ScrollTrigger.refresh(),
+          },
+          '<'
+        );
+
+        tl2.to(
+          number.current,
+          {
+            scale: 1,
+            transformOrigin: 'top center',
+            duration: 1,
+            onUpdate: () => setScaled(true),
+            onReverseComplete: () => setScaled(false),
+          },
+          '<'
+        );
+      }
     );
 
     ScrollTrigger.normalizeScroll(false);

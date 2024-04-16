@@ -19,61 +19,71 @@ const Illustration = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
-    const applyPin = window.innerWidth > 430;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#tech_intro',
-        start: !applyPin ? 'top 40%' : 'top top',
-        // start: 'top 80%',
-        // end: `+=${window.innerHeight}`,
-        end: applyPin ? `+=${window.innerHeight} ` : '+=300',
-        scrub: 1.5,
-      },
-    });
+    const mm = gsap.matchMedia();
 
-    tl.to(
-      orderMask.current,
+    mm.add(
       {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        delay: 0.3,
+        isMobile: '(max-width: 430px)',
+        isTablet: '(max-width: 834px)',
+        isDesktop: '(min-width: 834px)',
       },
-      '<'
-    );
+      (context) => {
+        const { isMobile } = context.conditions;
 
-    tl.to(
-      order.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      },
-      '<'
-    );
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#tech_intro',
+            start: isMobile ? 'top 40%' : 'top top',
+            end: !isMobile ? `+=${window.innerHeight} ` : '+=300',
+            scrub: 1.5,
+          },
+        });
 
-    tl.to(
-      rectSmall.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 0.2,
-      },
-      '<'
-    );
+        tl.to(
+          orderMask.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            delay: !isMobile ? 0.3 : 0,
+          },
+          '<'
+        );
 
-    tl.to(
-      rectBig.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 0.2,
-      },
-      '<'
-    );
+        tl.to(
+          order.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+          },
+          '<'
+        );
 
-    tl.to(
-      note.current,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-        duration: 0.08,
-      },
-      '<'
+        tl.to(
+          rectSmall.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            duration: 0.2,
+          },
+          '<'
+        );
+
+        tl.to(
+          rectBig.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            duration: 0.2,
+          },
+          '<'
+        );
+
+        tl.to(
+          note.current,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            duration: 0.08,
+          },
+          '<'
+        );
+      }
     );
 
     ScrollTrigger.normalizeScroll(true);
