@@ -36,7 +36,7 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: mainRef.current,
               start: '8% 7%',
-              end: `+=300`,
+              end: `+=500`,
               scrub: 1,
             },
           });
