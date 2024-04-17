@@ -1,7 +1,7 @@
 export const locations = [
   {
     id: 1,
-    city: 'Lviv',
+    city: 'San-Francisco',
     photo: '/images/about-page/city-photo.png',
   },
   {
@@ -16,7 +16,8 @@ export const locations = [
   },
   {
     id: 4,
-    city: 'San-Francisco',
+    city: 'Lviv',
     photo: '/images/about-page/city-photo.png',
   },
+
 ];
