@@ -16,6 +16,7 @@ const Illustration = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
+    ScrollTrigger.refresh();
 
     const bubbles = gsap.utils.toArray([
       `.${styles.illustration__bubble}`,
@@ -83,15 +84,6 @@ const Illustration = () => {
             },
             '<'
           );
-
-          // tl.to(
-          //   dotsRef.current,
-          //   {
-          //     top: '-25rem',
-          //     duration: 2,
-          //   },
-          //   '<'
-          // );
         }
       }
     );

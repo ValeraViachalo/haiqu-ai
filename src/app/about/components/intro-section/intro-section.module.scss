@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+
   @include mobile {
     padding-bottom: unset;
   }
@@ -77,7 +77,8 @@
   }
 
   &__perhaps_container {
-    height: 27.6875rem;
+    // height: 27.6875rem;
+    height: 40rem;
 
     @include tablet {
       height: 19.25rem;
@@ -91,8 +92,11 @@
   &__perhaps {
     padding-top: 2.5rem;
     position: relative;
+    position: sticky;
+    top: 0;
     font-size: 2.125rem;
     color: rgba($main-font-color, 0.35);
+
 
     @include tablet {
       font-size: 1.5rem;

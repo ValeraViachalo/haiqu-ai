@@ -20,6 +20,7 @@ const NoiseSection = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
+
     const mm = gsap.matchMedia();
 
     mm.add(
@@ -30,6 +31,17 @@ const NoiseSection = () => {
       },
       (context) => {
         const { isMobile, isTablet } = context.conditions;
+
+      //  gsap.timeline({
+      //     scrollTrigger: {
+      //       trigger: noiseRef.current,
+      //       start: 'top 40%',
+      //       end: '+=200',
+      //       pin: true,
+      //       pinSpacing: false,
+      //       markers: true,
+      //     },
+      //   });
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -67,6 +79,7 @@ const NoiseSection = () => {
             {
               height: isTablet ? '20rem' : '30rem',
               duration: 5,
+              onComplete: () => ScrollTrigger.refresh(),
             },
             '<'
           );
@@ -81,6 +94,7 @@ const NoiseSection = () => {
     <div
       className={styles.noise}
       ref={noiseRef}
+      id="noise"
     >
       <p className={styles.noise__heading}>What we do know for certain</p>
       <p className={styles.noise__text}>

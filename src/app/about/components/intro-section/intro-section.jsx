@@ -38,7 +38,6 @@ const IntroSection = () => {
               start: '8% 7%',
               end: `+=300`,
               scrub: 1,
-              pinSpacing: false,
             },
           });
 
@@ -65,15 +64,13 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: bubblesRef.current,
               start: 'bottom 15%',
-              end: `+=400`,
+              end: `+=300`,
               scrub: true,
-              duration: 4,
             },
           });
 
           tl1.to(perhapsRef.current, {
-            y: isTablet ? '6rem' : '12rem',
-            onComplete: () => ScrollTrigger.refresh(),
+            y: isTablet ? '6rem' : '18rem',
           });
 
           const tl2 = gsap.timeline({
@@ -81,8 +78,6 @@ const IntroSection = () => {
               trigger: perhapsRefContainer.current,
               start: 'top top',
               end: isTablet ? '+=150' : '+=210',
-              pin: true,
-              pinSpacing: false,
               scrub: true,
             },
           });

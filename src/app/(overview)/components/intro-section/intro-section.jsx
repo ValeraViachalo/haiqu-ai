@@ -29,13 +29,13 @@ const IntroSectionAlt = () => {
     } else {
       gsap.to(videoContainerRef.current, {
         opacity: 1,
-        duration: 0.2,
+        duration: 0.1,
         delay: 0.1,
       });
       gsap.to(sphereRef.current, {
         opacity: 0,
         duration: 0,
-        delay: 0.2,
+        delay: 0.1,
       });
       gsap.to(ballsContainer.current, {
         opacity: 0,
