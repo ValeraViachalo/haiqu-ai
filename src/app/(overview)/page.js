@@ -9,7 +9,6 @@ import {
 } from './components';
 
 import { BookADemo } from '@/src/ui';
-import Intro from './components/intro';
 
 const Home = () => {
   return (

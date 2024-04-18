@@ -94,14 +94,14 @@ const TechIntroSection = () => {
           scrollTrigger: {
             trigger: main.current,
             start: !isMobile ? '22% top' : 'top 10%',
-            end: '+=400',
+            end: '+=350',
             scrub: 1.5,
             pin: !isMobile,
           },
         });
 
         gsap.set(number.current, {
-          scale: !isMobile ? 0.05 : 0.1,
+          scale: !isMobile ? 0.06 : 0.09,
           transformOrigin: 'top center',
         });
 

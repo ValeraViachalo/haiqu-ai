@@ -35,9 +35,9 @@ const IntroSection = () => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: mainRef.current,
-              start: '8% 7%',
-              end: `+=500`,
-              scrub: 1,
+              start: 'top 5%',
+              end: `+=400`,
+              scrub: 3,
             },
           });
 
@@ -71,6 +71,7 @@ const IntroSection = () => {
 
           tl1.to(perhapsRef.current, {
             y: isTablet ? '6rem' : '10rem',
+            duration: 3,
           });
 
           const tl2 = gsap.timeline({
@@ -78,7 +79,7 @@ const IntroSection = () => {
               trigger: perhapsRefContainer.current,
               start: 'top top',
               end: isTablet ? '+=150' : '+=210',
-              scrub: true,
+              scrub: 2,
             },
           });
 
