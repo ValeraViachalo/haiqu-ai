@@ -84,8 +84,8 @@ const IntroSection = () => {
 
           tl2.to('span', {
             opacity: 1,
-            stagger: 0.001,
-            duration: 0.005,
+            stagger: 0.5,
+            duration: 0.5,
           });
         }
       }
