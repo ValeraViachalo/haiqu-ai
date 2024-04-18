@@ -70,7 +70,7 @@ const IntroSection = () => {
           });
 
           tl1.to(perhapsRef.current, {
-            y: isTablet ? '6rem' : '18rem',
+            y: isTablet ? '6rem' : '10rem',
           });
 
           const tl2 = gsap.timeline({
