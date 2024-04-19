@@ -21,6 +21,14 @@ const IntroSectionAlt = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      setBallTrigger(false);
+    };
+
+    window.addEventListener('scroll', scrollHandler);
 
     ScrollTrigger.create({
       trigger: '#intro',
@@ -62,6 +70,8 @@ const IntroSectionAlt = () => {
         delay: 0.2,
       });
     }
+
+    return () => window.removeEventListener('scroll', scrollHandler);
   }, [ballTrigger]);
 
   // useEffect(() => {

@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const scrubValue = 1.5;
 const easing = 'power4.in';
-const delay = 0.15;
+const delay = 0.1;
 
 const TechIntroSection = () => {
   const filledBar = useRef(null);
