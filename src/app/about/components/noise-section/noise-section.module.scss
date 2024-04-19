@@ -157,6 +157,7 @@
     @include mobile {
       font-size: 1.25rem;
       width: 18.125rem;
+      height: unset;
     }
   }
 }
