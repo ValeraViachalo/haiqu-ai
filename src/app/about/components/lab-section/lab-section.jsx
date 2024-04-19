@@ -31,8 +31,8 @@ const LabSection = () => {
           scrollTrigger: {
             trigger: labRef.current,
             start: 'top top',
-            end: '+=550',
-            scrub: 1,
+            end: '+=1800',
+            scrub: true,
           },
         });
 
@@ -49,7 +49,7 @@ const LabSection = () => {
           tl.to(
             bgRef.current,
             {
-              scaleX: 0.8,
+              scaleX: 0.6,
               transformOrigin: 'center center',
             },
             '<'

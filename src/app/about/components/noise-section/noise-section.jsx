@@ -49,7 +49,6 @@ const NoiseSection = () => {
             start: 'center 50%',
             end: '+=1000',
             scrub: 2,
-            onLeave: () => ScrollTrigger.refresh(),
           },
         });
 
@@ -75,15 +74,14 @@ const NoiseSection = () => {
             duration: 5,
           });
 
-          tl.to(
-            soonBlockRef.current,
-            {
-              height: isTablet ? '20rem' : '30rem',
-              duration: 5,
-              // onComplete: () => ScrollTrigger.refresh(),
-            },
-            '<'
-          );
+          // tl.to(
+          //   soonBlockRef.current,
+          //   {
+          //     height: isTablet ? '20rem' : '30rem',
+          //     duration: 5,
+          //   },
+          //   '<'
+          // );
         }
       }
     );
