@@ -40,23 +40,36 @@ const Illustration = () => {
               trigger: '#about-main',
               start: '8% 7%',
               end: isTablet ? '+=800' : '+=1100',
-              scrub: 1,
+              scrub: true,
               ease: 'power3.out',
             },
           });
+
+          const baseShift = isTablet ? 4.26125 : 6.4375;
 
           bubbles.forEach((bubble, index) => {
             tl.to(
               bubble,
               {
-                y: isTablet
-                  ? `-=${4.26125 * (index + 1)}rem`
-                  : `-=${6.4375 * (index + 1)}rem`,
+                y: `-=${baseShift * (index + 1)}rem`,
                 duration: 2,
               },
               '<'
             );
           });
+
+          // bubbles.forEach((bubble, index) => {
+          //   tl.to(
+          //     bubble,
+          //     {
+          //       y: isTablet
+          //         ? `-=${4.26125 * (index + 1)}rem`
+          //         : `-=${6.4375 * (index + 1)}rem`,
+          //       duration: 2,
+          //     },
+          //     '<'
+          //   );
+          // });
 
           tl.to(
             dot1.current,

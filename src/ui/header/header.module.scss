@@ -8,13 +8,16 @@
   padding: 1.375rem $padding-horizontal;
   z-index: 99999999999999;
   transition: 0.3s ease-in-out;
+  overflow-x: hidden;
 
   &__fixed {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     transition: 0.3s ease-in-out;
     background-color: $haiqu-header-bg;
+    overflow-x: hidden;
   }
 
   @include mobile {
