@@ -16,8 +16,6 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Якщо користувач скролить вгору, додати клас fixed.
-      // Якщо користувач досяг верху сторінки, зняти клас fixed.
       if (currentScrollY === 0) {
         setFixed(false);
       } else if (currentScrollY < lastScrollY) {
@@ -31,8 +29,14 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+
+    document.body.style.paddingTop = fixed ? '5rem' : '0';
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.style.paddingTop = '0'; 
+    };
+  }, [lastScrollY, fixed]); 
 
   return (
     <header

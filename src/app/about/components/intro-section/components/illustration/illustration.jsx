@@ -41,6 +41,7 @@ const Illustration = () => {
               start: '8% 7%',
               end: isTablet ? '+=800' : '+=1100',
               scrub: 1,
+              ease: 'power3.out',
             },
           });
 

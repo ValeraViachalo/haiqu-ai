@@ -12,6 +12,10 @@ import Illustration from './components/illustration';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const scrubValue = 1.5;
+const easing = 'power4.in';
+const delay = 0.15;
+
 const TechIntroSection = () => {
   const filledBar = useRef(null);
   const main = useRef(null);
@@ -42,26 +46,27 @@ const TechIntroSection = () => {
       (context) => {
         const { isMobile, isTablet, isDesktop } = context.conditions;
 
-        console.log('yeap', isDesktop, isTablet, isMobile);
-
         const tl1 = gsap.timeline({
           scrollTrigger: {
             trigger: main.current,
             start: isMobile ? 'top 40%' : 'top top',
-            end: !isMobile ? `+=${window.innerHeight}` : '+=300',
+            end: !isMobile ? `+=${window.innerHeight * 1.5}` : '+=300',
             pin: !isMobile,
-            scrub: 1.5,
+            scrub: scrubValue,
+            ease: easing,
           },
         });
 
         tl1.to(
           maskFilledBar.current,
           {
-            clipPath:
-              !isMobile
-                ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
-                : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
-            delay: !isMobile ? 0.3 : 0,
+            clipPath: !isMobile
+              ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
+              : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
+            delay: !isMobile ? delay : 0,
+            onUpdate: function () {
+              console.log(this.progress());
+            },
           },
           '<'
         );
@@ -95,8 +100,9 @@ const TechIntroSection = () => {
             trigger: main.current,
             start: !isMobile ? '22% top' : 'top 10%',
             end: '+=350',
-            scrub: 1.5,
-            pin: !isMobile,
+            scrub: 1,
+            // markers: true,
+            // pin: !isMobile,
           },
         });
 
@@ -114,7 +120,7 @@ const TechIntroSection = () => {
           {
             height: !isMobile ? '9rem' : '7rem',
             transformOrigin: 'top center',
-            onComplete: () => ScrollTrigger.refresh(),
+            // onComplete: () => ScrollTrigger.refresh(),
           },
           '<'
         );
@@ -171,7 +177,11 @@ const TechIntroSection = () => {
         But they can do a lot more than you think.
       </p>
 
-      <Illustration />
+      <Illustration
+        scrub={scrubValue}
+        easing={easing}
+        delay={delay}
+      />
 
       <div
         className={styles.tech_intro__100x_container}

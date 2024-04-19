@@ -5,6 +5,9 @@ import { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import Ball from './components/ball/ball';
 import { balls } from '@/src/constants/balls';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const IntroSectionAlt = () => {
   const triggerRef = useRef(null);
@@ -19,17 +22,33 @@ const IntroSectionAlt = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
+    ScrollTrigger.create({
+      trigger: '#intro',
+      start: 'top 1%',
+      onEnter: () => {
+        if (triggerRef.current) {
+          triggerRef.current.style.pointerEvents = 'none';
+        }
+      },
+      onLeaveBack: () => {
+        if (triggerRef.current) {
+          triggerRef.current.style.pointerEvents = 'auto';
+        }
+      },
+    });
+
     if (ballTrigger) {
       gsap.to(videoContainerRef.current, {
         opacity: 0,
         duration: 0,
+        // delay: 0.1,
       });
       gsap.to(sphereRef.current, { opacity: 1, duration: 0 });
       gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
     } else {
       gsap.to(videoContainerRef.current, {
         opacity: 1,
-        duration: 0.1,
+        duration: 0,
         delay: 0.1,
       });
       gsap.to(sphereRef.current, {
@@ -103,7 +122,10 @@ const IntroSectionAlt = () => {
   // }, [trigger]);
 
   return (
-    <section className={styles.intro}>
+    <section
+      className={styles.intro}
+      id="intro"
+    >
       <p className={styles.intro__title}>
         Clumsy <br />
         Hardware
@@ -111,6 +133,7 @@ const IntroSectionAlt = () => {
 
       <div className={styles.intro__animation_container}>
         <div
+          id="trigger-zone"
           ref={triggerRef}
           className={styles.intro__trigger_zone}
           onMouseEnter={() => setBallTrigger(true)}

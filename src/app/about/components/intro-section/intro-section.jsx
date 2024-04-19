@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './intro-section.module.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,8 +17,12 @@ const IntroSection = () => {
   const perhapsRef = useRef(null);
   const perhapsRefContainer = useRef(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useGSAP(() => {
-    ScrollTrigger.normalizeScroll(true);
+    // ScrollTrigger.normalizeScroll(true);
 
     const mm = gsap.matchMedia();
 
@@ -37,7 +41,9 @@ const IntroSection = () => {
               trigger: mainRef.current,
               start: 'top 5%',
               end: `+=400`,
-              scrub: 3,
+              scrub: 2,
+              ease: 'power2.in',
+              onLeave: () => ScrollTrigger.refresh(),
             },
           });
 
@@ -55,7 +61,6 @@ const IntroSection = () => {
             {
               alignItems: 'flexStart',
               height: isTablet ? '3.9375rem' : '6.0625rem',
-              onComplete: () => ScrollTrigger.refresh(),
             },
             '<'
           );
@@ -64,8 +69,9 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: bubblesRef.current,
               start: 'bottom 15%',
-              end: `+=300`,
-              scrub: true,
+              end: `+=600`,
+              scrub: 0.5,
+              ease: 'power4.in',
             },
           });
 
@@ -78,21 +84,21 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: perhapsRefContainer.current,
               start: 'top top',
-              end: isTablet ? '+=150' : '+=210',
-              scrub: 2,
+              end: isTablet ? '+=150' : '+=410',
+              scrub: 1,
             },
           });
 
           tl2.to('span', {
             opacity: 1,
-            stagger: 0.5,
-            duration: 0.5,
+            stagger: 0.8,
+            duration: 0.8,
           });
         }
       }
     );
 
-    ScrollTrigger.normalizeScroll(false);
+    // ScrollTrigger.normalizeScroll(false);
   }, []);
 
   return (

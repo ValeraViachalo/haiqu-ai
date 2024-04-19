@@ -19,7 +19,7 @@ export const ScrollProvider = ({ children }) => {
   const scrollTo = (e, currentLink) => {
     e.preventDefault();
     locomotiveScroll.current.scrollTo(currentLink, {
-      duration: 1.7,
+      duration: 2000,
       easing: (x) => easeInOutExpo(x),
     });
   };
@@ -29,8 +29,10 @@ export const ScrollProvider = ({ children }) => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
       locomotiveScroll.current = new LocomotiveScroll({
         lenisOptions: {
+          smooth: true,
           duration: 1,
-          lerp: 0.1,
+          multiplier: 1,
+          lerp: 0.15,
           smoothWheel: true,
           wheelMultiplier: 1,
         },

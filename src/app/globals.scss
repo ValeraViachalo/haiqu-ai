@@ -10,10 +10,9 @@
 
 html,
 body {
-  // scroll-behavior: auto !important;
   font-size: 0.833333vw;
   font-family: var(--neue-montreal-font);
-  // overflow-x: hidden;
+  position: relative;
 
   @media (max-width: 834px) {
     font-size: 1.34vh;
