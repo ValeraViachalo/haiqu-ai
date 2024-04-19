@@ -1,4 +1,3 @@
-
 @import '/src/styles/main.module.scss';
 
 .tech_intro {
@@ -142,9 +141,9 @@
   &__number {
     position: sticky;
     top: 0;
-    width: 83.875rem;
-    width:51.6875rem;
-    height: 29.1875rem;
+    // width: 83.875rem;
+    width: 51.6875rem;
+    // height: 29.1875rem;
     height: 18.375rem;
     background-color: $main-font-color;
     mask-image: url('./assets/100x.svg');
@@ -153,13 +152,17 @@
     overflow-x: hidden;
 
     @include tablet {
-      width: 48.375rem;
-      height: 17.1875rem;
+      // width: 48.375rem;
+      width: 30.0625rem;
+      // height: 17.1875rem;
+      height: 10.6875rem;
     }
 
     @include mobile {
-      width: 22.5rem;
-      height: 7.9375rem;
+      // width: 22.5rem;
+      width: 14.375rem;
+      // height: 7.9375rem;
+      height: 5.0625rem;
     }
 
     &::before {

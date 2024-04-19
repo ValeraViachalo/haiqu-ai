@@ -22,7 +22,7 @@ const IntroSection = () => {
   }, []);
 
   useGSAP(() => {
-    // ScrollTrigger.normalizeScroll(true);
+    ScrollTrigger.normalizeScroll(true);
 
     const mm = gsap.matchMedia();
 
@@ -43,7 +43,6 @@ const IntroSection = () => {
               end: `+=400`,
               scrub: 2,
               ease: 'power2.in',
-              normalize: true,
               onLeave: () => ScrollTrigger.refresh(),
             },
           });
@@ -71,8 +70,8 @@ const IntroSection = () => {
               trigger: bubblesRef.current,
               start: 'bottom 15%',
               end: `+=600`,
-              scrub: 0.5,
-              ease: 'power4.in',
+              scrub: true,
+              // ease: 'power4.in',
             },
           });
 
@@ -86,20 +85,20 @@ const IntroSection = () => {
               trigger: perhapsRefContainer.current,
               start: 'top top',
               end: isTablet ? '+=150' : '+=410',
-              scrub: 1,
+              scrub: true,
             },
           });
 
           tl2.to('span', {
             opacity: 1,
-            stagger: 0.8,
-            duration: 0.8,
+            stagger: 0.7,
+            duration: 0.7,
           });
         }
       }
     );
 
-    // ScrollTrigger.normalizeScroll(false);
+    ScrollTrigger.normalizeScroll(false);
   }, []);
 
   return (

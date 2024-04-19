@@ -49,6 +49,7 @@ const NoiseSection = () => {
             start: 'center 50%',
             end: '+=1000',
             scrub: 2,
+            onLeave: () => ScrollTrigger.refresh(),
           },
         });
 
@@ -79,7 +80,7 @@ const NoiseSection = () => {
             {
               height: isTablet ? '20rem' : '30rem',
               duration: 5,
-              onComplete: () => ScrollTrigger.refresh(),
+              // onComplete: () => ScrollTrigger.refresh(),
             },
             '<'
           );

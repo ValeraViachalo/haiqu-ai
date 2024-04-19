@@ -133,6 +133,10 @@
   &__row_single {
     flex-basis: 54.0625rem;
     flex-shrink: 0;
+
+    @include tablet {
+      flex-basis: unset;
+    }
   }
 
   &__row {
