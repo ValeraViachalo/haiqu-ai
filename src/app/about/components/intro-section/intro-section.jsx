@@ -43,6 +43,7 @@ const IntroSection = () => {
               end: `+=400`,
               scrub: 2,
               ease: 'power2.in',
+              normalize: true,
               onLeave: () => ScrollTrigger.refresh(),
             },
           });

@@ -16,7 +16,6 @@ const Illustration = () => {
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
-    ScrollTrigger.refresh();
 
     const bubbles = gsap.utils.toArray([
       `.${styles.illustration__bubble}`,
@@ -52,7 +51,7 @@ const Illustration = () => {
               bubble,
               {
                 y: `-=${baseShift * (index + 1)}rem`,
-                duration: 2,
+                duration: 1,
               },
               '<'
             );
