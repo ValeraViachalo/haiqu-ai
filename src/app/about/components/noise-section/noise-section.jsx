@@ -47,7 +47,7 @@ const NoiseSection = () => {
           scrollTrigger: {
             trigger: noiseRef.current,
             start: 'center 50%',
-            end: '+=1000',
+            end: '+=800',
             scrub: 2,
           },
         });
