@@ -55,7 +55,6 @@ const TechIntroSection = () => {
             pin: true,
             scrub: isMobile ? true : scrubValue,
             ease: easing,
-            markers: true,
           },
         });
 
