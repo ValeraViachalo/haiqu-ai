@@ -33,11 +33,13 @@ const Illustration = () => {
       (context) => {
         const { isMobile, isTablet } = context.conditions;
 
+        console.log('isTablet', isTablet);
+
         if (!isMobile) {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: '#about-main',
-              start: '8% 7%',
+              start: isTablet ? 'top 15%' : '8% 7%',
               end: isTablet ? '+=800' : '+=1100',
               scrub: true,
             },
@@ -59,8 +61,8 @@ const Illustration = () => {
           tl.to(
             dot1.current,
             {
-              top: isTablet ? '20.125rem' : '26.6875rem',
-              left: isTablet ? '5rem' : '25.3125rem',
+              top: isTablet ? '10.125rem' : '26.6875rem',
+              left: isTablet ? '4rem' : '25.3125rem',
               duration: 3,
             },
             '<'
@@ -69,7 +71,8 @@ const Illustration = () => {
           tl.to(
             dot2.current,
             {
-              top: isTablet ? '9.25rem' : '5.5rem',
+              top: isTablet ? '6.25rem' : '5.5rem',
+              left: isTablet ? '40rem' : '79rem',
               duration: 3,
             },
             '<'
@@ -78,7 +81,8 @@ const Illustration = () => {
           tl.to(
             dot3.current,
             {
-              top: '26.5rem',
+              top: isTablet ? '16.25rem' : '26.5rem',
+              left: isTablet ? '38rem' : '79rem',
               duration: 5,
             },
             '<'

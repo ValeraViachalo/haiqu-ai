@@ -49,12 +49,11 @@
     }
 
     @include mobile {
-      clip-path: polygon(0 0, 8% 0, 8% 100%, 0% 100%);
+      clip-path: polygon(0 0, 6% 0, 6% 100%, 0% 100%);
     }
   }
 
   &__logo {
-    // transform: translateX(-2.25rem);
     position: relative;
     width: 2.25rem;
     height: 2.25rem;
@@ -62,6 +61,11 @@
 
     @include tablet {
       margin-bottom: 3.8125rem;
+    }
+
+    @include mobile {
+      width: 1.75rem;
+      height: 1.75rem;
     }
   }
 

@@ -65,7 +65,7 @@
 
     @include tablet {
       width: 90%;
-      top: 24vh;
+      top: 28vh;
       left: 5vw;
     }
 
@@ -110,7 +110,6 @@
     background-position: center top 5%;
     opacity: 0;
 
-
     &::after {
       content: '';
       background-image: url('./assets/Hn_icon.svg');
@@ -137,10 +136,6 @@
 
     @include tablet {
       display: none;
-    }
-
-    @include portrait {
-      height: 50vh;
     }
   }
 }

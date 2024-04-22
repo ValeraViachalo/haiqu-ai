@@ -10,7 +10,7 @@
   &__video_container {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: $padding-horizontal;
     width: 28.375rem;
     height: 50.375rem;
     border-radius: 0.625rem;
@@ -36,7 +36,7 @@
 
     img {
       border-radius: 0.9375rem;
-        filter: grayscale(100%);
+      filter: grayscale(100%);
     }
   }
 

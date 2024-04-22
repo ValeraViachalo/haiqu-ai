@@ -7,14 +7,13 @@ import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Illustration = ({ scrub, easing, delay }) => {
+const Illustration = ({ scrub, easing, delay, startAnimation }) => {
   const main = useRef(null);
   const chaos = useRef(null);
   const orderMask = useRef(null);
   const order = useRef(null);
   const rectSmall = useRef(null);
   const rectBig = useRef(null);
-  const rects = useRef(null);
   const note = useRef(null);
 
   useGSAP(() => {
@@ -34,9 +33,9 @@ const Illustration = ({ scrub, easing, delay }) => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: '#tech_intro',
-            start: isMobile ? 'top 40%' : 'top top',
-            end: !isMobile ? `+=${window.innerHeight * 1.5} ` : '+=300',
-            scrub: scrub,
+            start: isMobile ? startAnimation : 'top top',
+            end: !isMobile ? `+=${window.innerHeight * 1.5} ` : '+=400',
+            scrub: isMobile ? true : scrub,
             ease: easing,
           },
         });
@@ -45,7 +44,7 @@ const Illustration = ({ scrub, easing, delay }) => {
           orderMask.current,
           {
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-            delay: !isMobile ? delay : 0,
+            delay: delay,
           },
           '<'
         );

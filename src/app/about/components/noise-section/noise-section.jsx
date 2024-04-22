@@ -36,7 +36,7 @@ const NoiseSection = () => {
       //     scrollTrigger: {
       //       trigger: noiseRef.current,
       //       start: 'top 40%',
-      //       end: '+=200',
+      //       end: '+=100',
       //       pin: true,
       //       pinSpacing: false,
       //       markers: true,
@@ -46,7 +46,7 @@ const NoiseSection = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: noiseRef.current,
-            start: 'center 50%',
+            start: isMobile ? 'top 30%' : 'center 50%',
             end: '+=800',
             scrub: 2,
           },
@@ -60,7 +60,7 @@ const NoiseSection = () => {
               align: '#motionPath',
               alignOrigin: [0.5, 0.5],
             },
-            scale: 0.1,
+            scale: isMobile ? 0.2 : 0.1,
             duration: 5,
             yoyo: false,
           },

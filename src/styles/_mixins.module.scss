@@ -47,8 +47,8 @@
   }
 }
 
-@mixin portrait {
-  @media (orientation: portrait) and (min-width: 834px) {
+@mixin smallMobile {
+  @media (max-width: 375px) {
     @content;
   }
 }

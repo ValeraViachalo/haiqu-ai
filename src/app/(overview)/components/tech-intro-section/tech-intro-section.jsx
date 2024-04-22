@@ -12,6 +12,7 @@ import Illustration from './components/illustration';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const startAnimation = 'top 7.5%';
 const scrubValue = 1.5;
 const easing = 'power4.in';
 const delay = 0.1;
@@ -44,16 +45,17 @@ const TechIntroSection = () => {
         isDesktop: '(min-width: 834px)',
       },
       (context) => {
-        const { isMobile, isTablet, isDesktop } = context.conditions;
+        const { isMobile } = context.conditions;
 
         const tl1 = gsap.timeline({
           scrollTrigger: {
             trigger: main.current,
-            start: isMobile ? 'top 40%' : 'top top',
-            end: !isMobile ? `+=${window.innerHeight * 1.5}` : '+=300',
-            pin: !isMobile,
-            scrub: scrubValue,
+            start: isMobile ? startAnimation : 'top top',
+            end: !isMobile ? `+=${window.innerHeight * 1.5}` : '+=400',
+            pin: true,
+            scrub: isMobile ? true : scrubValue,
             ease: easing,
+            markers: true,
           },
         });
 
@@ -63,10 +65,7 @@ const TechIntroSection = () => {
             clipPath: !isMobile
               ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
               : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
-            delay: !isMobile ? delay : 0,
-            onUpdate: function () {
-              console.log(this.progress());
-            },
+            delay: delay,
           },
           '<'
         );
@@ -98,16 +97,14 @@ const TechIntroSection = () => {
         const tl2 = gsap.timeline({
           scrollTrigger: {
             trigger: main.current,
-            start: !isMobile ? '22% top' : 'top 10%',
+            start: !isMobile ? '22% top' : 'top 5%',
             end: '+=350',
             scrub: 1,
-            // markers: true,
-            // pin: !isMobile,
           },
         });
 
         gsap.set(number.current, {
-          scale: !isMobile ? 0.06 : 0.09,
+          scale: isMobile ? 0.2 : 0.06,
           transformOrigin: 'top center',
         });
 
@@ -181,6 +178,7 @@ const TechIntroSection = () => {
         scrub={scrubValue}
         easing={easing}
         delay={delay}
+        startAnimation={startAnimation}
       />
 
       <div

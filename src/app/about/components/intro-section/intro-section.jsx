@@ -68,15 +68,14 @@ const IntroSection = () => {
           const tl1 = gsap.timeline({
             scrollTrigger: {
               trigger: bubblesRef.current,
-              start: 'bottom 15%',
+              start: isTablet ? 'top top' : 'bottom 15%',
               end: `+=600`,
               scrub: true,
-              // ease: 'power4.in',
             },
           });
 
           tl1.to(perhapsRef.current, {
-            y: isTablet ? '6rem' : '10rem',
+            y: isTablet ? '10rem' : '10rem',
             duration: 3,
           });
 
@@ -84,15 +83,16 @@ const IntroSection = () => {
             scrollTrigger: {
               trigger: perhapsRefContainer.current,
               start: 'top top',
-              end: isTablet ? '+=150' : '+=410',
+              end: isTablet ? '+=410' : '+=410',
               scrub: true,
+              pin: isTablet,
             },
           });
 
           tl2.to('span', {
             opacity: 1,
-            stagger: 0.7,
-            duration: 0.7,
+            stagger: isTablet ? 0.01 : 0.7,
+            duration: isTablet ? 0.01 : 0.7,
           });
         }
       }
