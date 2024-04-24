@@ -37,13 +37,17 @@ const MemberMobile = ({ name, description, role, photo }) => {
             {name}
           </p>
           <p className={styles.member__description}>{description}</p>
-          <div className={styles.member__icons}>
-            <Image
-              src="/mocked/team/icons.svg"
-              alt="icons"
-              fill
-            />
+          
+          <div className={styles.member__icons_container}>
+            <div className={styles.member__icons}>
+              <Image
+                src="/mocked/team/icons.svg"
+                alt="icons"
+                fill
+              />
+            </div>
           </div>
+
           <div
             className={classNames(styles.member__button, {
               [styles.member__button__opened]: !opened,

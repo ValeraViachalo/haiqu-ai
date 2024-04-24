@@ -10,7 +10,7 @@
     width: 100%;
     display: flex;
     padding: $padding-mobile 0 2.5rem 0;
-    overflow-y: hidden;
+    // overflow-y: hidden;
     transition: height 0.5s ease;
     height: 26rem;
 
@@ -27,7 +27,7 @@
   }
 
   &__info {
-    overflow-y: hidden;
+    overflow: hidden;
 
     @include tablet {
       height: 11rem;
@@ -39,13 +39,13 @@
     }
 
     &__opened {
-
       @include tablet {
-            height: 24rem;
+        height: 24rem;
       }
 
       @include mobile {
-        height: 19rem;
+        overflow: visible;
+        height: 20rem;
         transition: height 0.5s ease;
       }
     }
@@ -66,8 +66,9 @@
 
     @include mobile {
       width: 100%;
-      height: 18.25rem;
+      // height: 18.25rem;
       height: 292px;
+
       margin-right: unset;
       margin-bottom: $padding-mobile;
     }
@@ -113,14 +114,32 @@
     margin-bottom: 3.75rem;
 
     @include mobile {
-      width: 100%;
+      width: calc(100% - $padding-mobile);
       margin-bottom: 2.5rem;
     }
   }
 
-  &__icons {
+  &__icons_container {
     position: relative;
+    width: 110%;
+    height: 5rem;
+    overflow-x: scroll;
+    border-radius: 0.375rem;
+
+    &__opened {
+      position: absolute;
+      top: $padding-horizontal;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__icons {
+    position: absolute;
     width: 100%;
+    height: 5rem;
     height: 4.125rem;
     border-radius: 0.375rem;
 
@@ -133,7 +152,15 @@
     }
 
     @include mobile {
-      height: 3.5rem;
+      position: absolute;
+      overflow-x: scroll;
+      height: 5rem;
+      width: 210%;
+
+      img {
+        width: 210%;
+        height: 5rem;
+      }
     }
   }
 
@@ -156,6 +183,7 @@
       height: 1.9375rem;
       background-image: url('/images/arrow.svg');
       background-position: 52% 48%;
+      background-position: center center;
     }
 
     &__opened {
@@ -168,6 +196,7 @@
         transform: rotate(180deg);
         background-image: url('/images/arrow.svg');
         background-position: 48% 45%;
+
       }
     }
   }

@@ -34,7 +34,7 @@ const Illustration = ({ scrub, easing, delay, startAnimation }) => {
           scrollTrigger: {
             trigger: '#tech_intro',
             start: isMobile ? startAnimation : 'top top',
-            end: !isMobile ? `+=${window.innerHeight * 1.5} ` : '+=400',
+            end: !isMobile ? `+=${window.innerHeight * 1.5} ` : '+=1600',
             scrub: isMobile ? true : scrub,
             ease: easing,
           },
@@ -44,7 +44,7 @@ const Illustration = ({ scrub, easing, delay, startAnimation }) => {
           orderMask.current,
           {
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-            delay: delay,
+            delay: isMobile ? 0.5 : delay,
           },
           '<'
         );

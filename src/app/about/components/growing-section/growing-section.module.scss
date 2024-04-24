@@ -60,6 +60,10 @@
         object-position: left;
       }
     }
+
+    @include smallMobile {
+      height: 34rem;
+    }
   }
 
   &__button {

@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
           <Header />
         </div>
         <ScrollProvider>{children}</ScrollProvider>
-        {/* {children} */}
         <Footer />
       </body>
     </html>

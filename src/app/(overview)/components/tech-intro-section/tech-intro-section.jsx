@@ -51,7 +51,7 @@ const TechIntroSection = () => {
           scrollTrigger: {
             trigger: main.current,
             start: isMobile ? startAnimation : 'top top',
-            end: !isMobile ? `+=${window.innerHeight * 1.5}` : '+=400',
+            end: !isMobile ? `+=${window.innerHeight * 1.5}` : '+=1600',
             pin: true,
             scrub: isMobile ? true : scrubValue,
             ease: easing,
@@ -64,7 +64,7 @@ const TechIntroSection = () => {
             clipPath: !isMobile
               ? 'polygon(0 0, 102% 0, 102% 100%, 0% 100%)'
               : 'polygon(0 0, 108% 0, 108% 100%, 0% 100%)',
-            delay: delay,
+            delay: isMobile ? 0.5 : delay,
           },
           '<'
         );

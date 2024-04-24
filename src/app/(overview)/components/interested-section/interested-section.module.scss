@@ -56,15 +56,12 @@
     left: 0;
     right: 0;
     top: 0;
-    // top: -3rem;
 
     @include tablet {
-      // top: -2rem;
       top: 0;
     }
 
     @include mobile {
-      // top: -2.2rem;
       top:0;
     }
   }
@@ -90,158 +87,4 @@
       right: 34%;
     }
   }
-
-  // &__note {
-  //   display: flex;
-  //   flex-direction: column;
-  //   position: absolute;
-  //   color: $white-color;
-  //   font-family: $fraktion-semibold;
-  //   font-size: 1.25rem;
-  //   text-transform: uppercase;
-
-  //   @include tablet {
-  //     font-size: 0.875rem;
-  //     line-height: 1.05rem;
-  //   }
-
-  //   @include mobile {
-  //     font-size: 0.875rem;
-  //     line-height: 1.05rem;
-  //   }
-
-  //   &__1 {
-  //     top: 36.3125rem;
-  //     left: 38rem;
-
-  //     @include tablet {
-  //       top: 15rem;
-  //       left: 33rem;
-  //     }
-
-  //     @include mobile {
-  //       top: 7.8125rem;
-  //       left: 2.1875rem;
-  //     }
-  //   }
-
-  //   &__2 {
-  //     top: 41rem;
-  //     left: 34rem;
-
-  //     @include tablet {
-  //       top: 19rem;
-  //       left: 25rem;
-  //     }
-
-  //     @include mobile {
-  //       top: 13.875rem;
-  //       left: 0.9375rem;
-  //     }
-  //   }
-
-  //   &__3 {
-  //     top: 42rem;
-  //     left: 74rem;
-
-  //     @include tablet {
-  //       top: 20rem;
-  //       left: 30rem;
-  //     }
-
-  //     @include mobile {
-  //       top: 9.125rem;
-  //       left: 18.625rem;
-  //     }
-  //   }
-
-  //   &__4 {
-  //     top: 14rem;
-  //     left: 78rem;
-
-  //     @include tablet {
-  //       top: 4rem;
-  //       left: 30rem;
-  //     }
-
-  //     @include mobile {
-  //       top: 18.25rem;
-  //       left: 14.4375rem;
-  //     }
-  //   }
-  // }
-
-  // &__circle {
-  //   width: 0.9375rem;
-  //   height: 0.9375rem;
-  //   background-color: $white-color;
-  //   border-radius: 50%;
-
-  //   @include tablet {
-  //     width: 0.634375rem;
-  //     height: 0.634375rem;
-  //   }
-  // }
-
-  // &__note_title {
-  //   padding-left: 1.875rem;
-
-  //   @include tablet {
-  //     padding-left: 0.634375rem;
-  //   }
-  // }
-
-  // &__elipse {
-  //   position: absolute;
-  //   width: 36rem;
-  //   height: 5rem;
-
-  //   @include tablet {
-  //     width: 18.3125rem;
-  //     height: 2.5rem;
-  //   }
-
-  //   &__1 {
-  //     top: 14rem;
-  //     left: 42rem;
-  //     opacity: 0.95;
-
-  //     @include tablet {
-  //       top: 7rem;
-  //       left: 35rem;
-  //       opacity: 1;
-  //     }
-  //   }
-
-  //   &__2 {
-  //     top: 23.5rem;
-  //     left: 42rem;
-
-  //     @include tablet {
-  //       top: 12rem;
-  //       left: 35rem;
-  //     }
-  //   }
-
-  //   &__3 {
-  //     top: 32.5rem;
-  //     left: 42rem;
-
-  //     @include tablet {
-  //       top: 17rem;
-  //       left: 35rem;
-  //     }
-  //   }
-
-  //   &__4 {
-  //     top: 41.5rem;
-  //     left: 42rem;
-  //     opacity: 0;
-
-  //     @include tablet {
-  //       top: 22rem;
-  //       left: 35rem;
-  //     }
-  //   }
-  // }
 }
