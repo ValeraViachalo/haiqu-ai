@@ -45,15 +45,18 @@ const IntroSectionAlt = () => {
       },
     });
 
+    return () => window.removeEventListener('scroll', scrollHandler);
+  }, [ballTrigger]);
+
+  useEffect(() => {
     if (ballTrigger) {
+      gsap.killTweensOf([videoContainerRef.current, sphereRef.current, ballsContainer.current]);
       gsap.to(videoContainerRef.current, {
         opacity: 0,
         duration: 0,
       });
-
       gsap.to(sphereRef.current, { opacity: 1, duration: 0 });
-
-      gsap.to(ballsContainer.current, { opacity: 1, duration: 0.1 });
+      gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
     } else {
       gsap.to(videoContainerRef.current, {
         opacity: 1,
@@ -71,8 +74,6 @@ const IntroSectionAlt = () => {
         delay: 0.2,
       });
     }
-
-    return () => window.removeEventListener('scroll', scrollHandler);
   }, [ballTrigger]);
 
   // useEffect(() => {
