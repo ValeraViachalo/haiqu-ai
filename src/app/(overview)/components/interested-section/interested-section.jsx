@@ -8,8 +8,6 @@ import { BookADemo } from '@/src/ui';
 const InterestedSection = () => {
   const [videoSrc, setVideoSrc] = useState('/videos/quant-comp-tablet.mp4');
 
-  console.log('videoSrc!!!', videoSrc);
-
   const chooseVideo = (width) => {
     if (width >= 835) {
       return '/videos/quant-comp-desktop.mp4';

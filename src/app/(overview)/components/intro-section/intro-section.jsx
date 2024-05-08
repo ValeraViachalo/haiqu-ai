@@ -16,7 +16,7 @@ const IntroSectionAlt = () => {
   const sphereRef = useRef(null);
   const ballsContainer = useRef(null);
 
-  const [trigger, setTrigger] = useState(false);
+  // const [trigger, setTrigger] = useState(false);
   const [ballTrigger, setBallTrigger] = useState(false);
 
   useEffect(() => {
@@ -49,10 +49,11 @@ const IntroSectionAlt = () => {
       gsap.to(videoContainerRef.current, {
         opacity: 0,
         duration: 0,
-        // delay: 0.1,
       });
+
       gsap.to(sphereRef.current, { opacity: 1, duration: 0 });
-      gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
+
+      gsap.to(ballsContainer.current, { opacity: 1, duration: 0.1 });
     } else {
       gsap.to(videoContainerRef.current, {
         opacity: 1,
