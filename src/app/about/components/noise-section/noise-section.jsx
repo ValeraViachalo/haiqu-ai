@@ -67,22 +67,13 @@ const NoiseSection = () => {
           '<'
         );
 
-        if (!isMobile) {
-          tl.to(soonRef.current, {
-            y: isTablet ? '11.75rem' : '15.1875rem',
-            fontSize: isTablet ? '7.8125rem' : '18.75rem',
-            duration: 5,
-          });
-
-          // tl.to(
-          //   soonBlockRef.current,
-          //   {
-          //     height: isTablet ? '20rem' : '30rem',
-          //     duration: 5,
-          //   },
-          //   '<'
-          // );
-        }
+        // if (!isMobile) {
+        //   tl.to(soonRef.current, {
+        //     y: isTablet ? '11.75rem' : '15.1875rem',
+        //     fontSize: isTablet ? '7.8125rem' : '18.75rem',
+        //     duration: 5,
+        //   });
+        // }
       }
     );
 

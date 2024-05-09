@@ -146,12 +146,12 @@
     font-size: 2.125rem;
     line-height: 115%;
     color: rgba($main-font-color, 0.35);
-    height: 30rem;
+    // height: 30rem;
 
     @include tablet {
       width: 31.0625rem;
       font-size: 1.5rem;
-      height: 20rem;
+      // height: 20rem;
     }
 
     @include mobile {

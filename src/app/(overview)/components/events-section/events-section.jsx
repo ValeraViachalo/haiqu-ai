@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import styles from './events-section.module.scss';
 import { constants } from '@/src/constants';
-import { hackathons, latestNews, logos, seminars } from '@/src/mockedData';
+import { hackathons, latestNews, logos, logosAsSeenIs, partners, seminars } from '@/src/mockedData';
 import { Carousel, Hackathon, LatestNews, Seminar, Ticker } from '@/src/ui';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -143,7 +143,7 @@ const EventsSection = () => {
       </div>
 
       <Ticker
-        logos={logos}
+        logos={logosAsSeenIs}
         title={constants.TICKER_TITLE_AS_SEEN_IN}
         dark={false}
       />

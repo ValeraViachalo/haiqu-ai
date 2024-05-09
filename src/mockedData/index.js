@@ -7,3 +7,5 @@ export { caseStudy } from './caseStudy';
 export { logosLight } from './logos';
 export { team } from './team';
 export { locations } from './locations';
+export { logosAsSeenIs } from './as-seen-is';
+export { partners } from './partners';

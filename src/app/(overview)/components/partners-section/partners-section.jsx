@@ -1,4 +1,4 @@
-import { logosLight, testimonial } from '@/src/mockedData';
+import { logosAsSeenIs, partners, testimonial } from '@/src/mockedData';
 import Testimonial from '@/src/ui/testimonial';
 import styles from './partners-sections.module.scss';
 import { Ticker } from '@/src/ui';
@@ -10,7 +10,7 @@ const PartnersSection = () => {
       <div className={styles.partners_section__ticker_container}>
         <Ticker
           title={constants.TICKER_TITLE_PARTNERS_ADOPTERS}
-          logos={logosLight}
+          logos={partners}
           dark
         />
       </div>
