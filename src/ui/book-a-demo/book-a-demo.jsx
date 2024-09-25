@@ -45,10 +45,15 @@ const BookADemo = ({ light }) => {
     };
   }, []);
 
+  const scrolltoHash = function (element_id) {
+    const element = document.getElementById(element_id)
+    element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  }
+
   if (!isVisible) return null;
 
   return (
-    <button
+    <button onClick={() => scrolltoHash('form-section')}
       className={classNames(styles.book_a_demo, {
         [styles.book_a_demo__light]: light,
       })}

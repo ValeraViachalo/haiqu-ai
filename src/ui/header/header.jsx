@@ -8,7 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-const Header = () => {
+const Header = ({data}) => {
+
   const [lastScrollY, setLastScrollY] = useState(0);
   const [fixed, setFixed] = useState(false);
 
@@ -36,7 +37,7 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.paddingTop = '0'; 
     };
-  }, [lastScrollY, fixed]); 
+  }, [lastScrollY, fixed]);
 
   return (
     <header
@@ -61,7 +62,7 @@ const Header = () => {
         </div>
       </Link>
 
-      <Navigation />
+      <Navigation data={data} />
     </header>
   );
 };

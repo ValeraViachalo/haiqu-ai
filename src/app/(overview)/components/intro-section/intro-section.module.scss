@@ -18,7 +18,8 @@
   &__title {
     position: relative;
     @include sectionTitle;
-    padding-top: 4.1875rem;
+
+    padding-top: 1rem;
     z-index: 10;
 
     @include tablet {
@@ -37,7 +38,8 @@
   &__title_bottom {
     position: absolute;
     left: 50%;
-    bottom: $padding-horizontal;
+    bottom: calc($padding-horizontal - 1rem);
+    line-height: 1;
     @include sectionTitle;
 
     @include tablet {
@@ -56,12 +58,21 @@
 
   &__animation_container {
     position: absolute;
-    width: 1387px;
-    height: 689px;
+    // width: 1387px;
+    // height: 689px;
     width: calc(74vw - $padding-horizontal);
     height: 60vh;
-    top: 5vw;
+    top: 4vw;
     left: 15vw;
+
+    @include extra {
+      width: 1387px;
+      width: 85.5625rem;
+      height: 689px;
+      height: 41.96875rem;
+      left: 24vw;
+      top: 1.5vw;
+    }
 
     @include tablet {
       width: 90%;
@@ -89,6 +100,15 @@
 
   &__video_container {
     width: 100%;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include mobile {
+      display: block;
+    }
 
     video {
       width: 100%;
@@ -97,18 +117,70 @@
     }
   }
 
-  &__sphere_container {
+  &__sphere_horizontal {
     position: absolute;
     top: 0.3px;
     left: 0;
     width: 100%;
     z-index: 2;
     aspect-ratio: 16 / 9;
-    background-image: url('/images/sphere.svg');
+    background-image: url('/images/sphere-horizontal.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top 5%;
-    opacity: 0;
+    opacity: 1;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__sphere_container {
+    position: absolute;
+    top: 0.3px;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    aspect-ratio: 16 / 9;
+    background-image: url('/images/sphere-contour.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top 5%;
+    opacity: 1;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__sphere_vertical {
+    position: absolute;
+    top: 0.3px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    aspect-ratio: 16 / 9;
+    background-image: url('/images/sphere-vertical.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top 5%;
+    opacity: 1;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
 
     &::after {
       content: '';
@@ -130,11 +202,21 @@
     position: absolute;
     z-index: 10000;
     width: 100%;
-    top: 5vh;
-    height: 98%;
-    opacity: 0;
+    top: 4vh;
+    height: 63rem;
+    opacity: 1;
+
+    @include extra {
+      top: 0;
+      left: 15vw;
+      width: 70%;
+    }
 
     @include tablet {
+      display: none;
+    }
+
+    @include mobile {
       display: none;
     }
   }

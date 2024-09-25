@@ -5,11 +5,22 @@ import styles from './navigation.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileNavMenu from './components/mobile-nav-menu';
-import { links } from '@/src/constants';
+//import { links } from '@/src/constants';
 import BookADemo from '../book-a-demo';
 
-const Navigation = () => {
+const Navigation = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const links = data.header.menu
+    .filter(function (item) {
+      if (item.text) {
+        return true; // skip
+      }
+      return false;
+    })
+    .map(function (item, key) {
+      return { id: key, href: item.link, name: item.text };
+    });
 
   // useEffect(() => {
   //   if (isOpen) {
@@ -57,6 +68,7 @@ const Navigation = () => {
       <MobileNavMenu
         links={links}
         isOpened={isOpen}
+        data={data}
       />
 
       <div className={styles.navigation__links_container}>

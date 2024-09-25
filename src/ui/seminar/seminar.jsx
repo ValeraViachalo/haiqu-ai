@@ -6,7 +6,7 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import { constants } from '@/src/constants';
 
-const Seminar = ({ title, description, photo }) => {
+const Seminar = ({ title, description, photo, link }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -30,9 +30,12 @@ const Seminar = ({ title, description, photo }) => {
 
       <p className={styles.seminar__description}>{description}</p>
 
-      <button className={styles.seminar__button}>
-        {constants.SEMINAR__BUTTON}
-      </button>
+      { !link ?
+          '' :
+          <button onClick={() => location.href = link} className={styles.seminar__button}>
+            {constants.SEMINAR__BUTTON}
+          </button>
+      }
     </article>
   );
 };

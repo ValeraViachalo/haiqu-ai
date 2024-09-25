@@ -9,7 +9,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const IntroSectionAlt = () => {
+const IntroSectionAlt = ({data}) => {
+  if (data?.preview.active !== true) {
+    return ('');
+  }
+
   const triggerRef = useRef(null);
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
@@ -48,33 +52,33 @@ const IntroSectionAlt = () => {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, [ballTrigger]);
 
-  useEffect(() => {
-    if (ballTrigger) {
-      gsap.killTweensOf([videoContainerRef.current, sphereRef.current, ballsContainer.current]);
-      gsap.to(videoContainerRef.current, {
-        opacity: 0,
-        duration: 0,
-      });
-      gsap.to(sphereRef.current, { opacity: 1, duration: 0 });
-      gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
-    } else {
-      gsap.to(videoContainerRef.current, {
-        opacity: 1,
-        duration: 0,
-        delay: 0.1,
-      });
-      gsap.to(sphereRef.current, {
-        opacity: 0,
-        duration: 0,
-        delay: 0.1,
-      });
-      gsap.to(ballsContainer.current, {
-        opacity: 0,
-        duration: 0,
-        delay: 0.2,
-      });
-    }
-  }, [ballTrigger]);
+  // useEffect(() => {
+  //   if (ballTrigger) {
+  //     gsap.killTweensOf([videoContainerRef.current, sphereRef.current, ballsContainer.current]);
+  //     gsap.to(videoContainerRef.current, {
+  //       opacity: 0,
+  //       duration: 0,
+  //     });
+  //     gsap.to(sphereRef.current, { opacity: 1, duration: 0 });
+  //     gsap.to(ballsContainer.current, { opacity: 1, duration: 0 });
+  //   } else {
+  //     gsap.to(videoContainerRef.current, {
+  //       opacity: 1,
+  //       duration: 0,
+  //       delay: 0.1,
+  //     });
+  //     gsap.to(sphereRef.current, {
+  //       opacity: 0,
+  //       duration: 0,
+  //       delay: 0.1,
+  //     });
+  //     gsap.to(ballsContainer.current, {
+  //       opacity: 0,
+  //       duration: 0,
+  //       delay: 0.2,
+  //     });
+  //   }
+  // }, [ballTrigger]);
 
   // useEffect(() => {
   //   const video = videoRef.current;
@@ -138,9 +142,8 @@ const IntroSectionAlt = () => {
       className={styles.intro}
       id="intro"
     >
-      <p className={styles.intro__title}>
-        Clumsy <br />
-        Hardware
+      <p className={styles.intro__title} dangerouslySetInnerHTML={{ __html: data.preview.text_1 }}>
+
       </p>
 
       <div className={styles.intro__animation_container}>
@@ -172,6 +175,14 @@ const IntroSectionAlt = () => {
         </div>
 
         <div
+          className={styles.intro__sphere_vertical}
+        />
+        
+        <div
+          className={styles.intro__sphere_horizontal}
+        />
+
+        <div
           className={styles.intro__sphere_container}
           ref={sphereRef}
         />
@@ -190,9 +201,8 @@ const IntroSectionAlt = () => {
         ))}
       </div>
 
-      <p className={styles.intro__title_bottom}>
-        Needs Careful <br />
-        Software
+      <p className={styles.intro__title_bottom} dangerouslySetInnerHTML={{ __html: data.preview.text_2 }}>
+
       </p>
     </section>
   );

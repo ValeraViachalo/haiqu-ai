@@ -1,8 +1,9 @@
 export const hackathons = [
   {
-    id: 'empty',
-    date: 'Hackathons coming soon',
-    photo: '/mocked/hackathons/empty.png'
+    id: '1',
+    date: 'QHack 2024',
+    title: 'Sponsor Demos',
+    photo: '/mocked/hackathons/Qhack.png',
   },
   // {
   //   id: 1,

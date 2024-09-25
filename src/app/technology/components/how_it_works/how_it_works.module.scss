@@ -1,0 +1,34 @@
+@import '/src/styles/main.module.scss';
+
+.how_it_works {
+  position: relative;
+  z-index: 20;
+  padding: 4.375rem 1.75rem 8.3125rem 1.75rem;
+  background-color: $main-font-color;
+  width: 100%;
+
+  &__info {
+    display: flex;
+    color: white;
+    margin-bottom: 8.3125rem;
+  }
+
+  &__title {
+    @include sectionTitle;
+    width: 50%;
+  }
+
+  &__description {
+    width: 50%;
+  }
+
+  &__text {
+    font-size: 2.125rem;
+    width: 42.9375rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

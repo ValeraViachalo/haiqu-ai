@@ -43,10 +43,11 @@
 
     @include tablet {
       position: relative;
-      left: -$padding-horizontal;
+      left: -2.5rem;
       top: 0;
-      width: 60.8125rem;
-      height: 39.5625rem;
+      // width: 60.8125rem;
+      // height: 39.5625rem;
+      width: calc(100vw - $padding-mobile);
     }
 
     @include mobile {

@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { constants } from '@/src/constants';
 import ReadButton from '../read-button';
 
-const LatestNews = ({ backgroundColor, photo, date, title, dark }) => {
+const LatestNews = ({ backgroundColor, photo, date, title, dark, link }) => {
   const container = useRef(null);
   const [hovered, setHovered] = useState(false);
 
@@ -44,6 +44,7 @@ const LatestNews = ({ backgroundColor, photo, date, title, dark }) => {
       <ReadButton
         dark={dark}
         visibility={hovered}
+        link={link}
         title={constants.LATEST_NEWS_BUTTON_TITLE}
       />
     </article>

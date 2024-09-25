@@ -14,6 +14,16 @@ body {
   font-family: var(--neue-montreal-font);
   position: relative;
 
+  // @media (aspect-ratio: 21/9) {
+  //   font-size: 0.625vw;
+  //   overflow-x: hidden;
+  // }
+
+  @media (min-width: 2560px) {
+    font-size: 0.625vw;
+    overflow-x: hidden;
+  }
+
   @media (max-width: 834px) {
     font-size: 1.34vh;
     overflow-x: hidden;

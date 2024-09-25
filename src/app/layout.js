@@ -9,7 +9,16 @@ export const metadata = {
   description: siteConfig.description,
 };
 
-export default function RootLayout({ children }) {
+async function getHeadBot() {
+    const res = await fetch(`https://app.haiqu.ai/wp-admin/admin-ajax.php?action=api&page=options`,{
+        cache: "no-cache",
+    })
+    return res.json()
+}
+
+export default async function RootLayout({ children }) {
+    const dataHB = await getHeadBot();
+
   return (
     <html lang="en">
       <link
@@ -21,10 +30,10 @@ export default function RootLayout({ children }) {
         className={`${fraktionMono.variable} ${neueMontreal.variable} ${fraktionSemibold.variable}`}
       >
         <div className={styles.header_container}>
-          <Header />
+          <Header data={dataHB} />
         </div>
         <ScrollProvider>{children}</ScrollProvider>
-        <Footer />
+        <Footer data={dataHB} />
       </body>
     </html>
   );

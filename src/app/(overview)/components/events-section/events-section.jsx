@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import styles from './events-section.module.scss';
 import { constants } from '@/src/constants';
-import { hackathons, latestNews, logos, logosAsSeenIs, partners, seminars } from '@/src/mockedData';
+import { logos } from '@/src/mockedData';
 import { Carousel, Hackathon, LatestNews, Seminar, Ticker } from '@/src/ui';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -11,8 +11,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const EventsSection = () => {
-  const hackathonsRef = useRef(null);
+const EventsSection = ({data}) => {
+    if (data.events.active !== true) {
+        //return ('');
+    }
+
+
+    const hackathonsRef = useRef(null);
   const seminarsRef = useRef(null);
 
   useGSAP(() => {
@@ -41,20 +46,59 @@ const EventsSection = () => {
     }
   }, []);
 
+    const logosAsSeenIs = data.seen.logo.filter(function(item) {
+        if (item) {
+            return true;
+        }
+        return false;
+    }).map(function (item, key) {
+        return {id:key, photo:item, alt:''}
+    })
+
+    const seminars = data.events.seminars.filter(function(item) {
+        if (item.title) {
+            return true;
+        }
+        return false;
+    }).map(function (item, key) {
+        return {id:key, photo:item.img, title:item.title, description:item.description, link:item.link}
+    })
+
+    const latestNews = data.events.events.filter(function(item) {
+        if (item.title) {
+            return true;
+        }
+        return false;
+    }).map(function (item, key) {
+        return {id:key, photo:item.img, title:item.title, color:item.bg, link:item.link, dark:!item.dark, date:item.date}
+    })
+
+    const hackathons = data.events.hackathons.filter(function(item) {
+        if (item.title) {
+            return true;
+        }
+        return false;
+    }).map(function (item, key) {
+        return {id:key, photo:item.img, title:item.title, subtitle:item.subtitle, link:item.link, date:item.date}
+    })
+
   return (
     <section className={styles.events_section} id="events-section">
       <div className={styles.events_section__header}>
         <p className={styles.events_section__title}>
-          {constants.EVENTS_SECTION_TITLE}
+          {data.events.title}
         </p>
 
         <div>
           <p className={styles.events_section__description}>
-            {constants.EVENTS_SECTION_DESCRIPTION}
+              {data.events.text}
           </p>
-          <button className={styles.events_section__button}>
-            {constants.EVENTS_SECTION_DISCOVER_BUTTON_TEXT}
-          </button>
+            {data.events.button.active !== true ?
+                '' :
+                <button onClick={() => location.href=data.events.button.link} className={styles.events_section__button}>
+                    {data.events.button.text}
+                </button>
+            }
         </div>
       </div>
 
@@ -68,7 +112,7 @@ const EventsSection = () => {
           </p>
 
           <div className={styles.events_section__row__latest_news}>
-            {latestNews.map(({ id, title, date, photo, color, dark }) => (
+            {latestNews.map(({ id, title, date, photo, color, dark, link }) => (
               <LatestNews
                 key={id}
                 backgroundColor={color}
@@ -77,13 +121,14 @@ const EventsSection = () => {
                 photo={photo}
                 dark={dark}
                 color={color}
+                link={link}
               />
             ))}
           </div>
 
           <div className={styles.events_section__carousel_container}>
             <Carousel items={latestNews}>
-              {latestNews.map(({ id, title, date, photo, color, dark }) => (
+              {latestNews.map(({ id, title, date, photo, color, dark, link }) => (
                 <LatestNews
                   key={id}
                   backgroundColor={color}
@@ -92,6 +137,7 @@ const EventsSection = () => {
                   photo={photo}
                   dark={dark}
                   color={color}
+                  link={link}
                 />
               ))}
             </Carousel>
@@ -109,12 +155,14 @@ const EventsSection = () => {
               className={styles.events_section__row__hackathons}
               ref={hackathonsRef}
             >
-              {hackathons.map(({ id, title, date, photo }) => (
+              {hackathons.map(({ id, title, date, photo, link, subtitle }) => (
                 <Hackathon
                   key={id}
                   title={title}
                   date={date}
                   photo={photo}
+                  subtitle={subtitle}
+                  link={link}
                 />
               ))}
             </div>
@@ -129,12 +177,13 @@ const EventsSection = () => {
               className={styles.events_section__row__seminars}
               ref={seminarsRef}
             >
-              {seminars.map(({ id, photo, title, description }) => (
+              {seminars.map(({ id, photo, title, description, link }) => (
                 <Seminar
                   key={id}
                   photo={photo}
                   title={title}
                   description={description}
+                  link={link}
                 />
               ))}
             </div>
@@ -144,7 +193,7 @@ const EventsSection = () => {
 
       <Ticker
         logos={logosAsSeenIs}
-        title={constants.TICKER_TITLE_AS_SEEN_IN}
+        title={data.seen.title}
         dark={false}
       />
     </section>

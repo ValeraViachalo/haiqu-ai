@@ -1,7 +1,7 @@
 @import '/src/styles/main.module.scss';
 
 .we_are {
-  padding: 0 $padding-mobile 7.5rem;
+  padding: 7.5rem $padding-mobile 7.5rem;
 
   &__content {
     background-color: $haiqu-red;

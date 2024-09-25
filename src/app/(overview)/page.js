@@ -1,3 +1,6 @@
+'use client';
+import { useState, useEffect } from 'react';
+
 import styles from './page.module.scss';
 import {
   CaseStudySection,
@@ -11,14 +14,38 @@ import {
 import { BookADemo } from '@/src/ui';
 
 const Home = () => {
+    const [data, setData] = useState(null)
+    const [isLoading, setLoading] = useState(true)
+    useEffect(() => {
+        fetch(`https://app.haiqu.ai/wp-admin/admin-ajax.php?action=api&page=front`,{
+            cache: "no-cache",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data)
+                setLoading(false)
+            })
+    }, [])
+
+    if (isLoading) {
+        return (
+            <main className={styles.main}>
+                <div style={{height:'2000px'}}>
+                    {/* <p>Loading...</p> */}
+                </div>
+            </main>
+        );
+    }
+    //if (!data) return <p>No data</p>
+
   return (
     <main className={styles.main}>
-      <IntroSection />
-      <TechIntroSection />
-      <InterestedSection />
-      <CaseStudySection />
-      <PartnersSection />
-      <EventsSection />
+      <IntroSection data={data} />
+      <TechIntroSection data={data} />
+      <InterestedSection data={data} />
+      {/* <CaseStudySection /> */}
+      <PartnersSection data={data} />
+      <EventsSection data={data} />
       <div className={styles.book_a_demo_container}>
         <BookADemo />
       </div>

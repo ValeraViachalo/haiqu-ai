@@ -1,0 +1,137 @@
+@import '/src/styles/main.module.scss';
+
+.card {
+  position: relative;
+  border: 1px solid $main-font-color;
+  border-radius: 0.9375rem;
+  padding: 1.875rem;
+  width: 100%;
+  min-height: 50rem;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+
+  &__hovered {
+    border: unset;
+  }
+
+  &:hover {
+    transition: background-color 0.3s ease;
+    background-color: $main-font-color;
+  }
+
+  &__red {
+    &:hover {
+      transition: background-color 0.3s ease;
+      background-color: $haiqu-red;
+    }
+  }
+
+  &__blue {
+    &:hover {
+      transition: background-color 0.3s ease;
+      background-color: $haiqu-blue;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 16.8125rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.625rem;
+    background-color: $main-font-color;
+    margin-bottom: 1.875rem;
+    transition: 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__hovered {
+      transition: 1s ease;
+      background-color: white;
+    }
+  }
+
+  &__image_text {
+    position: absolute;
+    bottom: 20px;
+    text-transform: uppercase;
+    font-family: $fraktion-font;
+    color: $haiqu-light-grey;
+  }
+
+  &__button {
+    width: max-content;
+    padding: $padding-button;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    background-color: rgba(white, 0.35);
+    border: unset;
+    border-radius: 0.625rem;
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    position: absolute;
+    right: 1.875rem;
+    top: 1.875rem;
+    transition: transform 1s ease;
+    transform: translateY(-4rem);
+
+    &:hover {
+      transition: translate 1s ease;
+      opacity: 0.6;
+    }
+
+    &:visited {
+      color: $main-font-color;
+    }
+
+    &__hovered {
+      transition: transform 1s ease;
+      transform: translateY(0);
+    }
+  }
+
+  &__info {
+    position: absolute;
+    transform: translateY(16.5rem);
+    transition: 1s ease;
+
+    &__hovered {
+      color: white;
+      transform: translateY(0);
+      transition: 1s ease;
+    }
+  }
+
+  &__title {
+    opacity: 0.5;
+    font-size: 1.625rem;
+    margin-bottom: 0.9375rem;
+  }
+
+  &__moto {
+    font-size: 2.125rem;
+    margin-bottom: 4.375rem;
+  }
+
+  &__badges {
+    display: flex;
+    gap: 0.9375rem;
+    margin-bottom: 0.9375rem;
+  }
+
+  &__badge {
+    padding: 3px 12px 6px;
+    background-color: rgba(#d9d9d959, 0.35);
+    border-radius: 1.875rem;
+    font-family: $fraktion-font;
+    font-size: 1.25rem;
+    line-height: 1;
+    width: max-content;
+  }
+
+  &__text {
+    font-size: 2.125rem;
+    width: calc(100% - 1.875rem);
+  }
+}

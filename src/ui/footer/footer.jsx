@@ -2,30 +2,31 @@ import React from 'react';
 import styles from './footer.module.scss';
 import DemoBookingForm from '../demo-booking-form';
 
-const Footer = () => {
+const Footer = ({data}) => {
+
   return (
     <footer
       className={styles.footer}
       id="footer"
     >
-      <DemoBookingForm />
+      <DemoBookingForm data={data} />
 
       <div className={styles.footer__container}>
         <div className={styles.footer__top_section}>
-          <p>©2023 Haiqu. All rights reserved.</p>
+          <p>©2023 {data.footer.copy}</p>
           <a
-            href="tel:+16507886011"
+            href={"mailto:" + data.footer.phone}
             className={styles.footer__phone}
           >
-            +1 650 788 6011
+            {data.footer.phone}
           </a>
         </div>
 
         <div className={styles.footer__bottom_section}>
           <div>
-            <a href="#">Facebook</a>
-            <a href="#">X</a>
-            <a href="#">LinkedIn</a>
+            {data.footer.facebook ? <a href={data.footer.facebook} rel="nofollow" target="_blank">Facebook</a> : '' }
+            {data.footer.x ? <a href={data.footer.x} rel="nofollow" target="_blank">X</a> : '' }
+            {data.footer.linkedin ? <a href={data.footer.linkedin} rel="nofollow" target="_blank">LinkedIn</a> : '' }
           </div>
 
           <div className={styles.footer__terms}>

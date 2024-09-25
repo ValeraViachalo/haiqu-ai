@@ -6,6 +6,7 @@
   border-radius: 0.9375rem;
   padding: 0.9375rem;
   transition: 1s ease;
+  cursor: pointer;
 
   &__photo {
     position: relative;
@@ -13,6 +14,7 @@
     height: 5.125rem;
     overflow: hidden;
     border-radius: 0.625rem;
+    margin-bottom: 0.731875rem;
   }
 
   &__image {
@@ -52,5 +54,18 @@
       font-size: 1.25rem;
       line-height: 1.4375rem;
     }
+  }
+}
+
+.hackathon__link {
+  color: $main-font-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $main-font-color;
+  }
+
+  &:active {
+    color: $main-font-color;
   }
 }

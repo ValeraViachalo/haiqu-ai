@@ -3,7 +3,7 @@
 .location {
   @include flexCenter;
   width: 57.1875rem;
-  height: 48.125rem;
+  height: 42.125rem;
   transition: 0.3s ease;
   border-radius: 0.625rem;
 
@@ -26,22 +26,22 @@
     }
   }
 
-  &__1 {
+  &__0 {
     transition: 0.3s ease;
     background-color: #cde9f7;
   }
 
-  &__2 {
+  &__1 {
     transition: 0.3s ease;
     background-color: #d9d9d9;
   }
 
-  &__3 {
+  &__2 {
     transition: 0.3s ease;
     background-color: #ffeabf;
   }
 
-  &__4 {
+  &__3 {
     transition: 0.3s ease;
     background-color: #f7cfc6;
   }
@@ -118,7 +118,8 @@
     margin-bottom: 6.75rem;
 
     @include tablet {
-      margin-bottom: 3.75rem;
+      // margin-bottom: 3.75rem;
+      margin-bottom: 0;
     }
 
     &__hovered {

@@ -1,0 +1,34 @@
+@import '/src/styles/main.module.scss';
+
+.technology {
+  &__info {
+    display: flex;
+    padding-top: 10.75rem;
+    padding-bottom: 1.875rem;
+    padding-left: 1.875rem;
+    align-items: flex-end;
+    gap: 8.8125rem;
+  }
+
+  &__title {
+    @include sectionTitle;
+    width: 49.875rem;
+  }
+
+  &__description {
+    width: 27.75rem;
+    font-size: 1.625rem;
+    opacity: 0.35;
+    line-height: 116%;
+  }
+
+  &__illustration {
+    background-color: $haiqu-light-blue;
+    padding: 11.1875rem 13.9375rem 11.5rem 16.4375rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import '/src/styles/main.module.scss';
+
+.our_middleware {
+  width: 100vw;
+  background-color: $haiqu-light-grey;
+  padding: 4.275rem 1.875rem 13.125rem 1.875rem;
+  display: flex;
+  gap: 7.5625rem;
+
+  &__leftside {
+    width: 50%;
+  }
+
+  &__rightside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    width: 50vw;
+  }
+
+  &__title {
+    font-size: 10rem;
+    line-height: 1;
+    width: 54.5625rem;
+    margin-bottom: 1.875rem;
+  }
+
+  &__description {
+    font-size: 1.625rem;
+    width: 20.9375rem;
+  }
+}

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useIsMobile } from '@/src/hooks';
 import { mediaQueries } from '@/src/constants';
 
-const Location = ({ city, id, photo }) => {
+const Location = ({ city, id, photo, address, email, phone }) => {
   const [hovered, setHovered] = useState(false);
 
   const isTablet = useIsMobile(mediaQueries.tablet);
@@ -80,23 +80,22 @@ const Location = ({ city, id, photo }) => {
       >
         <div>
           <p className={styles.location__info_title}>Email</p>
-          <p className={styles.location__info_content}>contact@haiqu.com</p>
+          <p className={styles.location__info_content}>{email}</p>
         </div>
 
         <div>
-          <p className={styles.location__info_title}>Phone</p>
-          <p className={styles.location__info_content}>+34 943 371-956</p>
+          <p className={styles.location__info_title}>Address</p>
+          <p className={styles.location__info_content}>{address}</p>
         </div>
       </div>
 
-      <p
+      {/* <p
         className={classNames(styles.location__address, {
           [styles.location__address__hovered]: hovered,
         })}
       >
-        Crookedest Street In The World Lombard St, 1098, San Francisco,
-        California, United States
-      </p>
+        {address}
+      </p> */}
     </div>
   );
 };

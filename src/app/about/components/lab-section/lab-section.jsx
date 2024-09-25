@@ -8,7 +8,10 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const LabSection = () => {
+const LabSection = ({data}) => {
+  if (data.date.active !== true) {
+    return ('');
+  }
   const labRef = useRef(null);
   const yearRef = useRef(null);
   const bgRef = useRef(null);
@@ -71,21 +74,21 @@ const LabSection = () => {
         className={styles.lab__bg}
         ref={bgRef}
       />
-      <p className={styles.lab__october}>October</p>
+      <p className={styles.lab__october} dangerouslySetInnerHTML={{ __html: data.date.month }}>
+
+      </p>
       <p
         className={styles.lab__year}
         ref={yearRef}
+        dangerouslySetInnerHTML={{ __html: data.date.year }}
       >
-        2022
+
       </p>
-      <p className={styles.lab__creative_lab}>Creative Desctuction Lab</p>
-      <p className={styles.lab__text}>
-        Since forming within the Creative Destruction Lab in October 2022, we
-        have built a global team of interdisciplinary, open minds to push
-        quantum software forward. <br />
-        <br />
-        We combine deep expertise with creativity to deliver performance
-        breakthroughs. 
+      <p className={styles.lab__creative_lab} dangerouslySetInnerHTML={{ __html: data.date.title }}>
+
+      </p>
+      <p className={styles.lab__text} dangerouslySetInnerHTML={{ __html: data.date.text }}>
+
       </p>
     </section>
   );

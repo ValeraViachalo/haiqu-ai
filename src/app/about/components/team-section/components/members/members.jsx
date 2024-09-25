@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-
-import { team } from '@/src/mockedData';
+//import { team } from '@/src/mockedData';
 import styles from './members.module.scss';
-import MembersDetails from './components/members-details';
+import MembersDetails from './components/member-details';
 import Image from 'next/image';
 
-const Members = () => {
+const Members = ({team}) => {
   const [photoId, setPhotoId] = useState(null);
 
   const selectedMember = team.find((member) => member.id === photoId);
+
   return (
     <div className={styles.members}>
       <div className={styles.members__details}>

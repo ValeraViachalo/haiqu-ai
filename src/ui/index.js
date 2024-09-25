@@ -15,3 +15,4 @@ export { default as BookADemo } from './book-a-demo';
 export { default as CaseStudyMobile } from './case-study-mobile';
 export { default as Carousel } from './carousel';
 export { default as Transition } from './transition';
+export { default as Card } from './card';

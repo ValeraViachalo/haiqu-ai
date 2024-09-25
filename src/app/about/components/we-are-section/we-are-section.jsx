@@ -8,18 +8,20 @@ import WeAreSectionMobile from './we-are-section-mobile';
 import { useIsMobile } from '@/src/hooks';
 import { mediaQueries } from '@/src/constants';
 
-const professions = [
-  'engineers',
-  'researchers',
-  'physicists',
-  'mathematicians',
-  'strategists',
-  'operators',
-  'optimists',
-  'creatives',
-];
+const WeAreSection = ({data}) => {
+  if (data.we.active !== true) {
+    return ('');
+  }
 
-const WeAreSection = () => {
+  const professions = data.we.list.filter(function(item) {
+    if (item.text) {
+      return true;
+    }
+    return false;
+  }).map(function (item, key) {
+    return item.text
+  })
+
   const isMobile = useIsMobile(mediaQueries.mobile);
 
   function shuffleArray(array) {
@@ -56,7 +58,9 @@ const WeAreSection = () => {
       ) : (
         <section className={styles.we_are}>
           <div className={styles.we_are__content}>
-            <p className={styles.we_are__title}>We are</p>
+            <p className={styles.we_are__title}>
+              {data.we.title}
+            </p>
             <div className={styles.we_are__line} />
             <div className={styles.we_are__professions}>
               {professions.map((profession) => (

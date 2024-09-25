@@ -9,7 +9,11 @@ import Illustration from './components/illustration';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const IntroSection = () => {
+const IntroSection = ({ data = { data } }) => {
+  if (data.preview.active !== true) {
+    return '';
+  }
+
   const mainRef = useRef(null);
   const titleRef = useRef(null);
   const titlePartRef = useRef(null);
@@ -31,9 +35,10 @@ const IntroSection = () => {
         isMobile: '(max-width: 430px)',
         isTablet: '(max-width: 834px)',
         isDesktop: '(min-width: 834px)',
+        isHugeDesktop: '(min-width: 2560px)',
       },
       (context) => {
-        const { isMobile, isTablet } = context.conditions;
+        const { isMobile, isTablet, isHugeDesktop } = context.conditions;
 
         if (!isMobile) {
           const tl = gsap.timeline({
@@ -75,8 +80,8 @@ const IntroSection = () => {
           });
 
           tl1.to(perhapsRef.current, {
-            y: isTablet ? '10rem' : '10rem',
-            duration: 3,
+            y: isHugeDesktop ? '40rem' : '10rem',
+            duration: isHugeDesktop ? 4 : 3,
           });
 
           const tl2 = gsap.timeline({
@@ -107,9 +112,10 @@ const IntroSection = () => {
       ref={mainRef}
       id="about-main"
     >
-      <p className={styles.intro__title}>
-        Quantum computing will inspire a more carefully designed world
-      </p>
+      <p
+        className={styles.intro__title}
+        dangerouslySetInnerHTML={{ __html: data.preview.text }}
+      ></p>
 
       <div
         ref={titlePartRef}
@@ -118,16 +124,15 @@ const IntroSection = () => {
         <p
           className={styles.intro__title_part_text}
           ref={titleRef}
-        >
-          when it works.
-        </p>
+          dangerouslySetInnerHTML={{ __html: data.preview.title }}
+        ></p>
       </div>
 
       <div
         className={styles.intro__bubbles}
         ref={bubblesRef}
       >
-        <Illustration />
+        <Illustration data={data} />
       </div>
 
       <div
@@ -138,7 +143,9 @@ const IntroSection = () => {
           className={styles.intro__perhaps}
           ref={perhapsRef}
         >
-          Perhaps. <span>Perhaps.</span> <span>Perhaps.</span>
+          {data.preview.illustration.text_4}{' '}
+          <span>{data.preview.illustration.text_4}</span>{' '}
+          <span>{data.preview.illustration.text_4}</span>
         </p>
       </div>
     </section>

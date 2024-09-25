@@ -15,9 +15,13 @@ gsap.registerPlugin(ScrollTrigger);
 const startAnimation = 'top 7.5%';
 const scrubValue = 1.5;
 const easing = 'power4.in';
-const delay = 0.1;
+let delay = 0.1;
 
-const TechIntroSection = () => {
+const TechIntroSection = ({ data }) => {
+  if (data.computers.active !== true) {
+    return '';
+  }
+
   const filledBar = useRef(null);
   const main = useRef(null);
   const logo = useRef(null);
@@ -43,9 +47,10 @@ const TechIntroSection = () => {
         isMobile: '(max-width: 430px)',
         isTablet: '(max-width: 834px)',
         isDesktop: '(min-width: 834px)',
+        isHugeDesktop: '(min-width: 2560px',
       },
       (context) => {
-        const { isMobile } = context.conditions;
+        const { isMobile, isHugeDesktop } = context.conditions;
 
         const tl1 = gsap.timeline({
           scrollTrigger: {
@@ -57,6 +62,10 @@ const TechIntroSection = () => {
             ease: easing,
           },
         });
+
+        // if (isHugeDesktop) {
+        //   delay = 0;
+        // }
 
         tl1.to(
           maskFilledBar.current,
@@ -116,7 +125,6 @@ const TechIntroSection = () => {
           {
             height: !isMobile ? '9rem' : '7rem',
             transformOrigin: 'top center',
-            // onComplete: () => ScrollTrigger.refresh(),
           },
           '<'
         );
@@ -162,23 +170,26 @@ const TechIntroSection = () => {
         <Logo blue />
       </div>
 
-      <p className={styles.tech_intro__text}>
-        Today’s quantum computers are noisy.
-      </p>
+      <p
+        className={styles.tech_intro__text}
+        dangerouslySetInnerHTML={{ __html: data.computers.title_1 }}
+      ></p>
 
       <p
         className={styles.tech_intro__moto}
         ref={moto}
-      >
-        But they can do a lot more than you think.
-      </p>
+        dangerouslySetInnerHTML={{ __html: data.computers.title_2 }}
+      ></p>
 
-      <Illustration
-        scrub={scrubValue}
-        easing={easing}
-        delay={delay}
-        startAnimation={startAnimation}
-      />
+      <div className={styles.tech_intro__illustration_container}>
+        <Illustration
+          scrub={scrubValue}
+          easing={easing}
+          delay={delay}
+          startAnimation={startAnimation}
+          data={data}
+        />
+      </div>
 
       <div
         className={styles.tech_intro__100x_container}
@@ -204,19 +215,28 @@ const TechIntroSection = () => {
       </div>
 
       <div className={styles.tech_intro__dc}>
-        <p className={styles.tech_intro__dc_title}>Deeper circuits</p>
-        <p className={styles.tech_intro__dc_description_top}>
-          Executing algorithms on a quantum device is fundamentally an
-          approximate process, which is especially difficult to control in the
-          presence of noise.
-        </p>
-        <p className={styles.tech_intro__dc_description_bottom}>
-          Our middleware embraces approximation by design to maximize the
-          capabilities of current QPUs. Run up to 100X deeper circuits with
-          Haiqu.
-        </p>
+        <p
+          className={styles.tech_intro__dc_title}
+          dangerouslySetInnerHTML={{ __html: data.computers.title }}
+        ></p>
+        <p
+          className={styles.tech_intro__dc_description_top}
+          dangerouslySetInnerHTML={{ __html: data.computers.text_1 }}
+        ></p>
+        <p
+          className={styles.tech_intro__dc_description_bottom}
+          dangerouslySetInnerHTML={{ __html: data.computers.text_2 }}
+        ></p>
 
-        <button className={styles.tech_intro__learn_more}>learn more</button>
+        {data.computers.button.active !== true ? (
+          ''
+        ) : (
+          <button
+            onClick={() => (location.href = data.computers.button.link)}
+            className={styles.tech_intro__learn_more}
+            dangerouslySetInnerHTML={{ __html: data.computers.button.text }}
+          ></button>
+        )}
       </div>
     </section>
   );

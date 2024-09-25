@@ -5,16 +5,20 @@ import styles from './interested-section.module.scss';
 import { constants } from '@/src/constants';
 import { BookADemo } from '@/src/ui';
 
-const InterestedSection = () => {
-  const [videoSrc, setVideoSrc] = useState('/videos/quant-comp-tablet.mp4');
+const InterestedSection = ({data}) => {
+  if (data.video.active !== true) {
+    return ('');
+  }
+
+  const [videoSrc, setVideoSrc] = useState(data.video.video_tablet);
 
   const chooseVideo = (width) => {
     if (width >= 835) {
-      return '/videos/quant-comp-desktop.mp4';
+      return data.video.video;
     } else if (width <= 430) {
-      return '/videos/quant-comp-mobile.mp4';
+      return data.video.video_mobile;
     } else {
-      return '/videos/quant-comp-tablet.mp4';
+      return data.video.video_tablet;
     }
   };
 

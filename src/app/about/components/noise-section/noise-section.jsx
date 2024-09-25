@@ -12,7 +12,11 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 const path =
   'M0.5 129.5L37.5 95L95.5 57.5L163.5 27L230 8L302.5 0.5L376 8L444 27L493 45.5L532 68L571 95L609.5 129.5';
 
-const NoiseSection = () => {
+const NoiseSection = ({data}) => {
+  if (data.about.active !== true) {
+    return ('');
+  }
+
   const noiseRef = useRef(null);
   const spotRef = useRef(null);
   const soonRef = useRef(null);
@@ -86,11 +90,9 @@ const NoiseSection = () => {
       ref={noiseRef}
       id="noise"
     >
-      <p className={styles.noise__heading}>What we do know for certain</p>
-      <p className={styles.noise__text}>
-        Is that quantum computers must first work for any discoveries to be
-        made. They must navigate noise to run algorithms at greater depth and
-        with greater width.
+      <p className={styles.noise__heading} dangerouslySetInnerHTML={{ __html: data.about.title }}></p>
+      <p className={styles.noise__text} dangerouslySetInnerHTML={{ __html: data.about.text_1 }}>
+
       </p>
       <div className={styles.noise__union}>
         <svg
@@ -112,19 +114,18 @@ const NoiseSection = () => {
         />
       </div>
 
-      <p className={styles.noise__description}>
-        Hardware advancements will get us there eventually. We believe advanced
-        software is necessary to get us there
+      <p className={styles.noise__description} dangerouslySetInnerHTML={{ __html: data.about.text_2 }}>
+
       </p>
 
-      <div ref={soonBlockRef}>
+      {/*<div ref={soonBlockRef}>
         <p
           className={styles.noise__soon}
           ref={soonRef}
         >
           soon.
         </p>
-      </div>
+      </div>*/}
     </div>
   );
 };

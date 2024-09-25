@@ -10,6 +10,10 @@
   transition: 0.3s ease-in-out;
   overflow-x: hidden;
 
+  // @include extra {
+  //   opacity: 0.2;
+  // }
+
   &__fixed {
     position: fixed;
     top: 0;

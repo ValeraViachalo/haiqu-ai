@@ -1,0 +1,61 @@
+@import '/src/styles/main.module.scss';
+
+.you_can {
+  position: relative;
+  width: 100vw;
+  padding: 1.875rem;
+  padding-bottom: 4.375rem;
+  z-index: 20;
+  background-color: white;
+
+  &__info {
+    margin-bottom: 1.875rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include sectionTitle;
+    width: 30rem;
+  }
+
+  &__rightbox {
+    border-top: 0.95px solid black;
+    width: 50%;
+    align-self: flex-end;
+  }
+
+  &__100x {
+    font-size: 10rem;
+    line-height: 1;
+  }
+
+  &__description {
+    font-size: 2.125rem;
+    width: 34rem;
+    margin-bottom: 5.5rem;
+  }
+
+  &__button {
+    width: max-content;
+    padding: $padding-button;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    background-color: unset;
+    border: 1px solid rgba($main-font-color, 0.35);
+    border-radius: 0.625rem;
+    transition: 0.3s ease;
+    color: $main-font-color;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+
+    &:hover {
+      transition: 0.3s ease;
+      opacity: 0.6;
+    }
+
+    &:visited {
+      color: $main-font-color;
+    }
+  }
+}

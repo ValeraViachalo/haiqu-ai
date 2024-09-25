@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
 import styles from './mobile-nav-menu.module.scss';
+import React from "react";
 
-const MobileNavMenu = ({ links, isOpened }) => {
+const MobileNavMenu = ({ links, isOpened, data }) => {
   return (
     <div
       className={classNames(styles.mobile_menu__container, {
@@ -33,24 +34,9 @@ const MobileNavMenu = ({ links, isOpened }) => {
             <p className={styles.mob_menu__follow_us_title}>follow us</p>
 
             <div className={styles.mob_menu__follow_us_links}>
-              <a
-                className={styles.mob_menu__follow_us_link}
-                href="#"
-              >
-                Facebook
-              </a>
-              <a
-                className={styles.mob_menu__follow_us_link}
-                href="#"
-              >
-                X
-              </a>
-              <a
-                className={styles.mob_menu__follow_us_link}
-                href="#"
-              >
-                LinkedIn
-              </a>
+              {data.footer.facebook ? <a href={data.footer.facebook} className={styles.mob_menu__follow_us_link} rel="nofollow" target="_blank">Facebook</a> : '' }
+              {data.footer.x ? <a href={data.footer.x} className={styles.mob_menu__follow_us_link} rel="nofollow" target="_blank">X</a> : '' }
+              {data.footer.linkedin ? <a href={data.footer.linkedin} className={styles.mob_menu__follow_us_link} rel="nofollow" target="_blank">LinkedIn</a> : '' }
             </div>
           </div>
         </div>

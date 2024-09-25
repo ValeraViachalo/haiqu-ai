@@ -109,6 +109,10 @@
     height: 40.5625rem;
     padding: 0 $padding-mobile;
 
+    @include extra {
+      width: calc(100% - 40rem);
+    }
+
     @include mobile {
       position: relative;
       display: flex;

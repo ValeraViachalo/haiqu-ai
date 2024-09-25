@@ -1,0 +1,103 @@
+@import '/src/styles/main.module.scss';
+
+.example {
+  position: relative;
+  width: 100vw;
+  z-index: 20;
+  background-color: white;
+  padding: 4.275rem 1.875rem 4.275rem 1.875rem;
+  overflow: hidden;
+
+  &__title {
+    @include sectionTitle;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 13.125rem;
+  }
+
+  &__description {
+    width: 50%;
+  }
+
+  &__subheading {
+    font-size: 2.125rem;
+    width: 38rem;
+    margin-bottom: 1.875rem;
+
+    &__opacity {
+      opacity: 0.35;
+    }
+  }
+
+  &__button {
+    width: max-content;
+    padding: $padding-button;
+    font-family: $fraktion-semibold;
+    text-transform: uppercase;
+    background-color: unset;
+    border: 1px solid rgba($main-font-color, 0.35);
+    border-radius: 0.625rem;
+    transition: 0.3s ease;
+    color: $main-font-color;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 11.625rem;
+
+    &:hover {
+      transition: 0.3s ease;
+      opacity: 0.6;
+    }
+
+    &:visited {
+      color: $main-font-color;
+    }
+  }
+
+  &__paragraphs_container {
+    display: flex;
+    flex-direction: column;
+    gap: 4.375rem;
+  }
+
+  &__paragraph {
+    width: 30.0625rem;
+    color: rgba($main-font-color, 0.35);
+    font-size: 1.625rem;
+  }
+
+  &__orange_circle {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: $haiqu-orange;
+  }
+
+  &__graph {
+    width: 50%;
+    position: relative;
+  }
+
+  &__graph_container {
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    right: -1.25rem;
+    // transform: scale(0.9);
+  }
+
+  &__footer {
+    border-top: 1px solid $main-font-color;
+    padding-top: 1.875rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

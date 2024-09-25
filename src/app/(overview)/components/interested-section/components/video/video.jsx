@@ -7,8 +7,6 @@ const Video = () => {
     getVideoSource('/videos/quant-comp-mobile.mp4')
   );
 
-  console.log('videosrc', videoSrc);
-
   function getVideoSource(width) {
     const tabletViewport = 834;
     const mobileViewport = 430;

@@ -8,7 +8,7 @@ import styles from './illustration.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Illustration = () => {
+const Illustration = ({ data }) => {
   const dotsRef = useRef(null);
   const dot1 = useRef(null);
   const dot2 = useRef(null);
@@ -32,8 +32,6 @@ const Illustration = () => {
       },
       (context) => {
         const { isMobile, isTablet } = context.conditions;
-
-        console.log('isTablet', isTablet);
 
         if (!isMobile) {
           const tl = gsap.timeline({
@@ -88,6 +86,21 @@ const Illustration = () => {
             '<'
           );
         }
+
+        if (isMobile) {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: dotsRef.current,
+              start: 'top 70%',
+              end: '+=400',
+              scrub: true,
+            },
+          });
+
+          tl.to([dot1.current, dot2.current, dot3.current],  {
+            x: '-=300%',
+          });
+        }
       }
     );
 
@@ -112,9 +125,12 @@ const Illustration = () => {
           ref={dot1}
         >
           <div className={styles.illustration__dot} />
-          <p className={styles.illustration__info}>
-            create better carbon capture mechanisms?
-          </p>
+          <p
+            className={styles.illustration__info}
+            dangerouslySetInnerHTML={{
+              __html: data.preview.illustration.text_1,
+            }}
+          ></p>
         </div>
 
         <div
@@ -122,9 +138,12 @@ const Illustration = () => {
           ref={dot2}
         >
           <div className={styles.illustration__dot} />
-          <p className={styles.illustration__info}>
-            Will it help us discover better drugs?
-          </p>
+          <p
+            className={styles.illustration__info}
+            dangerouslySetInnerHTML={{
+              __html: data.preview.illustration.text_2,
+            }}
+          ></p>
         </div>
 
         <div
@@ -132,9 +151,12 @@ const Illustration = () => {
           ref={dot3}
         >
           <div className={styles.illustration__dot} />
-          <p className={styles.illustration__info}>
-            find cleaner ways to produce ammonia?
-          </p>
+          <p
+            className={styles.illustration__info}
+            dangerouslySetInnerHTML={{
+              __html: data.preview.illustration.text_3,
+            }}
+          ></p>
         </div>
       </div>
     </div>

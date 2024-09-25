@@ -6,6 +6,11 @@
   height: 42.1875rem;
   padding-left: $padding-horizontal;
 
+  @include extra {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   @include tablet {
     height: 24rem;
   }
@@ -78,7 +83,6 @@
       width: 300%;
       top: -12%;
     }
-
   }
 
   &__rect_small {
@@ -91,6 +95,10 @@
     background-color: $haiqu-blue;
     opacity: 0.8;
     z-index: 15;
+
+    @include extra {
+      top: 18%;
+    }
 
     @include tablet {
       width: 14rem;
@@ -120,6 +128,10 @@
     opacity: 0.8;
     z-index: 14;
 
+    @include extra {
+      top: 18%;
+    }
+
     @include tablet {
       width: 17.5rem;
       height: 9.8rem;
@@ -131,7 +143,6 @@
       height: 7rem;
       top: 8%;
     }
-
 
     @include smallMobile {
       top: 5%;

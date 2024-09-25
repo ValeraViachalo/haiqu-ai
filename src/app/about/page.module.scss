@@ -3,5 +3,9 @@
 .about {
   position: relative;
 
-  //не ставь тут оверфлоу, тому що це зламає стікі!
+  &__extra {
+    @include extra {
+      padding: 0 20.9375rem;
+    }
+  }
 }
