@@ -1,7 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './how_it_works.module.scss';
+import { useIsMobile } from '@/src/hooks';
 
 const HowItWorksSection = () => {
+  const isMobile = useIsMobile();
+
+  console.log('is mobile', isMobile);
+
   return (
     <section className={styles.how_it_works}>
       <div className={styles.how_it_works__info}>
@@ -15,12 +22,18 @@ const HowItWorksSection = () => {
           </p>
         </div>
       </div>
-      <Image
-        width={1862}
-        height={1057}
-        alt="input circuit"
-        src="/images/input-circuit.png"
-      />
+      <picture>
+        <source
+          media="(max-width: 450px)"
+          srcSet="/images/technology-page/input-circuit-mobile.png"
+        />
+        <Image
+          width={1862}
+          height={1057}
+          alt="input circuit"
+          src="/images/input-circuit.png"
+        />
+      </picture>
     </section>
   );
 };

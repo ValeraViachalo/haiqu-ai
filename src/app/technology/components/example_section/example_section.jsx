@@ -28,18 +28,30 @@ const ExampleSection = () => {
         </div>
         <div className={styles.example__graph}>
           <div className={styles.example__graph_container}>
-            <Image
-              width={1021}
-              height={681}
-              src="/images/technology-page/graph.svg"
-              alt="graph"
-            />
+            <picture>
+              <source
+                media="(max-width: 450px)"
+                srcSet="/images/technology-page/graph-mobile.svg"
+              />
+              <Image
+                width={1021}
+                height={681}
+                src="/images/technology-page/graph.svg"
+                alt="graph"
+              />
+            </picture>
           </div>
         </div>
       </div>
       <div className={styles.example__footer}>
         <p className={styles.example__subheading}>Built for Compatibility</p>
-        <p className={classNames(styles.example__subheading, styles.example__subheading__opacity)}>
+        <p
+          className={classNames(
+            styles.example__subheading,
+            styles.example__subheading__opacity,
+            styles.example__subheading__footer
+          )}
+        >
           Our execution technology is readily compatible with the growing
           middleware stack and can be integrated naturally with other
           compilation, error suppression, and noise mitigation techniques.

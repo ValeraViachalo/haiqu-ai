@@ -14,12 +14,27 @@
     border: unset;
   }
 
+  @include tablet {
+    transition: background-color 0.3s ease;
+    background-color: $main-font-color;
+    min-height: 49.25rem;
+    padding: 1.25rem;
+  }
+
+  @include mobile {
+    padding: $padding-mobile;
+    min-height: 42.625rem;
+  }
+
   &:hover {
     transition: background-color 0.3s ease;
     background-color: $main-font-color;
   }
 
   &__red {
+    transition: background-color 0.3s ease;
+    background-color: $haiqu-red;
+
     &:hover {
       transition: background-color 0.3s ease;
       background-color: $haiqu-red;
@@ -27,6 +42,9 @@
   }
 
   &__blue {
+    transition: background-color 0.3s ease;
+    background-color: $haiqu-blue;
+
     &:hover {
       transition: background-color 0.3s ease;
       background-color: $haiqu-blue;
@@ -48,6 +66,10 @@
     &__hovered {
       transition: 1s ease;
       background-color: white;
+    }
+
+    @include mobile {
+      width: 10.625rem;
     }
   }
 
@@ -89,6 +111,13 @@
       transition: transform 1s ease;
       transform: translateY(0);
     }
+
+    @include tablet {
+      bottom: 1.25rem;
+      top: unset;
+      right: unset;
+      left: 1.25rem;
+    }
   }
 
   &__info {
@@ -107,17 +136,35 @@
     opacity: 0.5;
     font-size: 1.625rem;
     margin-bottom: 0.9375rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 
   &__moto {
     font-size: 2.125rem;
     margin-bottom: 4.375rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      margin-bottom: 3.75rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+    }
   }
 
   &__badges {
     display: flex;
     gap: 0.9375rem;
     margin-bottom: 0.9375rem;
+
+    @include mobile {
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
   }
 
   &__badge {
@@ -128,10 +175,22 @@
     font-size: 1.25rem;
     line-height: 1;
     width: max-content;
+
+    @include mobile {
+      font-size: 0.875rem;
+    }
   }
 
   &__text {
     font-size: 2.125rem;
     width: calc(100% - 1.875rem);
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 1.25rem;
+    }
   }
 }

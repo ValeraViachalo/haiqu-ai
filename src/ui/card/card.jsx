@@ -1,11 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import styles from './card.module.scss';
 import Image from 'next/image';
-
-//colors: blue, red, black as default
 
 const Card = ({
   color,
@@ -18,10 +16,37 @@ const Card = ({
   imageText,
 }) => {
   const [isCardHovered, setIsCardHovered] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+
+      if (window.innerWidth < 834) {
+        setIsCardHovered(true);
+      } else {
+        setIsCardHovered(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div
-      onMouseEnter={() => setIsCardHovered(true)}
-      onMouseLeave={() => setIsCardHovered(false)}
+      onMouseEnter={() => {
+        if (window.innerWidth >= 834) {
+          setIsCardHovered(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (window.innerWidth >= 834) {
+          setIsCardHovered(false);
+        }
+      }}
       className={classNames(styles.card, {
         [styles.card__hovered]: isCardHovered,
         [styles.card__red]: isCardHovered && color === 'red',

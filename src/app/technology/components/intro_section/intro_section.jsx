@@ -13,16 +13,33 @@ const IntroSection = () => {
   const technologySectionRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: technologySectionRef.current,
-        start: 'bottom bottom',
-        end: '+=3000',
-        pin: true,
-        scrub: true,
-        pinSpacing: false,
+    ScrollTrigger.normalizeScroll(true);
+
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isMobile: '(max-width: 430px)',
+        isTablet: '(max-width: 834px)',
+        isDesktop: '(min-width: 834px)',
       },
-    });
+      (context) => {
+        const { isDesktop } = context.conditions;
+
+        if (isDesktop) {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: technologySectionRef.current,
+              start: 'bottom bottom',
+              end: '+=3000',
+              pin: true,
+              scrub: true,
+              pinSpacing: false,
+            },
+          });
+        }
+      }
+    );
   }, []);
 
   return (

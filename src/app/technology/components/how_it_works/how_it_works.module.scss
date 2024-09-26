@@ -7,24 +7,48 @@
   background-color: $main-font-color;
   width: 100%;
 
+  @include mobile {
+    padding: 3.75rem $padding-mobile;
+  }
+
   &__info {
     display: flex;
     color: white;
     margin-bottom: 8.3125rem;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 4.375rem;
+    }
   }
 
   &__title {
     @include sectionTitle;
     width: 50%;
+
+    @include mobile {
+      width: 100%;
+      margin-bottom: 1.3125rem;
+    }
   }
 
   &__description {
     width: 50%;
+
+    @include mobile {
+      width: 100%;
+      font-size: 1.25rem;
+    }
   }
 
   &__text {
     font-size: 2.125rem;
     width: 42.9375rem;
+
+    @include tablet {
+      width: 22rem;
+      font-size: 1.5rem;
+    }
   }
 
   img {
