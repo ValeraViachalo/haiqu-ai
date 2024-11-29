@@ -1,12 +1,29 @@
-import React from 'react';
-import styles from './testimonial-item.module.scss';
+import React from "react";
+import styles from "./testimonial-item.module.scss";
 
 const TestimonialItem = ({ name, role, quote }) => {
   return (
     <div className={styles.testimonial_item}>
-      <p className={styles.testimonial_item__name}>{name}</p>
-      <p className={styles.testimonial_item__role}>{role}</p>
-      <p className={styles.testimonial_item__quote}>{quote}</p>
+      <div className={styles.icon}>
+        <svg
+          viewBox="0 0 50 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.2416 23.0792C13.2972 22.1014 15.9249 22.4681 18.1249 24.1792C20.386 25.8903 21.5166 28.7319 21.5166 32.7042C21.5166 36.1264 20.5694 38.8153 18.6749 40.7708C16.7805 42.6653 14.3666 43.6125 11.4333 43.6125C8.01105 43.6125 5.38327 42.2986 3.54993 39.6708C1.77771 37.0431 0.891602 33.4681 0.891602 28.9458C0.891602 26.1958 1.19716 23.4153 1.80827 20.6042C2.41938 17.7319 3.39716 14.8597 4.7416 11.9875C6.08605 9.11528 8.0416 6.64028 10.6083 4.5625C13.1749 2.42361 16.1999 1.04861 19.6833 0.4375V9.7875C16.811 10.4597 14.5194 11.9875 12.8083 14.3708C11.0972 16.6931 10.2416 19.5958 10.2416 23.0792ZM37.8333 23.0792C40.8888 22.1014 43.5166 22.4681 45.7166 24.1792C47.9777 25.8903 49.1083 28.7319 49.1083 32.7042C49.1083 36.1264 48.161 38.8153 46.2666 40.7708C44.3722 42.6653 41.9583 43.6125 39.0249 43.6125C35.6027 43.6125 32.9749 42.2986 31.1416 39.6708C29.3694 37.0431 28.4833 33.4681 28.4833 28.9458C28.4833 26.1958 28.7888 23.4153 29.3999 20.6042C30.011 17.7319 30.9888 14.8597 32.3333 11.9875C33.6777 9.11528 35.6333 6.64028 38.1999 4.5625C40.7666 2.42361 43.7916 1.04861 47.2749 0.4375V9.7875C44.4027 10.4597 42.111 11.9875 40.3999 14.3708C38.6888 16.6931 37.8333 19.5958 37.8333 23.0792Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <div>
+        <p className={styles.testimonial_item__name}>{name}</p>
+        <p className={styles.testimonial_item__role}>{role}</p>
+      </div>
+      <p
+        className={styles.testimonial_item__quote}
+        dangerouslySetInnerHTML={{ __html: quote }}
+      />
     </div>
   );
 };

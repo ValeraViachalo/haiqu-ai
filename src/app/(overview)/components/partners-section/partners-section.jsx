@@ -9,6 +9,9 @@ const PartnersSection = ({data}) => {
         return ('');
     }
 
+    console.log(data.quotes);
+    
+
     const partners = data.partners.logo.filter(function(item) {
         if (item) {
             return true;
@@ -27,10 +30,6 @@ const PartnersSection = ({data}) => {
           dark
         />
       </div>
-
-      {/* <div className={styles.partners_section__testimonial_container}>
-        <Testimonial testimonial={testimonial} />
-      </div> */}
     </section>
   );
 };

@@ -3,7 +3,7 @@ import styles from './footer.module.scss';
 import DemoBookingForm from '../demo-booking-form';
 
 const Footer = ({data}) => {
-
+  const currentYear = new Date().getFullYear();
   return (
     <footer
       className={styles.footer}
@@ -13,7 +13,7 @@ const Footer = ({data}) => {
 
       <div className={styles.footer__container}>
         <div className={styles.footer__top_section}>
-          <p>©2023 {data.footer.copy}</p>
+          <p>©{currentYear} {data.footer.copy}</p>
           <a
             href={"mailto:" + data.footer.phone}
             className={styles.footer__phone}
@@ -35,7 +35,7 @@ const Footer = ({data}) => {
             <a href="#">Cookie Policy</a>
           </div>
 
-          <p>Made by twid</p>
+          <a href='https://twid.marketing/' target='_blank'>Made by twid</a>
         </div>
       </div>
     </footer>

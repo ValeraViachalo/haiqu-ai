@@ -1,12 +1,13 @@
 @import '/src/styles/main.module.scss';
 
 .testimonial_item {
-  min-width: $testimonial-item-width;
+  width: VW(854);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: VW(30);
   color: $white-color;
-  padding: 1.875rem;
-  border-left: 1px solid rgba($haiqu-light-grey, 0.35);
+  text-align: center;
 
   @include tablet {
     padding: $padding-tablet;
@@ -20,17 +21,13 @@
 
   &__name {
     font-size: 1.625rem;
-    line-height: 1.86875rem;
-
 
     @include tablet {
-      font-size: 1rem;
-      line-height: 1.15rem;
+      font-size: VW(16, $tablet);
     }
-
+    
     @include mobile {
-      font-size: 0.875rem;
-      line-height: 1.00625rem;
+      font-size: VW(16, $mobile);
     }
   }
 
@@ -40,28 +37,39 @@
     margin-bottom: 0.9375rem;
 
     @include tablet {
-      font-size: 1rem;
-      line-height: 1.15rem;
+      font-size: VW(16, $tablet);
     }
-
+    
     @include mobile {
-      font-size: 0.875rem;
-      line-height: 1.00625rem;
+      font-size: VW(16, $mobile);
     }
   }
 
   &__quote {
-    font-size: 5.25rem;
-    line-height: 6.09rem;
-
+    font-size: VW(44);
+    line-height: 110%;
+    
     @include tablet {
-      font-size: 3.375rem;
-      line-height: 3.915rem;
+      font-size: VW(32, $tablet);
+    }
+    
+    @include mobile {
+      font-size: VW(22, $mobile);
+    }
+  }
+
+  .icon {
+    width: VW(50);
+    height: VW(44);
+    
+    @include tablet {
+      width: VW(34, $tablet);
+      height: VW(31, $tablet);
     }
 
     @include mobile {
-      font-size: 2.75rem;
-      line-height: 3.19rem;
+      width: VW(34, $mobile);
+      height: VW(31, $mobile);
     }
   }
 }

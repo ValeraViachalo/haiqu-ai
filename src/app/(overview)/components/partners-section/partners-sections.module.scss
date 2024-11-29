@@ -9,6 +9,10 @@
     @include tablet {
         padding-bottom: 5rem;
     }
+    
+    @include mobile {
+        padding: 0 ;
+    }
 
     &__ticker_container {
         @include mobile {
@@ -18,5 +22,17 @@
 
     &__testimonial_container {
         overflow-x: scroll;
+
+        scrollbar-width: none; /* Firefox 64+ */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        overflow: -moz-scrollbars-none;
+      
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        
+        &::-moz-scrollbar {
+          display: none; /* Firefox до версії 64 */
+        }
     }
 }

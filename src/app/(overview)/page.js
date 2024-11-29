@@ -11,7 +11,7 @@ import {
   TechIntroSection,
 } from './components';
 
-import { BookADemo } from '@/src/ui';
+import { BookADemo, Testimonial } from '@/src/ui';
 
 const Home = () => {
     const [data, setData] = useState(null)
@@ -38,13 +38,14 @@ const Home = () => {
     }
     //if (!data) return <p>No data</p>
 
-  return (
-    <main className={styles.main}>
+    return (
+      <main className={styles.main}>
       <IntroSection data={data} />
       <TechIntroSection data={data} />
       <InterestedSection data={data} />
-      {/* <CaseStudySection /> */}
       <PartnersSection data={data} />
+      <Testimonial testimonial={data.quotes} />
+      {/* <CaseStudySection /> */}
       <EventsSection data={data} />
       <div className={styles.book_a_demo_container}>
         <BookADemo />

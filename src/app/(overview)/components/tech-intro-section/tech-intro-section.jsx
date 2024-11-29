@@ -47,7 +47,7 @@ const TechIntroSection = ({ data }) => {
         isMobile: '(max-width: 430px)',
         isTablet: '(max-width: 834px)',
         isDesktop: '(min-width: 834px)',
-        isHugeDesktop: '(min-width: 2560px',
+        isHugeDesktop: '(min-width: 2560px)',
       },
       (context) => {
         const { isMobile, isHugeDesktop } = context.conditions;

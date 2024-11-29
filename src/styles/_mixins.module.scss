@@ -46,14 +46,46 @@
 //   }
 // }
 
+// @mixin forMobileRatio() {
+//   @media screen and (max-aspect-ratio: 2/3) {
+//     @content;
+//   }
+// }
+
+// @mixin forTabletRatio() {
+//   @media screen and (min-aspect-ratio: 2/3) and (max-aspect-ratio: 4/3) {
+//     @content;
+//   }
+// }
+
+// @mixin forPortraitTabletRatio() {
+//   @media screen and (min-aspect-ratio: 4/3) and (max-aspect-ratio: 15/9) {
+//     @content;
+//   }
+// }
+
+@mixin desktopRatio {
+  @media screen and (min-aspect-ratio: 15/9) and (max-aspect-ratio: 21/9) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media (max-width: 834px) {
+  // @media (max-width: 834px) {
+  //   @content;
+  // }
+
+  @media screen and (min-aspect-ratio: 2/3) and (max-aspect-ratio: 4/3) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media (max-width: 430px) {
+  // @media (max-width: 430px) {
+  //   @content;
+  // }
+
+  @media screen and (max-aspect-ratio: 2/3) {
     @content;
   }
 }
@@ -77,4 +109,8 @@
     font-size: 2.75rem;
     line-height: 3.19rem;
   }
+}
+
+@function VW($px, $base: 1920) {
+  @return calc(($px / $base) * 100vw);
 }

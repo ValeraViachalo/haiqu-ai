@@ -1,4 +1,4 @@
-@import '/src/styles/main.module.scss';
+@import "/src/styles/main.module.scss";
 
 .intro {
   position: fixed;
@@ -22,6 +22,10 @@
     padding-top: 1rem;
     z-index: 10;
 
+    @include extra {
+      margin-left: 7%;
+    }
+
     @include tablet {
       font-size: 3.375rem;
       line-height: 3.875rem;
@@ -42,6 +46,14 @@
     line-height: 1;
     @include sectionTitle;
 
+    @include extra {
+      left: 65%;
+    }
+
+    @include desktopRatio {
+      left: 55%;
+    }
+
     @include tablet {
       position: absolute;
       bottom: $padding-tablet;
@@ -60,8 +72,10 @@
     position: absolute;
     // width: 1387px;
     // height: 689px;
-    width: calc(74vw - $padding-horizontal);
-    height: 60vh;
+    width: calc(64vw - $padding-horizontal);
+    height: 50vh;
+    // width: calc(74vw - $padding-horizontal);
+    // height: 60vh;
     top: 4vw;
     left: 15vw;
 
@@ -124,7 +138,7 @@
     width: 100%;
     z-index: 2;
     aspect-ratio: 16 / 9;
-    background-image: url('/images/sphere-horizontal.svg');
+    background-image: url("/images/sphere-horizontal.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top 5%;
@@ -146,7 +160,7 @@
     width: 100%;
     z-index: 99999;
     aspect-ratio: 16 / 9;
-    background-image: url('/images/sphere-contour.svg');
+    background-image: url("/images/sphere-contour.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top 5%;
@@ -168,7 +182,7 @@
     width: 100%;
     z-index: 2;
     aspect-ratio: 16 / 9;
-    background-image: url('/images/sphere-vertical.svg');
+    background-image: url("/images/sphere-vertical.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top 5%;
@@ -183,8 +197,8 @@
     }
 
     &::after {
-      content: '';
-      background-image: url('./assets/Hn_icon.svg');
+      content: "";
+      background-image: url("./assets/Hn_icon.svg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: left;
@@ -206,10 +220,16 @@
     height: 63rem;
     opacity: 1;
 
-    @include extra {
+    @include desktopRatio {
+      scale: 0.9;
       top: 0;
+    }
+
+    @include extra {
+      top: 5rem;
       left: 15vw;
       width: 70%;
+      scale: 1.1;
     }
 
     @include tablet {
