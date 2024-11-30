@@ -6,10 +6,6 @@ import { useIsMobile } from '@/src/hooks';
 import { mediaQueries } from '@/src/constants';
 
 const TeamSection = ({data}) => {
-    if (data.team.active !== true) {
-        return '';
-    }
-
   const isTablet = useIsMobile(mediaQueries.tablet);
 
     const team = data.team.list.filter(function(item) {

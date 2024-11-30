@@ -9,10 +9,6 @@ import { useIsMobile } from '@/src/hooks';
 import { mediaQueries } from '@/src/constants';
 
 const WeAreSection = ({data}) => {
-  if (data.we.active !== true) {
-    return ('');
-  }
-
   const professions = data.we.list.filter(function(item) {
     if (item.text) {
       return true;

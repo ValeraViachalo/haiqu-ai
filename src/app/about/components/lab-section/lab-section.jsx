@@ -9,9 +9,6 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const LabSection = ({data}) => {
-  if (data.date.active !== true) {
-    return ('');
-  }
   const labRef = useRef(null);
   const yearRef = useRef(null);
   const bgRef = useRef(null);

@@ -9,10 +9,6 @@ import { mediaQueries } from '@/src/constants';
 import classNames from 'classnames';
 
 const LocationsSection = ({ data }) => {
-  if (data.locations.active !== true) {
-    return '';
-  }
-
   const locations = data.locations.list
     .filter(function (item) {
       if (item.name) {

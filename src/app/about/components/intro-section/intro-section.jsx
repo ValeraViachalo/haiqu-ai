@@ -10,10 +10,6 @@ import Illustration from './components/illustration';
 gsap.registerPlugin(ScrollTrigger);
 
 const IntroSection = ({ data = { data } }) => {
-  if (data.preview.active !== true) {
-    return '';
-  }
-
   const mainRef = useRef(null);
   const titleRef = useRef(null);
   const titlePartRef = useRef(null);

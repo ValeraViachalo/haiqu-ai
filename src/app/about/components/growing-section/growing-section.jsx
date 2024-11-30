@@ -7,9 +7,6 @@ import styles from './growing-section.module.scss';
 import { mediaQueries } from '@/src/constants';
 
 const GrowingSection = ({ data }) => {
-  if (data.careers.active !== true) {
-    return '';
-  }
   const [graphImage, setGraphImage] = useState(data.careers.img);
 
   const chooseGraphImage = (width) => {

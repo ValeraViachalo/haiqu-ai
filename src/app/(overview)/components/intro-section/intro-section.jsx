@@ -10,10 +10,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const IntroSectionAlt = ({data}) => {
-  if (data?.preview.active !== true) {
-    return ('');
-  }
-
   const triggerRef = useRef(null);
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);

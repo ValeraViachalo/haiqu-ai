@@ -6,10 +6,6 @@ import { constants } from '@/src/constants';
 import { BookADemo } from '@/src/ui';
 
 const InterestedSection = ({data}) => {
-  if (data.video.active !== true) {
-    return ('');
-  }
-
   const [videoSrc, setVideoSrc] = useState(data.video.video_tablet);
 
   const chooseVideo = (width) => {

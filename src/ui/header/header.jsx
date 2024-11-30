@@ -12,7 +12,7 @@ const Header = ({data}) => {
 
   return (
     <header
-      className={`${styles.header} ${styles.header__fixed}`}
+      className={`${styles.header}`}
       // className={classNames(styles.header, {
       //   [styles.header__fixed]: fixed,
       // })}

@@ -18,10 +18,6 @@ const easing = 'power4.in';
 let delay = 0.1;
 
 const TechIntroSection = ({ data }) => {
-  if (data.computers.active !== true) {
-    return '';
-  }
-
   const filledBar = useRef(null);
   const main = useRef(null);
   const logo = useRef(null);

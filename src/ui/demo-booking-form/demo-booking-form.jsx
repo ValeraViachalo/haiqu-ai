@@ -5,11 +5,6 @@ import styles from './demo-booking-form.module.scss';
 import { useState, useEffect } from 'react';
 
 const DemoBookingForm = ({data}) => {
-
-    if (data.book.active !== true) {
-        return ('');
-    }
-
     const [formData, setFormData] = useState({
         email: ""
     });
