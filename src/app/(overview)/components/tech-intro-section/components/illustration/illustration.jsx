@@ -35,7 +35,7 @@ const Illustration = ({ scrub, easing, delay, startAnimation, data }) => {
         //   delay = 0.035;
         // }
 
-        console.log('is huge', isHugeDesktop);
+        // console.log('is huge', isHugeDesktop);
 
         const tl = gsap.timeline({
           scrollTrigger: {
