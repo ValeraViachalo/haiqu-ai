@@ -21,8 +21,8 @@ const OurMiddlewareSection = () => {
           <Card
             color={currCard.hover_bg}
             btn_title={currCard.button.text}
-            image="/images/technology-page/pivet-img.svg"
-            imageText="pivet"
+            image={currCard.img.img}
+            imageText={currCard.img.text}
             title={currCard.subtitle}
             moto={currCard.title}
             badges={currCard.tags}
