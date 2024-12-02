@@ -86,14 +86,14 @@ const Card = ({
           {badges?.length > 0 &&
             badges?.map((badge) => (
               <div
-                key={badge}
+                key={badge.tag}
                 className={styles.card__badge}
               >
-                {badge}
+                {badge.tag}
               </div>
             ))}
         </div>
-        <p className={styles.card__text}>{text}</p>
+        <p className={styles.card__text} dangerouslySetInnerHTML={{ __html: text }}/>
       </div>
     </div>
   );

@@ -20,6 +20,9 @@
 
   &__leftside {
     width: 50%;
+    height: fit-content;
+    position: sticky;
+    top: 7%;
   }
 
   &__rightside {

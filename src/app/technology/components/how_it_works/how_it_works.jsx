@@ -3,22 +3,24 @@
 import Image from 'next/image';
 import styles from './how_it_works.module.scss';
 import { useIsMobile } from '@/src/hooks';
+import { useContext } from 'react';
+import { DataContext } from '@/src/context/DataProvider/context';
 
 const HowItWorksSection = () => {
+  const { data: allData } = useContext(DataContext);
+  const data = allData?.how_it_works;
+
   const isMobile = useIsMobile();
 
   console.log('is mobile', isMobile);
 
-  return (
+  return data && data.active && (
     <section className={styles.how_it_works}>
       <div className={styles.how_it_works__info}>
-        <p className={styles.how_it_works__title}>How it works</p>
+        <p className={styles.how_it_works__title}>{data.title}</p>
         <div className={styles.how_it_works__description}>
           <p className={styles.how_it_works__text}>
-            We execute quantum algorithms as multiple modified circuits that
-            each fit the constraints of the QPU. We combine all the results and
-            apply noise mitigation to achieve a high-fidelity final result... in
-            a way that scales.
+            {data.text}
           </p>
         </div>
       </div>

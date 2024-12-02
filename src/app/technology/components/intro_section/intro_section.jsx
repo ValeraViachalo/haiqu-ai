@@ -1,16 +1,19 @@
 'use client';
 
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import Image from 'next/image';
 import styles from './intro_section.module.scss';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { DataContext } from '@/src/context/DataProvider/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const IntroSection = () => {
   const technologySectionRef = useRef(null);
+  const { data: allData } = useContext(DataContext);
+  const data = allData?.preview
 
   useGSAP(() => {
     ScrollTrigger.normalizeScroll(true);
@@ -40,18 +43,17 @@ const IntroSection = () => {
         }
       }
     );
-  }, []);
+  }, [data]);
 
-  return (
+  return data && data.active && (
     <section
       className={styles.technology}
       ref={technologySectionRef}
     >
       <div className={styles.technology__info}>
-        <p className={styles.technology__title}>We Execute Quantum Circuits</p>
+        <p className={styles.technology__title}>{data.title}</p>
         <p className={styles.technology__description}>
-          Our middleware embraces the limitations of today’s quantum hardware to
-          deliver breakthrough performance.
+        {data.text}
         </p>
       </div>
 
@@ -59,7 +61,7 @@ const IntroSection = () => {
         <Image
           width={1434}
           height={825}
-          src="/images/quantum_circuits.png"
+          src={data.img}
           alt="quantum circuits"
         />
       </div>

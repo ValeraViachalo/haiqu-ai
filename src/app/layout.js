@@ -1,8 +1,8 @@
-import styles from './globals.scss';
-import { siteConfig } from '../constants';
-import { fraktionMono, neueMontreal, fraktionSemibold } from '../fonts';
-import { Footer, Header } from '../ui';
-import { ScrollProvider } from '../context/scrollProvider';
+import styles from "./globals.scss";
+import { siteConfig } from "../constants";
+import { fraktionMono, neueMontreal, fraktionSemibold } from "../fonts";
+import { Footer, Header } from "../ui";
+import { ScrollProvider } from "../context/ScrollContext/scrollProvider";
 
 export const metadata = {
   title: siteConfig.name,
@@ -10,22 +10,21 @@ export const metadata = {
 };
 
 async function getHeadBot() {
-    const res = await fetch(`https://app.haiqu.ai/wp-admin/admin-ajax.php?action=api&page=options`,{
-        cache: "no-cache",
-    })
-    return res.json()
+  const res = await fetch(
+    `https://app.haiqu.ai/wp-admin/admin-ajax.php?action=api&page=options`,
+    {
+      cache: "no-cache",
+    }
+  );
+  return res.json();
 }
 
 export default async function RootLayout({ children }) {
-    const dataHB = await getHeadBot();
+  const dataHB = await getHeadBot();
 
   return (
     <html lang="en">
-      <link
-        rel="icon"
-        href="favicon.ico"
-        sizes="any"
-      />
+      <link rel="icon" href="favicon.ico" sizes="any" />
       <body
         className={`${fraktionMono.variable} ${neueMontreal.variable} ${fraktionSemibold.variable}`}
       >
