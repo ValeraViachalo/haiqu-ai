@@ -19,6 +19,14 @@
     margin-bottom: 1.875rem;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      margin-bottom: VW(40, $tablet);
+    }
+
+    @include mobile {
+      align-items: center;
+    }
   }
 
   &__title {
@@ -26,11 +34,10 @@
     width: 30rem;
 
     @include tablet {
-      width: 24rem;
+      width: 50%;
     }
 
     @include mobile {
-      margin-bottom: 2.5rem;
       width: 20rem;
       text-align: center;
     }
@@ -52,7 +59,7 @@
     line-height: 1;
 
     @include tablet {
-      font-size: 6.5625rem;
+      font-size: VW(110, $tablet);
     }
 
     @include mobile {
@@ -67,8 +74,8 @@
     margin-bottom: 5.5rem;
 
     @include tablet {
-      font-size: 1.5rem;
-      width: 18.75rem;
+      font-size: VW(24, $tablet);
+      width: 42rem;
       margin-bottom: 4.375rem;
     }
 
@@ -99,6 +106,12 @@
 
     &:visited {
       color: $main-font-color;
+    }
+
+    @include tablet {
+      font-size: VW(20, $tablet);
+      padding: VW(4, $tablet) VW(10,$tablet);
+      border-radius: VW(10, $tablet);
     }
 
     @include mobile {

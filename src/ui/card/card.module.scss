@@ -1,4 +1,4 @@
-@import '/src/styles/main.module.scss';
+@import "/src/styles/main.module.scss";
 
 .card {
   position: relative;
@@ -10,25 +10,27 @@
   overflow: hidden;
   transition: background-color 0.3s ease;
 
-  &__hovered {
-    border: unset;
-  }
-
   @include tablet {
     transition: background-color 0.3s ease;
     background-color: $main-font-color;
-    min-height: 49.25rem;
-    padding: 1.25rem;
+    min-height: VW(788, $tablet);
+    padding: VW(20, $tablet);
+    border-radius: VW(15, $tablet);
   }
 
   @include mobile {
     padding: $padding-mobile;
     min-height: 42.625rem;
+    padding-bottom: 34rem;
   }
 
   &:hover {
     transition: background-color 0.3s ease;
     background-color: $main-font-color;
+  }
+
+  &__hovered {
+    border: unset;
   }
 
   &__red {
@@ -51,6 +53,16 @@
     }
   }
 
+  &__black {
+    transition: background-color 0.3s ease;
+    background-color: $main-font-color;
+
+    &:hover {
+      transition: background-color 0.3s ease;
+      background-color: $main-font-color;
+    }
+  }
+
   &__image {
     position: relative;
     width: 16.8125rem;
@@ -63,14 +75,20 @@
     justify-content: center;
     align-items: center;
 
-    &__hovered {
-      transition: 1s ease;
-      background-color: white;
+    @include tablet {
+      width: VW(200, $tablet);
+      border-radius: VW(10, $tablet);
     }
 
     @include mobile {
       width: 10.625rem;
     }
+
+    &__hovered {
+      transition: 1s ease;
+      background-color: white;
+    }
+
   }
 
   &__image_text {
@@ -79,6 +97,15 @@
     text-transform: uppercase;
     font-family: $fraktion-font;
     color: $haiqu-light-grey;
+
+    @include tablet {
+      font-size: VW(20, $tablet);
+      bottom: 4%;
+    }
+
+    @include mobile {
+      bottom: 4%;
+    }
   }
 
   &__button {
@@ -98,6 +125,23 @@
     transition: transform 1s ease;
     transform: translateY(-4rem);
 
+    @include tablet {
+      font-size: VW(20, $tablet);
+      padding: VW(10, $tablet) VW(10, $tablet) VW(10, $tablet);
+
+      bottom: VW(20, $tablet);
+      top: unset;
+      right: unset;
+      left: VW(20, $tablet);
+    }
+    
+    @include mobile {
+      bottom: VW(15, $mobile);
+      top: unset;
+      right: unset;
+      left: VW(15, $mobile);
+    }
+
     &:hover {
       transition: translate 1s ease;
       opacity: 0.6;
@@ -110,13 +154,6 @@
     &__hovered {
       transition: transform 1s ease;
       transform: translateY(0);
-    }
-
-    @include tablet {
-      bottom: 1.25rem;
-      top: unset;
-      right: unset;
-      left: 1.25rem;
     }
   }
 
@@ -138,7 +175,8 @@
     margin-bottom: 0.9375rem;
 
     @include tablet {
-      font-size: 1rem;
+      font-size: VW(16, $tablet);
+      margin: VW(20, $tablet) 0;
     }
   }
 
@@ -147,7 +185,7 @@
     margin-bottom: 4.375rem;
 
     @include tablet {
-      font-size: 1.5rem;
+      font-size: VW(20, $tablet);
       margin-bottom: 3.75rem;
     }
 
@@ -176,6 +214,11 @@
     line-height: 1;
     width: max-content;
 
+    @include tablet {
+      padding: VW(4, $tablet) VW(10, $tablet);
+      font-size: VW(20, $tablet);
+    }
+
     @include mobile {
       font-size: 0.875rem;
     }
@@ -186,7 +229,7 @@
     width: calc(100% - 1.875rem);
 
     @include tablet {
-      font-size: 1.5rem;
+      font-size: VW(24, $tablet);
     }
 
     @include mobile {

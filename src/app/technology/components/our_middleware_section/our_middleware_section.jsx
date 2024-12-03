@@ -20,7 +20,7 @@ const OurMiddlewareSection = () => {
         {data?.list.map((currCard, i) => (
           <Card
             color={currCard.hover_bg}
-            btn_title={currCard.button.text}
+            button={currCard.button}
             image={currCard.img.img}
             imageText={currCard.img.text}
             title={currCard.subtitle}

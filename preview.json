@@ -2,7 +2,7 @@
   "preview": {
     "active": true,
     "title": "We Execute Quantum Circuits",
-    "text": "Our middleware embraces the limitations of today’s quantum hardware to deliver breakthrough performance.",
+    "text": "Our software embraces the limitations of today’s quantum hardware to deliver breakthrough performance.",
     "img": "https://app.haiqu.ai/wp-content/uploads/quantum_circuits-min.png"
   },
   "what_you_can": {
@@ -13,12 +13,15 @@
         "title": "100x",
         "text": "Execute complex quantum algorithms with 100x more operations"
       },
-      { "title": "4x", "text": "Extend the quantum volume of your QPU by 4x" }
+      {
+        "title": "4x",
+        "text": "Extend the quantum volume of your QPU by 4x"
+      }
     ],
     "title_2": "Can’t quite believe it?",
     "button_2": {
       "active": true,
-      "text": "Check out our whitepaper",
+      "text": "Check out our explainer blog",
       "link": "https://haiqu.ai/"
     }
   },
@@ -26,7 +29,9 @@
     "active": true,
     "title": "How it works",
     "text": "We execute quantum algorithms as multiple modified circuits that each fit the constraints of the QPU. We combine all the results and apply noise mitigation to achieve a high-fidelity final result... in a way that scales.",
-    "img": "https://app.haiqu.ai/wp-content/uploads/input-circuit-1600x910.png"
+    "img": "https://app.haiqu.ai/wp-content/uploads/desktop-1600x981.png",
+    "img_tablet": "https://app.haiqu.ai/wp-content/uploads/tablet.png",
+    "img_mobile": "https://app.haiqu.ai/wp-content/uploads/mobile.png"
   },
   "example": {
     "active": true,
@@ -37,58 +42,19 @@
       "text": "See more here",
       "link": "https://haiqu.ai/"
     },
-    "text": "We ran a time evolution circuit solving a 1D advection PDE equation on a noisy device. Notice that without our software, fidelity plummets to zero at around 5 time-steps.</p>When we use our Optimized Execution (</span>) software, we achieve 25 time-steps and 5500+ gates in depth, maintaining ~60% fidelity by the end—meaning we could keep going...</p>\n",
-    "img": "https://app.haiqu.ai/wp-content/uploads/graph-1.svg",
+    "text": "Computational fluid dynamics (CFD) simulations are one of the nearest term applications for quantum computers. Think realistic aerodynamics simulations around an airfoil or sound propagation through an environment. Fewer than 100 qubits are needed for advantage... but the circuits are thousands of gates in depth.\n\nFor the first time, our software makes it possible to run CFD circuits on real QPUs.",
+    "img": "https://app.haiqu.ai/wp-content/uploads/1b4b53c20fc2484e2ed54a65a1df79d9.gif",
     "title_compatibility": "Built for Compatibility",
     "text_compatibility": "Our execution technology is readily compatible with the growing middleware stack and can be integrated naturally with other compilation, error suppression, and noise mitigation techniques."
   },
   "middleware": {
     "active": true,
-    "title": "Our Middleware",
+    "title": "Our Software",
     "text": "Haiqu developing tools of other parts of the stack",
     "list": [
       {
         "img": {
-          "img": "https://app.haiqu.ai/wp-content/uploads/pivet-img.svg",
-          "text": "Pivet"
-        },
-        "button": {
-          "active": true,
-          "text": "Request demo",
-          "link": "https://haiqu.ai/"
-        },
-        "subtitle": "PIVET – Approximate Execution",
-        "title": "Execute 100x deeper circuits",
-        "tags": [
-          { "tag": "For static circuits" },
-          { "tag": "100x more depth" }
-        ],
-        "text": "Our most powerful solution. This proprietary approximate divide-and-conquer circuit execution scheme allows for the execution of circuits which are 100x deeper, as compared with any other technique on the market. We supplement this execution scheme with noise mitigation and error suppression.</p>\n",
-        "hover_bg": "blue"
-      },
-      {
-        "img": {
-          "img": "https://app.haiqu.ai/wp-content/uploads/zivet-img.svg",
-          "text": "Zivet"
-        },
-        "button": {
-          "active": true,
-          "text": "Request demo",
-          "link": "https://haiqu.ai/"
-        },
-        "subtitle": "ZIVET – Noise Mitigation",
-        "title": "Execute 100x deeper circuits",
-        "tags": [
-          { "tag": "For variational jobs" },
-          { "tag": "For static circuits" },
-          { "tag": "2-3x better fidelity" }
-        ],
-        "text": "The most effective noise mitigation on the market. Our mitigation yields a 2-3x fidelity improvement above existing noise-reduction techniques, all with minimal classical overhead. The overhead is so low you can use it during variational circuit routines!</p>\n",
-        "hover_bg": "red"
-      },
-      {
-        "img": {
-          "img": "https://app.haiqu.ai/wp-content/uploads/rivet-img.svg",
+          "img": "https://app.haiqu.ai/wp-content/uploads/icon-3.svg",
           "text": "Rivet"
         },
         "button": {
@@ -98,11 +64,67 @@
         },
         "subtitle": "RIVET – Modular Transpilation",
         "title": "Reduce your QML runtime from hours to seconds",
-        "tags": [{ "tag": "Open-source" }],
-        "text": "This transpilation SDK allows you to speeds up the transpilation time for routines involving a high-volume of circuit. Run your QML and other workloads in seconds instead of hours. And it’s open- source.</p>\n",
+        "tags": [
+          {
+            "tag": "Open-source"
+          }
+        ],
+        "text": "This transpilation SDK allows you to speeds up the transpilation time for routines involving a high-volume of circuit. Run your QML and other workloads in seconds instead of hours. And it’s open-source.",
+        "hover_bg": "blue"
+      },
+      {
+        "img": {
+          "img": "https://app.haiqu.ai/wp-content/uploads/icon-1.svg",
+          "text": "Private Beta"
+        },
+        "button": {
+          "active": true,
+          "text": "Request demo",
+          "link": "https://haiqu.ai/"
+        },
+        "subtitle": "Our Approximate Circuit Execution",
+        "title": "Execute 100x deeper circuits",
+        "tags": [
+          {
+            "tag": "For static circuits"
+          },
+          {
+            "tag": "100x more depth"
+          }
+        ],
+        "text": "Our most powerful solution (in private beta). This proprietary approximate divide-and-conquer circuit execution scheme allows for the execution of circuits which are 100x deeper, as compared with any other technique on the market. We supplement this execution scheme with error mitigation and error suppression.",
+        "hover_bg": "red"
+      },
+      {
+        "img": {
+          "img": "https://app.haiqu.ai/wp-content/uploads/icon-3.svg",
+          "text": "Private Beta"
+        },
+        "button": {
+          "active": true,
+          "text": "Request demo",
+          "link": "https://haiqu.ai/"
+        },
+        "subtitle": "Our Error Mitigation",
+        "title": "High-performance, lightweight mitigation",
+        "tags": [
+          {
+            "tag": "For variational jobs"
+          },
+          {
+            "tag": "For static circuits"
+          },
+          {
+            "tag": "2-3x better fidelity"
+          }
+        ],
+        "text": "The most effective, lowest-overhead error mitigation system on the market (in private beta). The overhead is so low you can use it during variational circuit routines! In fact, your mitigated variational routine will require fewer circuit runs to converge.",
         "hover_bg": "black"
       }
     ]
   },
-  "seo": { "title": "", "description": "" }
+  "seo": {
+    "title": "",
+    "description": ""
+  }
 }

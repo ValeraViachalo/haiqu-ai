@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import styles from './card.module.scss';
 import Image from 'next/image';
+import useIsRatioResponse from '@/src/hooks/useIsRatioResponce';
 
 const Card = ({
   color,
-  btn_title,
+  button,
   title,
   moto,
   badges,
@@ -16,34 +17,26 @@ const Card = ({
   imageText,
 }) => {
   const [isCardHovered, setIsCardHovered] = useState(false);
+  const isDesktop = useIsRatioResponse({ aspectRatio: "15/9" });
 
   useEffect(() => {
-    const handleResize = () => {
-
-      if (window.innerWidth < 834) {
+      if (!isDesktop) {
         setIsCardHovered(true);
       } else {
         setIsCardHovered(false);
       }
-    };
+  }, [isDesktop]);
 
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div
       onMouseEnter={() => {
-        if (window.innerWidth >= 834) {
-          setIsCardHovered(true);
+        if (isDesktop) {
+        setIsCardHovered(true);
         }
       }}
       onMouseLeave={() => {
-        if (window.innerWidth >= 834) {
+        if (isDesktop) {
           setIsCardHovered(false);
         }
       }}
@@ -51,6 +44,7 @@ const Card = ({
         [styles.card__hovered]: isCardHovered,
         [styles.card__red]: isCardHovered && color === 'red',
         [styles.card__blue]: isCardHovered && color === 'blue',
+        [styles.card__black]: isCardHovered && color === 'black',
       })}
     >
       <div
@@ -67,13 +61,13 @@ const Card = ({
         <p className={styles.card__image_text}>{imageText}</p>
       </div>
 
-      <button
-        className={classNames(styles.card__button, {
-          [styles.card__button__hovered]: isCardHovered,
-        })}
-      >
-        {btn_title}
-      </button>
+      {button.active && (
+          <a href={button.link} target='_blank' className={classNames(styles.card__button, {
+            [styles.card__button__hovered]: isCardHovered,
+          })}>
+            {button.text}
+          </a>
+        )}
 
       <div
         className={classNames(styles.card__info, {

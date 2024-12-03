@@ -7,6 +7,10 @@
   background-color: white;
   padding: 4.275rem 1.875rem 4.275rem 1.875rem;
   overflow: hidden;
+  
+  @include tablet {
+    padding: VW(70, $tablet) VW(30, $tablet);
+  }
 
   @include mobile {
     padding: 4.375rem $padding-mobile;
@@ -21,15 +25,19 @@
     display: flex;
     gap: VW(140);
     margin-bottom: 13.125rem;
-
+    
     @include tablet {
       flex-direction: column;
+      align-items: center;
       width: 100%;
+      gap: VW(40, $tablet);
       margin-bottom: 16.1875rem;
     }
 
     @include mobile {
       margin-bottom: 3.5rem;
+      flex-direction: column;
+      width: 100%;
     }
   }
 
@@ -39,8 +47,9 @@
     @include tablet {
       width: 100%;
     }
-
+    
     @include mobile {
+      width: 100%;
       margin-bottom: 3.75rem;
     }
   }
@@ -51,17 +60,22 @@
     margin-bottom: 1.875rem;
 
     @include tablet {
-      font-size: 1.5rem;
-      width: 23.5rem;
+      font-size: VW(24, $tablet);
+      width: 50rem;
       margin-bottom: 1.875rem;
     }
 
     @include mobile {
       font-size: 1.25rem;
+      width: 100%;
     }
 
     &__footer {
       width: 33.125rem;
+
+      @include tablet {
+        width: 70%;
+      }
 
       @include mobile {
         width: 100%;
@@ -88,9 +102,15 @@
     margin-bottom: 11.625rem;
     text-decoration: none;
     display: block;
-
+    
     @include tablet {
-      margin-bottom: 2.25rem;
+      font-size: VW(20, $tablet);
+      padding: VW(4, $tablet) VW(10,$tablet);
+      margin: VW(30, $tablet) 0;
+    }
+
+    @include mobile {
+      margin-bottom: 2rem;
     }
 
     &:hover {
@@ -127,8 +147,12 @@
 
     @include tablet {
       width: 50%;
-      font-size: 1rem;
+      font-size: VW(20, $tablet);
     }
+
+    @include tablet {
+    }
+
 
     @include mobile {
       width: 100%;
@@ -154,14 +178,17 @@
     width: VW(710);
     height: VW(710);
     border-radius: VW(48);
-
+    
     @include tablet {
-      width: VW(710 , $tablet);
-      height: VW(710 , $tablet);
+      width: VW(710, $tablet);
+      height: VW(710, $tablet);
+      border-radius: VW(48, $tablet);
     }
-
+    
     @include mobile {
-      height: 25.625rem;
+      width: VW(362, $mobile);
+      height: VW(362, $mobile);
+      border-radius: VW(24, $mobile);
     }
 
     img {

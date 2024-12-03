@@ -100,9 +100,9 @@
   font-size: 5.25rem;
   line-height: 6.09rem;
 
-  @include tablet {
-    font-size: 3.375rem;
-    line-height: 3.915rem;
+  @include tablet() {
+    font-size: VW(54, $tablet);
+    line-height: 100%;
   }
 
   @include mobile {

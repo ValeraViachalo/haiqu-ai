@@ -11,17 +11,20 @@
     position: relative;
 
     @include tablet {
-      padding-top: 1rem;
+      padding-top: VW(60, $tablet);
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.9375rem;
+      gap: VW(15, $tablet);
     }
-
+    
     @include mobile {
+      flex-direction: column;
       padding: 0.9375rem;
-      padding-top: 8rem;
       padding-bottom: 3.75rem;
       align-items: center;
+      padding-top: VW(100, $mobile);
+      gap: VW(15, $mobile);
+
     }
   }
 
@@ -30,7 +33,9 @@
     width: 49.875rem;
 
     @include tablet {
-      width: 31.8125rem;
+      width: VW(500, $tablet);
+      font-size: VW(54, $tablet);
+      line-height: 100%;
     }
 
     @include mobile {
@@ -45,6 +50,11 @@
     opacity: 0.35;
     line-height: 116%;
 
+    @include tablet {
+      width: VW(450, $tablet);
+      font-size: VW(24, $tablet);
+    }
+
     @include mobile {
       text-align: center;
       width: 19.4375rem;
@@ -56,7 +66,8 @@
     padding: 11.1875rem 13.9375rem 11.5rem 16.4375rem;
 
     @include tablet {
-      padding: 9.9375rem 1.875rem 12.9375rem 1.3125rem;
+      padding: VW(210, $tablet) 1.875rem VW(210, $tablet) 1.3125rem;
+      margin-top: VW(40, $tablet);
     }
 
     @include mobile {
