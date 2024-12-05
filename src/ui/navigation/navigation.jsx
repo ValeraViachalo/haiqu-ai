@@ -8,7 +8,7 @@ import MobileNavMenu from './components/mobile-nav-menu';
 //import { links } from '@/src/constants';
 import BookADemo from '../book-a-demo';
 
-const Navigation = ({ data }) => {
+const   Navigation = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = data.header.menu

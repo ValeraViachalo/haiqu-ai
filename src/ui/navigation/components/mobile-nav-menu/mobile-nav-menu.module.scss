@@ -38,8 +38,9 @@
       transform: translateX(0);
       transition: 0.15s ease;
     }
-
+    
     @include mobile {
+      display: block;
       transform: translateX(0);
       transition: 0.15s ease;
     }

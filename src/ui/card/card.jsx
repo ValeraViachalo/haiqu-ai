@@ -52,12 +52,13 @@ const Card = ({
           [styles.card__image__hovered]: isCardHovered,
         })}
       >
-        <Image
-          width={85}
-          height={85}
-          alt={imageText}
-          src={image}
-        />
+        <div className={styles.card__image_wrapper}>
+          <Image
+           fill
+            alt={imageText}
+            src={image}
+          />
+        </div>
         <p className={styles.card__image_text}>{imageText}</p>
       </div>
 

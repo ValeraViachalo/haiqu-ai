@@ -20,10 +20,10 @@ const Technology = () => {
   <DataProvider url="https://app.haiqu.ai/wp-admin/admin-ajax.php?action=api&page=technology">
     <section className={styles.page}>
       <IntroSection />
-      <YouCanSection />
+      <OurMiddlewareSection />
       <HowItWorksSection />
       <ExampleSection />
-      <OurMiddlewareSection />
+      <YouCanSection />
     </section>
   </DataProvider>
 )};

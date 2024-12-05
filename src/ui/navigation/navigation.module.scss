@@ -12,6 +12,10 @@
     @include tablet {
       display: block;
     }
+   
+    @include mobile {
+      display: block;
+    }
   }
 
   &__burger {
@@ -29,6 +33,8 @@
     }
 
     @include mobile {
+      @include flexCenter;
+
       width: 1.375rem;
       height: 1rem;
     }
@@ -38,7 +44,6 @@
     position: relative;
 
     @include tablet {
-
       display: block;
       // width: 1.5625rem;
       width: 3rem;
@@ -46,6 +51,7 @@
     }
 
     @include mobile {
+      display: block;
       width: 1.375rem;
       height: 1rem;
     }
@@ -55,6 +61,10 @@
     @include tablet {
       display: none;
     }
+    @include mobile {
+      display: none;
+    }
+
   }
 
   &__link {
@@ -73,14 +83,6 @@
 
     &:visited {
       color: $main-font-color;
-    }
-
-    &:nth-last-child(2) {
-      margin-right: 6.25rem;
-    }
-
-    &:nth-last-child(1) {
-      margin-right: 0 !important;
     }
   }
 

@@ -6,9 +6,14 @@
   border-radius: 0.9375rem;
   padding: 1.875rem;
   width: 100%;
-  min-height: 50rem;
+  min-height: 52rem;
   overflow: hidden;
   transition: background-color 0.3s ease;
+
+  @include extra {
+    min-height: 50rem;
+  }
+
 
   @include tablet {
     transition: background-color 0.3s ease;
@@ -89,6 +94,22 @@
       background-color: white;
     }
 
+    &_wrapper {
+      width: VW(85);
+      height: VW(85);
+      position: relative;
+      
+      @include tablet {
+        width: VW(65, $tablet);
+        height: VW(65, $tablet);
+      }
+      
+      @include mobile {
+        width: VW(50, $mobile);
+        height: VW(50, $mobile);
+      }
+    }
+
   }
 
   &__image_text {
@@ -159,8 +180,12 @@
 
   &__info {
     position: absolute;
-    transform: translateY(16.5rem);
+    transform: translateY(19rem);
     transition: 1s ease;
+    
+    @include extra {
+      transform: translateY(16.5rem);
+    }
 
     &__hovered {
       color: white;

@@ -62,21 +62,37 @@
   }
 
   &__illustration {
-    background-color: $haiqu-light-blue;
-    padding: 11.1875rem 13.9375rem 11.5rem 16.4375rem;
-
+    padding: 7rem 13.9375rem 11.5rem 16.4375rem;
+    
     @include tablet {
-      padding: VW(210, $tablet) 1.875rem VW(210, $tablet) 1.3125rem;
-      margin-top: VW(40, $tablet);
+        margin-top: VW(40, $tablet);
     }
 
     @include mobile {
-      padding: 5rem 0.9375rem;
+      padding: 1rem 0.9375rem 2rem;
     }
 
     img {
       width: 100%;
       height: auto;
+    }
+
+    &_wrapper {
+      background-color: $haiqu-light-blue;
+      overflow: hidden;
+
+      width: 100vw;
+      height: auto;
+      aspect-ratio: 16/9;
+      
+      @include tablet {
+        aspect-ratio: 4/3;
+      }
+      
+      @include mobile {
+        aspect-ratio: 4/3;
+
+      }
     }
   }
 }
